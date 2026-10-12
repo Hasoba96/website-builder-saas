@@ -1,0 +1,100 @@
+
+> website-builder@0.0.0 build F:\Website Builder Proj
+> node scripts/turbo.ts run build
+
+
+   • turbo 2.11.5
+   • Packages in scope: @website-builder/api, @website-builder/config, @website-builder/dashboard-web, @website-builder/database, @website-builder/public-renderer, @website-builder/schemas, @website-builder/worker
+   • Running build in 7 packages
+   • Remote caching disabled
+
+@website-builder/schemas:build: cache bypass, force executing 00f7994da0d40aac
+@website-builder/schemas:build: 
+@website-builder/schemas:build: > @website-builder/schemas@0.0.0 build F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:build: > tsc -p tsconfig.json
+@website-builder/schemas:build: 
+@website-builder/database:build: cache bypass, force executing ffcb8ff108921a6f
+@website-builder/config:build: cache bypass, force executing 056e39c5c27702d8
+@website-builder/database:build: 
+@website-builder/database:build: > @website-builder/database@0.0.0 build F:\Website Builder Proj\packages\database
+@website-builder/database:build: > tsc -p tsconfig.json
+@website-builder/database:build: 
+@website-builder/config:build: 
+@website-builder/config:build: > @website-builder/config@0.0.0 build F:\Website Builder Proj\packages\config
+@website-builder/config:build: > tsc -p tsconfig.json
+@website-builder/config:build: 
+@website-builder/worker:build: cache bypass, force executing 8c9966b6d8a05b8d
+@website-builder/api:build: cache bypass, force executing 5a16df8ec7172891
+@website-builder/worker:build: 
+@website-builder/worker:build: > @website-builder/worker@0.0.0 build F:\Website Builder Proj\apps\worker
+@website-builder/worker:build: > tsc -p tsconfig.build.json
+@website-builder/worker:build: 
+@website-builder/api:build: 
+@website-builder/api:build: > @website-builder/api@0.0.0 build F:\Website Builder Proj\apps\api
+@website-builder/api:build: > tsc -p tsconfig.build.json
+@website-builder/api:build: 
+@website-builder/dashboard-web:build: cache bypass, force executing c2b9055259921a8a
+@website-builder/public-renderer:build: cache bypass, force executing 9928d96e8533ef48
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: > @website-builder/dashboard-web@0.0.0 build F:\Website Builder Proj\apps\dashboard-web
+@website-builder/dashboard-web:build: > node ../../scripts/next.ts build
+@website-builder/dashboard-web:build: 
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: > @website-builder/public-renderer@0.0.0 build F:\Website Builder Proj\apps\public-renderer
+@website-builder/public-renderer:build: > node ../../scripts/next.ts build
+@website-builder/public-renderer:build: 
+@website-builder/dashboard-web:build: ▲ Next.js 16.3.7 (Turbopack)
+@website-builder/public-renderer:build: ▲ Next.js 16.3.7 (Turbopack)
+@website-builder/dashboard-web:build: ✓ Running next.config.ts took 214ms
+@website-builder/public-renderer:build: ✓ Running next.config.ts took 232ms
+@website-builder/public-renderer:build: 
+@website-builder/dashboard-web:build: 
+@website-builder/public-renderer:build:   Creating an optimized production build ...
+@website-builder/dashboard-web:build:   Creating an optimized production build ...
+@website-builder/public-renderer:build: ✓ Compiled successfully in 4.3s
+@website-builder/public-renderer:build:   Running TypeScript ...
+@website-builder/dashboard-web:build: ✓ Compiled successfully in 4.7s
+@website-builder/dashboard-web:build:   Running TypeScript ...
+@website-builder/public-renderer:build:   Finished TypeScript in 2.8s ...
+@website-builder/public-renderer:build:   Collecting page data using 4 workers ...
+@website-builder/dashboard-web:build:   Finished TypeScript in 2.9s ...
+@website-builder/dashboard-web:build:   Collecting page data using 4 workers ...
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (0/4) ...
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (0/4) ...
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (1/4) 
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (2/4) 
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (3/4) 
+@website-builder/public-renderer:build: ✓ Generating static pages using 4 workers (4/4) in 881ms
+@website-builder/public-renderer:build:   Finalizing page optimization ...
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: Route (app)
+@website-builder/public-renderer:build: ┌ ○ /_not-found
+@website-builder/public-renderer:build: └ ƒ /[locale]
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: ƒ Proxy (Middleware)
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: ○  (Static)   prerendered as static content
+@website-builder/public-renderer:build: ƒ  (Dynamic)  server-rendered on demand
+@website-builder/public-renderer:build: 
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (1/4) 
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (2/4) 
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (3/4) 
+@website-builder/dashboard-web:build: ✓ Generating static pages using 4 workers (4/4) in 854ms
+@website-builder/dashboard-web:build:   Finalizing page optimization ...
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: Route (app)
+@website-builder/dashboard-web:build: ┌ ○ /_not-found
+@website-builder/dashboard-web:build: └ ƒ /[locale]
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: ƒ Proxy (Middleware)
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: ○  (Static)   prerendered as static content
+@website-builder/dashboard-web:build: ƒ  (Dynamic)  server-rendered on demand
+@website-builder/dashboard-web:build: 
+
+ Tasks:    7 successful, 7 total
+Cached:    0 cached, 7 total
+  Time:    27.363s 
+
