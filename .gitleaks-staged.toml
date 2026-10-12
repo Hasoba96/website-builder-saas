@@ -1,0 +1,4 @@
+title = "Staged secret scanning without path exclusions"
+
+[extend]
+useDefault = true
