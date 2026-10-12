@@ -1,0 +1,9 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "endOfLine": "lf",
+  "proseWrap": "preserve",
+  "overrides": [
+    { "files": ".github/**/*.yml", "options": { "parser": "json" } }
+  ]
+}
