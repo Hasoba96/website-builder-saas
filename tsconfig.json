@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "types": ["node"]
+  },
+  "include": [
+    "eslint.config.ts",
+    "vitest.config.ts",
+    "vitest.database.config.ts",
+    "vitest.redis.config.ts",
+    "vitest.local.config.ts",
+    "playwright.config.ts",
+    "scripts/**/*.ts",
+    "tests/**/*.ts"
+  ]
+}
