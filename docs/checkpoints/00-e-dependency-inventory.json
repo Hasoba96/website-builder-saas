@@ -1,0 +1,589 @@
+{
+  "date": "2026-10-01",
+  "inventory": [
+    {
+      "name": "@ioredis/commands",
+      "version": "2.0.0",
+      "date": "2026-07-28T12:12:18.460Z",
+      "latest": "2.0.0",
+      "latestDate": "2026-07-28T12:12:18.460Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/ioredis/commands.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/@ioredis/commands/-/commands-2.0.0.tgz",
+      "integrity": "sha512-vrx0AE/T0h7cRZwfo1M39Cr+ZhZrkf0V8mQN75wucKCxCLD9l/VX6no3gFvrLqD1IlG/1LtzWovqEw3t0Vr9zg==",
+      "compressedBytes": 8230,
+      "unpackedBytes": 113719,
+      "installHooks": {}
+    },
+    {
+      "name": "@msgpackr-extract/msgpackr-extract-darwin-arm64",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:39:24.908Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:39:24.908Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-darwin-arm64/-/msgpackr-extract-darwin-arm64-3.0.4.tgz",
+      "integrity": "sha512-LCkGo6JDfaBhgST7UpPWgNgLINpcpabaHfyz5OBx75nUYxBsaEPxjnyNjWpeb/xBup/682QnBfRBy2/LvPutZQ==",
+      "compressedBytes": 4401,
+      "unpackedBytes": 53604,
+      "installHooks": {}
+    },
+    {
+      "name": "@msgpackr-extract/msgpackr-extract-darwin-x64",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:39:23.481Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:39:23.481Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-darwin-x64/-/msgpackr-extract-darwin-x64-3.0.4.tgz",
+      "integrity": "sha512-zExlW9zUJKZH/tOtVMttwjKa4Xm/3KcNjnE3dPN92uCktwavMxpgCA3MoJK/DOnTWsQgo224OaST27/mPNAf+w==",
+      "compressedBytes": 3941,
+      "unpackedBytes": 20276,
+      "installHooks": {}
+    },
+    {
+      "name": "@msgpackr-extract/msgpackr-extract-linux-arm64",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:39:28.161Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:39:28.161Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-linux-arm64/-/msgpackr-extract-linux-arm64-3.0.4.tgz",
+      "integrity": "sha512-dgX0P/9wGPJeHFBG+ZmhgE6bmtMt7NP5CRBGyyktpopdk/mW4POnrpQsSLtKI1dwpc+pPLuXHDh6vvskyQE/sw==",
+      "compressedBytes": 6875,
+      "unpackedBytes": 28624,
+      "installHooks": {}
+    },
+    {
+      "name": "@msgpackr-extract/msgpackr-extract-linux-arm",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:39:29.915Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:39:29.915Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-linux-arm/-/msgpackr-extract-linux-arm-3.0.4.tgz",
+      "integrity": "sha512-Tg3yX65f5GbtXLkrYEHE5oibZG9epyYWas7FogTTEJeDEF9JlXJzKgXaNhT3UXlTOeA+AfZpYZYZ0uPj7Cfquw==",
+      "compressedBytes": 6564,
+      "unpackedBytes": 26008,
+      "installHooks": {}
+    },
+    {
+      "name": "@msgpackr-extract/msgpackr-extract-linux-x64",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:39:26.633Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:39:26.633Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-linux-x64/-/msgpackr-extract-linux-x64-3.0.4.tgz",
+      "integrity": "sha512-8TNXMEjJc3QEy7R/x1INhgiU+XakDAFUzBhaz7+Rbrs8NH5UQeHQxxmzsSBJGyV6I1jW79undiQm8tOI+D+8FQ==",
+      "compressedBytes": 11525,
+      "unpackedBytes": 60832,
+      "installHooks": {}
+    },
+    {
+      "name": "@msgpackr-extract/msgpackr-extract-win32-x64",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:12:04.332Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:12:04.332Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-win32-x64/-/msgpackr-extract-win32-x64-3.0.4.tgz",
+      "integrity": "sha512-CmCXPQrkbwExx3j946/PtHWHbYJiCRBRDl4BlkRQcJB/YOwQxJRTpoo7aTsortjgoJ1x7opzTSxn7C+ASSLVjQ==",
+      "compressedBytes": 116288,
+      "unpackedBytes": 225736,
+      "installHooks": {}
+    },
+    {
+      "name": "bullmq",
+      "version": "6.3.10",
+      "date": "2026-09-29T10:34:16.916Z",
+      "latest": "6.3.11",
+      "latestDate": "2026-10-01T01:58:07.395Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=14.17.0"
+      },
+      "dependencies": {
+        "tslib": "2.8.1",
+        "semver": "7.8.5",
+        "msgpackr": "2.1.0",
+        "cron-parser": "5.10.1",
+        "node-abort-controller": "3.1.1"
+      },
+      "optionalDependencies": {},
+      "peers": {
+        "pg": ">=8.0.0",
+        "redis": ">=5.0.0",
+        "ioredis": ">=5.0.0",
+        "bullmq-otel": ">=2.0.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/taskforcesh/bullmq.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/bullmq/-/bullmq-6.3.10.tgz",
+      "integrity": "sha512-Z+dKyOJ3PazCGMGBCIKW8BeCh6THfwLsQu6W4YG0CWPvVhI4DdEKi1IN7o/Xjln9a9KL8NSTgpY+uPFc2s2hog==",
+      "compressedBytes": 535413,
+      "unpackedBytes": 2974619,
+      "installHooks": {}
+    },
+    {
+      "name": "cluster-key-slot",
+      "version": "1.1.1",
+      "date": "2022-09-27T10:46:05.140Z",
+      "latest": "1.1.2",
+      "latestDate": "2022-11-01T14:03:06.331Z",
+      "license": "Apache-2.0",
+      "deprecated": null,
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Salakar/cluster-key-slot.git"
+      },
+      "source": "https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.1.tgz",
+      "integrity": "sha512-rwHwUfXL40Chm1r08yrhU3qpUvdVlgkKNeyeGPOxnW8/SyVDvgRaed/Uz54AqWNaTCAThlj6QAs3TZcKI0xDEw==",
+      "compressedBytes": 5133,
+      "unpackedBytes": 11758,
+      "installHooks": {}
+    },
+    {
+      "name": "cron-parser",
+      "version": "5.10.1",
+      "date": "2026-09-12T19:11:21.465Z",
+      "latest": "5.10.1",
+      "latestDate": "2026-09-12T19:11:21.465Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=18"
+      },
+      "dependencies": {
+        "luxon": "^3.7.2"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/harrisiirak/cron-parser.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/cron-parser/-/cron-parser-5.10.1.tgz",
+      "integrity": "sha512-pKRrRagItwk9rGIStcUyMxFX34x56zoX3KDf9HJ4ttwkXIK1qxK63EvXvEDmlxI9AdPJ+Y7TEKRftRlW5eSS7A==",
+      "compressedBytes": 34014,
+      "unpackedBytes": 154638,
+      "installHooks": {}
+    },
+    {
+      "name": "debug",
+      "version": "4.4.3",
+      "date": "2025-09-13T17:25:19.732Z",
+      "latest": "4.4.3",
+      "latestDate": "2025-09-13T17:25:19.732Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=6.0"
+      },
+      "dependencies": {
+        "ms": "^2.1.3"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/debug-js/debug.git"
+      },
+      "source": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
+      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+      "compressedBytes": 13449,
+      "unpackedBytes": 42793,
+      "installHooks": {}
+    },
+    {
+      "name": "denque",
+      "version": "2.1.0",
+      "date": "2022-07-18T10:14:29.117Z",
+      "latest": "2.1.0",
+      "latestDate": "2022-07-18T10:14:29.117Z",
+      "license": "Apache-2.0",
+      "deprecated": null,
+      "engines": {
+        "node": ">=0.10"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/invertase/denque.git"
+      },
+      "source": "https://registry.npmjs.org/denque/-/denque-2.1.0.tgz",
+      "integrity": "sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==",
+      "compressedBytes": 9230,
+      "unpackedBytes": 30361,
+      "installHooks": {}
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "date": "2025-10-05T12:46:33.077Z",
+      "latest": "2.1.2",
+      "latestDate": "2025-10-05T12:46:33.077Z",
+      "license": "Apache-2.0",
+      "deprecated": null,
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/lovell/detect-libc.git"
+      },
+      "source": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
+      "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+      "compressedBytes": 7776,
+      "unpackedBytes": 26437,
+      "installHooks": {}
+    },
+    {
+      "name": "ioredis",
+      "version": "6.0.0",
+      "date": "2026-07-31T15:03:15.489Z",
+      "latest": "6.0.0",
+      "latestDate": "2026-07-31T15:03:15.489Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "dependencies": {
+        "debug": "4.4.3",
+        "denque": "2.1.0",
+        "redis-errors": "1.2.0",
+        "cluster-key-slot": "1.1.1",
+        "@ioredis/commands": "2.0.0",
+        "standard-as-callback": "2.1.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/redis/ioredis.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/ioredis/-/ioredis-6.0.0.tgz",
+      "integrity": "sha512-f+Dtubxfpf6KYFq7WVXJoOLn0bk4TJrMrN9SzeE+jrWrCWj7XX3fA6vkryafhADX+GMymRxgDJDOI33COkJc0w==",
+      "compressedBytes": 165683,
+      "unpackedBytes": 1290811,
+      "installHooks": {}
+    },
+    {
+      "name": "luxon",
+      "version": "3.7.2",
+      "date": "2025-09-05T10:14:55.814Z",
+      "latest": "3.7.2",
+      "latestDate": "2025-09-05T10:14:55.814Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/moment/luxon.git"
+      },
+      "source": "https://registry.npmjs.org/luxon/-/luxon-3.7.2.tgz",
+      "integrity": "sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==",
+      "compressedBytes": 1009319,
+      "unpackedBytes": 4592735,
+      "installHooks": {}
+    },
+    {
+      "name": "ms",
+      "version": "2.1.3",
+      "date": "2020-12-08T13:54:35.223Z",
+      "latest": "2.1.3",
+      "latestDate": "2020-12-08T13:54:35.223Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/vercel/ms.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+      "compressedBytes": 2967,
+      "unpackedBytes": 6721,
+      "installHooks": {}
+    },
+    {
+      "name": "msgpackr-extract",
+      "version": "3.0.4",
+      "date": "2026-05-25T13:39:31.475Z",
+      "latest": "3.0.4",
+      "latestDate": "2026-05-25T13:39:31.475Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {
+        "node-gyp-build-optional-packages": "5.2.2"
+      },
+      "optionalDependencies": {
+        "@msgpackr-extract/msgpackr-extract-darwin-arm64": "3.0.4",
+        "@msgpackr-extract/msgpackr-extract-darwin-x64": "3.0.4",
+        "@msgpackr-extract/msgpackr-extract-linux-arm": "3.0.4",
+        "@msgpackr-extract/msgpackr-extract-linux-arm64": "3.0.4",
+        "@msgpackr-extract/msgpackr-extract-linux-x64": "3.0.4",
+        "@msgpackr-extract/msgpackr-extract-win32-x64": "3.0.4"
+      },
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr-extract.git"
+      },
+      "source": "https://registry.npmjs.org/msgpackr-extract/-/msgpackr-extract-3.0.4.tgz",
+      "integrity": "sha512-4kmO/MdyUIkLIvTPr8VHLil4AtoKIoniWPIEk5+CDy0xnWC84azhSFmuJ7PxZdsYtiP5kEeQsORAVIeMgxT+Hw==",
+      "compressedBytes": 5073,
+      "unpackedBytes": 15646,
+      "installHooks": {
+        "install": "node-gyp-build-optional-packages"
+      }
+    },
+    {
+      "name": "msgpackr",
+      "version": "2.1.0",
+      "date": "2026-08-27T20:17:19.489Z",
+      "latest": "2.1.0",
+      "latestDate": "2026-08-27T20:17:19.489Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {
+        "msgpackr-extract": "^3.0.4"
+      },
+      "peers": {},
+      "repository": {
+        "url": "git+ssh://git@github.com/kriszyp/msgpackr.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/msgpackr/-/msgpackr-2.1.0.tgz",
+      "integrity": "sha512-p/pBCVO63CsvvpkomUnNNag6+n38rULuDA6HHe70o2gtC8ODI52foF/4ko2qQcp6OiErJXTmrZeXmsGGHsIQNQ==",
+      "compressedBytes": 413274,
+      "unpackedBytes": 1911232,
+      "installHooks": {}
+    },
+    {
+      "name": "node-abort-controller",
+      "version": "3.1.1",
+      "date": "2023-01-26T15:10:43.536Z",
+      "latest": "3.1.1",
+      "latestDate": "2023-01-26T15:10:43.536Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/southpolesteve/node-abort-controller.git"
+      },
+      "source": "https://registry.npmjs.org/node-abort-controller/-/node-abort-controller-3.1.1.tgz",
+      "integrity": "sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==",
+      "compressedBytes": 5406,
+      "unpackedBytes": 16885,
+      "installHooks": {}
+    },
+    {
+      "name": "node-gyp-build-optional-packages",
+      "version": "5.2.2",
+      "date": "2024-06-09T03:33:11.576Z",
+      "latest": "5.2.2",
+      "latestDate": "2024-06-09T03:33:11.576Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {
+        "detect-libc": "^2.0.1"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prebuild/node-gyp-build.git"
+      },
+      "source": "https://registry.npmjs.org/node-gyp-build-optional-packages/-/node-gyp-build-optional-packages-5.2.2.tgz",
+      "integrity": "sha512-s+w+rBWnpTMwSFbaE0UXsRlg7hU4FjekKU4eyAih5T8nJuNZT1nNsskXpxmeqSK9UzkBl6UgRlnKc8hz8IEqOw==",
+      "compressedBytes": 5710,
+      "unpackedBytes": 14806,
+      "installHooks": {}
+    },
+    {
+      "name": "redis-errors",
+      "version": "1.2.0",
+      "date": "2017-06-01T00:22:49.218Z",
+      "latest": "1.2.0",
+      "latestDate": "2017-06-01T00:22:49.218Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NodeRedis/redis-errors.git"
+      },
+      "source": "https://registry.npmjs.org/redis-errors/-/redis-errors-1.2.0.tgz",
+      "integrity": "sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==",
+      "compressedBytes": 3351,
+      "installHooks": {}
+    },
+    {
+      "name": "semver",
+      "version": "7.8.5",
+      "date": "2026-06-19T18:32:48.972Z",
+      "latest": "7.8.5",
+      "latestDate": "2026-06-19T18:32:48.972Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": ">=10"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/npm/node-semver.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz",
+      "integrity": "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==",
+      "compressedBytes": 29399,
+      "unpackedBytes": 101065,
+      "installHooks": {}
+    },
+    {
+      "name": "standard-as-callback",
+      "version": "2.1.0",
+      "date": "2021-03-14T07:17:44.418Z",
+      "latest": "2.1.0",
+      "latestDate": "2021-03-14T07:17:44.418Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/luin/asCallback.git"
+      },
+      "source": "https://registry.npmjs.org/standard-as-callback/-/standard-as-callback-2.1.0.tgz",
+      "integrity": "sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==",
+      "compressedBytes": 2477,
+      "unpackedBytes": 5303,
+      "installHooks": {}
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "date": "2024-10-31T22:42:48.624Z",
+      "latest": "2.8.1",
+      "latestDate": "2024-10-31T22:42:48.624Z",
+      "license": "0BSD",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/Microsoft/tslib.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+      "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+      "compressedBytes": 18477,
+      "unpackedBytes": 90359,
+      "installHooks": {}
+    }
+  ]
+}
