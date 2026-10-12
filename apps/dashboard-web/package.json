@@ -1,0 +1,31 @@
+{
+  "name": "@website-builder/dashboard-web",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    ".next/standalone",
+    ".next/static"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "node ../../scripts/next.ts build",
+    "dev": "node ../../scripts/next.ts dev",
+    "start": "node ../../scripts/next.ts start",
+    "typecheck": "node ../../scripts/next.ts typegen && tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@website-builder/observability": "workspace:*",
+    "@website-builder/config": "workspace:*",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "next-intl": "4.14.8"
+  },
+  "devDependencies": {
+    "webpack": "5.111.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  }
+}
