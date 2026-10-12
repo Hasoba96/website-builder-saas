@@ -1,0 +1,25 @@
+{
+  "name": "@website-builder/observability",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist",
+    "*.json"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "browser": null,
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@website-builder/schemas": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint . --max-warnings 0"
+  }
+}
