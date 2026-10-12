@@ -1,0 +1,6 @@
+
+> website-builder@0.0.0 format:check F:\Website Builder Proj
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
