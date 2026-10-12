@@ -1,0 +1,2 @@
+#!/bin/sh
+exec gitleaks git --pre-commit --staged --config .gitleaks-staged.toml --redact --no-banner --ignore-gitleaks-allow --timeout 60
