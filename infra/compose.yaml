@@ -1,0 +1,75 @@
+services:
+  postgres:
+    image: postgres@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873
+    environment:
+      POSTGRES_DB: foundation
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    secrets:
+      - postgres-password
+    ports:
+      - target: 5432
+        published: ${DB_PORT:?Initialize local configuration first}
+        host_ip: 127.0.0.1
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    networks: [local]
+    labels:
+      website-builder.local: ${LOCAL_PROJECT:?Use the local infrastructure command}
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -h 127.0.0.1 -U postgres -d foundation']
+      interval: 2s
+      timeout: 2s
+      retries: 20
+      start_period: 10s
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 128
+    security_opt: [no-new-privileges:true]
+    stop_grace_period: 15s
+  redis:
+    image: redis@sha256:29e8589c3f9ba699b5f7aa4b3c7733c58852a3626439e619aa0ee78de08c6ca0
+    user: '999:999'
+    command: [redis-server, /run/secrets/redis-config]
+    secrets:
+      - redis-config
+      - redis-health-password
+    ports:
+      - target: 6379
+        published: ${REDIS_PORT:?Initialize local configuration first}
+        host_ip: 127.0.0.1
+    networks: [local]
+    labels:
+      website-builder.local: ${LOCAL_PROJECT:?Use the local infrastructure command}
+    healthcheck:
+      test:
+        [
+          CMD-SHELL,
+          'REDISCLI_AUTH=$$(cat /run/secrets/redis-health-password) redis-cli --user health ping | grep -qx PONG',
+        ]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    read_only: true
+    tmpfs: ['/data:rw,nosuid,nodev,size=128m']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 64
+    stop_grace_period: 10s
+secrets:
+  postgres-password:
+    file: ${LOCAL_STATE_DIR:?Use the local infrastructure command}/postgres-password
+  redis-config:
+    file: ${LOCAL_STATE_DIR:?Use the local infrastructure command}/redis.conf
+  redis-health-password:
+    file: ${LOCAL_STATE_DIR:?Use the local infrastructure command}/redis-health-password
+volumes:
+  postgres-data:
+    labels:
+      website-builder.local: ${LOCAL_PROJECT}
+networks:
+  local:
+    labels:
+      website-builder.local: ${LOCAL_PROJECT}
