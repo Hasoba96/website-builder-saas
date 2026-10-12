@@ -1,0 +1,277 @@
+
+> website-builder@0.0.0 test F:\Website Builder Proj
+> node scripts/test-database.ts --all
+
+
+   • turbo 2.11.5
+   • Packages in scope: @website-builder/api
+   • Running build in 1 package
+   • Remote caching disabled
+
+@website-builder/schemas:build: cache bypass, force executing 00f7994da0d40aac
+@website-builder/schemas:build: 
+@website-builder/schemas:build: > @website-builder/schemas@0.0.0 build F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:build: > tsc -p tsconfig.json
+@website-builder/schemas:build: 
+@website-builder/config:build: cache bypass, force executing 056e39c5c27702d8
+@website-builder/database:build: cache bypass, force executing ffcb8ff108921a6f
+@website-builder/config:build: 
+@website-builder/config:build: > @website-builder/config@0.0.0 build F:\Website Builder Proj\packages\config
+@website-builder/config:build: > tsc -p tsconfig.json
+@website-builder/config:build: 
+@website-builder/database:build: 
+@website-builder/database:build: > @website-builder/database@0.0.0 build F:\Website Builder Proj\packages\database
+@website-builder/database:build: > tsc -p tsconfig.json
+@website-builder/database:build: 
+@website-builder/api:build: cache bypass, force executing 5a16df8ec7172891
+@website-builder/api:build: 
+@website-builder/api:build: > @website-builder/api@0.0.0 build F:\Website Builder Proj\apps\api
+@website-builder/api:build: > tsc -p tsconfig.build.json
+@website-builder/api:build: 
+
+ Tasks:    4 successful, 4 total
+Cached:    0 cached, 4 total
+  Time:    1m48.254s 
+
+Disposable PostgreSQL 18.6 started; isolated loopback port and generated credentials.
+
+ RUN  v5.0.2 F:/Website Builder Proj
+
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  11:47:29
+   Duration  15.16s (tests 96%, import 3%, transform 1%)
+
+
+   • turbo 2.11.5
+   • Packages in scope: @website-builder/api, @website-builder/config, @website-builder/dashboard-web, @website-builder/database, @website-builder/public-renderer, @website-builder/schemas, @website-builder/worker
+   • Running test in 7 packages
+   • Remote caching disabled
+
+@website-builder/schemas:build: cache bypass, force executing 00f7994da0d40aac
+@website-builder/schemas:build: 
+@website-builder/schemas:build: > @website-builder/schemas@0.0.0 build F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:build: > tsc -p tsconfig.json
+@website-builder/schemas:build: 
+@website-builder/database:build: cache bypass, force executing ffcb8ff108921a6f
+@website-builder/config:build: cache bypass, force executing 056e39c5c27702d8
+@website-builder/database:build: 
+@website-builder/database:build: > @website-builder/database@0.0.0 build F:\Website Builder Proj\packages\database
+@website-builder/database:build: > tsc -p tsconfig.json
+@website-builder/database:build: 
+@website-builder/config:build: 
+@website-builder/config:build: > @website-builder/config@0.0.0 build F:\Website Builder Proj\packages\config
+@website-builder/config:build: > tsc -p tsconfig.json
+@website-builder/config:build: 
+@website-builder/schemas:test: cache bypass, force executing 921f9313d4dd9bce
+@website-builder/public-renderer:build: cache bypass, force executing 9928d96e8533ef48
+@website-builder/schemas:test: 
+@website-builder/schemas:test: > @website-builder/schemas@0.0.0 test F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:test: > vitest run
+@website-builder/schemas:test: 
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: > @website-builder/public-renderer@0.0.0 build F:\Website Builder Proj\apps\public-renderer
+@website-builder/public-renderer:build: > node ../../scripts/next.ts build
+@website-builder/public-renderer:build: 
+@website-builder/schemas:test: 
+@website-builder/schemas:test:  RUN  v5.0.2 F:/Website Builder Proj/packages/schemas
+@website-builder/schemas:test: 
+@website-builder/schemas:test:  ✓ tests/configuration.spec.ts (12 tests) 11ms
+@website-builder/schemas:test: 
+@website-builder/schemas:test:  Test Files  1 passed (1)
+@website-builder/schemas:test:       Tests  12 passed (12)
+@website-builder/schemas:test:    Start at  11:47:55
+@website-builder/schemas:test:    Duration  385ms (import 59%, transform 32%, tests 6%, worker 3%)
+@website-builder/schemas:test: 
+@website-builder/config:test: cache bypass, force executing 9d04724c3ad2758c
+@website-builder/config:test: 
+@website-builder/config:test: > @website-builder/config@0.0.0 test F:\Website Builder Proj\packages\config
+@website-builder/config:test: > vitest run
+@website-builder/config:test: 
+@website-builder/config:test: 
+@website-builder/config:test:  RUN  v5.0.2 F:/Website Builder Proj/packages/config
+@website-builder/config:test: 
+@website-builder/config:test:  ✓ tests/locales.spec.ts (5 tests) 10ms
+@website-builder/config:test:  ✓ tests/environment.spec.ts (17 tests) 19ms
+@website-builder/config:test:  ✓ tests/database.spec.ts (4 tests) 23ms
+@website-builder/config:test: 
+@website-builder/config:test:  Test Files  3 passed (3)
+@website-builder/config:test:       Tests  26 passed (26)
+@website-builder/config:test:    Start at  11:47:56
+@website-builder/config:test:    Duration  641ms (import 63%, transform 29%, tests 5%, worker 2%)
+@website-builder/config:test: 
+@website-builder/worker:build: cache bypass, force executing 8c9966b6d8a05b8d
+@website-builder/worker:build: 
+@website-builder/worker:build: > @website-builder/worker@0.0.0 build F:\Website Builder Proj\apps\worker
+@website-builder/worker:build: > tsc -p tsconfig.build.json
+@website-builder/worker:build: 
+@website-builder/public-renderer:build: ▲ Next.js 16.3.7 (Turbopack)
+@website-builder/public-renderer:build: ✓ Running next.config.ts took 2.4s
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build:   Creating an optimized production build ...
+@website-builder/dashboard-web:build: cache bypass, force executing c2b9055259921a8a
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: > @website-builder/dashboard-web@0.0.0 build F:\Website Builder Proj\apps\dashboard-web
+@website-builder/dashboard-web:build: > node ../../scripts/next.ts build
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: ▲ Next.js 16.3.7 (Turbopack)
+@website-builder/dashboard-web:build: ✓ Running next.config.ts took 213ms
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build:   Creating an optimized production build ...
+@website-builder/dashboard-web:build: ✓ Compiled successfully in 27.1s
+@website-builder/dashboard-web:build:   Running TypeScript ...
+@website-builder/public-renderer:build: ✓ Compiled successfully in 28.9s
+@website-builder/public-renderer:build:   Running TypeScript ...
+@website-builder/public-renderer:build:   Finished TypeScript in 6.6s ...
+@website-builder/public-renderer:build:   Collecting page data using 4 workers ...
+@website-builder/dashboard-web:build:   Finished TypeScript in 6.9s ...
+@website-builder/dashboard-web:build:   Collecting page data using 4 workers ...
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (0/4) ...
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (0/4) ...
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (1/4) 
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (2/4) 
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (1/4) 
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (2/4) 
+@website-builder/dashboard-web:build:   Generating static pages using 4 workers (3/4) 
+@website-builder/public-renderer:build:   Generating static pages using 4 workers (3/4) 
+@website-builder/dashboard-web:build: ✓ Generating static pages using 4 workers (4/4) in 1020ms
+@website-builder/public-renderer:build: ✓ Generating static pages using 4 workers (4/4) in 1037ms
+@website-builder/dashboard-web:build:   Finalizing page optimization ...
+@website-builder/public-renderer:build:   Finalizing page optimization ...
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: Route (app)
+@website-builder/dashboard-web:build: ┌ ○ /_not-found
+@website-builder/dashboard-web:build: └ ƒ /[locale]
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: ƒ Proxy (Middleware)
+@website-builder/dashboard-web:build: 
+@website-builder/dashboard-web:build: ○  (Static)   prerendered as static content
+@website-builder/dashboard-web:build: ƒ  (Dynamic)  server-rendered on demand
+@website-builder/dashboard-web:build: 
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: Route (app)
+@website-builder/public-renderer:build: ┌ ○ /_not-found
+@website-builder/public-renderer:build: └ ƒ /[locale]
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: ƒ Proxy (Middleware)
+@website-builder/public-renderer:build: 
+@website-builder/public-renderer:build: ○  (Static)   prerendered as static content
+@website-builder/public-renderer:build: ƒ  (Dynamic)  server-rendered on demand
+@website-builder/public-renderer:build: 
+@website-builder/api:build: cache bypass, force executing 5a16df8ec7172891
+@website-builder/worker:test: cache bypass, force executing d1a413da6940bfd1
+@website-builder/api:build: 
+@website-builder/api:build: > @website-builder/api@0.0.0 build F:\Website Builder Proj\apps\api
+@website-builder/api:build: > tsc -p tsconfig.build.json
+@website-builder/api:build: 
+@website-builder/worker:test: 
+@website-builder/worker:test: > @website-builder/worker@0.0.0 test F:\Website Builder Proj\apps\worker
+@website-builder/worker:test: > vitest run
+@website-builder/worker:test: 
+@website-builder/worker:test: 
+@website-builder/worker:test:  RUN  v5.0.2 F:/Website Builder Proj/apps/worker
+@website-builder/worker:test: 
+@website-builder/worker:test:  ✓ tests/bootstrap.spec.ts (2 tests) 1778ms
+@website-builder/worker:test:    ✓ initializes the real Nest module and closes its context 1765ms
+@website-builder/worker:test: 
+@website-builder/worker:test:  Test Files  1 passed (1)
+@website-builder/worker:test:       Tests  2 passed (2)
+@website-builder/worker:test:    Start at  11:48:52
+@website-builder/worker:test:    Duration  7.10s (import 67%, tests 27%, transform 5%, worker 1%)
+@website-builder/worker:test: 
+@website-builder/public-renderer:test: cache bypass, force executing bc18a6a41a5c5a35
+@website-builder/dashboard-web:test: cache bypass, force executing 5846faae25ce3eca
+@website-builder/public-renderer:test: 
+@website-builder/public-renderer:test: > @website-builder/public-renderer@0.0.0 test F:\Website Builder Proj\apps\public-renderer
+@website-builder/public-renderer:test: > vitest run
+@website-builder/public-renderer:test: 
+@website-builder/dashboard-web:test: 
+@website-builder/dashboard-web:test: > @website-builder/dashboard-web@0.0.0 test F:\Website Builder Proj\apps\dashboard-web
+@website-builder/dashboard-web:test: > vitest run
+@website-builder/dashboard-web:test: 
+@website-builder/public-renderer:test: 
+@website-builder/public-renderer:test:  RUN  v5.0.2 F:/Website Builder Proj/apps/public-renderer
+@website-builder/public-renderer:test: 
+@website-builder/dashboard-web:test: 
+@website-builder/dashboard-web:test:  RUN  v5.0.2 F:/Website Builder Proj/apps/dashboard-web
+@website-builder/dashboard-web:test: 
+@website-builder/public-renderer:test:  ✓ tests/translations.spec.ts (2 tests) 10ms
+@website-builder/dashboard-web:test:  ✓ tests/translations.spec.ts (2 tests) 9ms
+@website-builder/public-renderer:test:  ✓ tests/states.spec.ts (2 tests) 31ms
+@website-builder/public-renderer:test: 
+@website-builder/dashboard-web:test:  ✓ tests/states.spec.ts (2 tests) 29ms
+@website-builder/public-renderer:test:  Test Files  2 passed (2)
+@website-builder/public-renderer:test:       Tests  4 passed (4)
+@website-builder/public-renderer:test:    Start at  11:49:02
+@website-builder/public-renderer:test:    Duration  1.60s (import 72%, transform 23%, tests 3%, worker 2%)
+@website-builder/public-renderer:test: 
+@website-builder/dashboard-web:test: 
+@website-builder/dashboard-web:test:  Test Files  2 passed (2)
+@website-builder/dashboard-web:test:       Tests  4 passed (4)
+@website-builder/dashboard-web:test:    Start at  11:49:03
+@website-builder/dashboard-web:test:    Duration  887ms (import 52%, transform 37%, tests 7%, worker 4%)
+@website-builder/dashboard-web:test: 
+@website-builder/api:test: cache bypass, force executing 28860821d9c35d26
+@website-builder/api:test: 
+@website-builder/api:test: > @website-builder/api@0.0.0 test F:\Website Builder Proj\apps\api
+@website-builder/api:test: > vitest run
+@website-builder/api:test: 
+@website-builder/api:test: 
+@website-builder/api:test:  RUN  v5.0.2 F:/Website Builder Proj/apps/api
+@website-builder/api:test: 
+@website-builder/api:test:  ✓ tests/bootstrap.spec.ts (2 tests) 582ms
+@website-builder/api:test:    ✓ initializes the real Nest module and closes its context 434ms
+@website-builder/api:test: 
+@website-builder/api:test:  Test Files  1 passed (1)
+@website-builder/api:test:       Tests  2 passed (2)
+@website-builder/api:test:    Start at  11:49:06
+@website-builder/api:test:    Duration  2.21s (import 63%, tests 31%, transform 6%)
+@website-builder/api:test: 
+
+ Tasks:    13 successful, 13 total
+Cached:    0 cached, 13 total
+  Time:    1m23.155s 
+
+
+ RUN  v5.0.2 F:/Website Builder Proj
+
+
+ Test Files  4 passed (4)
+      Tests  20 passed (20)
+   Start at  11:49:09
+   Duration  21.66s (tests 94%, import 4%, transform 1%)
+
+[WebServer] (node:21364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:20736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 17 tests using 1 worker
+
+(node:13416) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\configuration.spec.ts:4:3 › server environment does not reach browser HTML or scripts on 3100 (1.5s)
+  ok  2 tests\browser\configuration.spec.ts:4:3 › server environment does not reach browser HTML or scripts on 3102 (700ms)
+  ok  3 tests\browser\shell.spec.ts:18:7 › dashboard-web ar 390 (1.3s)
+  ok  4 tests\browser\shell.spec.ts:18:7 › dashboard-web ar 1440 (1.3s)
+  ok  5 tests\browser\shell.spec.ts:18:7 › dashboard-web en 390 (1.1s)
+  ok  6 tests\browser\shell.spec.ts:18:7 › dashboard-web en 1440 (1.3s)
+  ok  7 tests\browser\shell.spec.ts:97:3 › dashboard-web defaults to Arabic (276ms)
+  ok  8 tests\browser\shell.spec.ts:18:7 › public-renderer ar 390 (1.2s)
+  ok  9 tests\browser\shell.spec.ts:18:7 › public-renderer ar 1440 (1.2s)
+  ok 10 tests\browser\shell.spec.ts:18:7 › public-renderer en 390 (1.2s)
+  ok 11 tests\browser\shell.spec.ts:18:7 › public-renderer en 1440 (1.3s)
+  ok 12 tests\browser\shell.spec.ts:97:3 › public-renderer defaults to Arabic (284ms)
+  ok 13 tests\browser\shell.spec.ts:109:1 › application locale selections remain independent (803ms)
+(node:19492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 14 tests\browser\hydration.spec.ts:15:5 › dashboard-web /ar hydrates without diagnostics (2.8s)
+  ok 15 tests\browser\hydration.spec.ts:15:5 › dashboard-web /en hydrates without diagnostics (2.8s)
+  ok 16 tests\browser\hydration.spec.ts:15:5 › public-renderer /ar hydrates without diagnostics (2.7s)
+  ok 17 tests\browser\hydration.spec.ts:15:5 › public-renderer /en hydrates without diagnostics (2.7s)
+
+  17 passed (33.7s)
+Disposable PostgreSQL container removed.
