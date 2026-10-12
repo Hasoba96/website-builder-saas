@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "root": 55,
+    "api": 4,
+    "worker": 2,
+    "config": 29,
+    "schemas": 12,
+    "dashboard-web": 4,
+    "public-renderer": 4,
+    "database": 11,
+    "redis": 15,
+    "local": 6,
+    "browser": 25
+  },
+  "total": 167,
+  "durationMs": 318987
+}
