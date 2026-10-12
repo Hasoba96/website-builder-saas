@@ -1,0 +1,4 @@
+{
+  "extends": "@website-builder/config/node.json",
+  "include": ["src/**/*.ts", "tests/**/*.ts", "vitest.config.ts"]
+}
