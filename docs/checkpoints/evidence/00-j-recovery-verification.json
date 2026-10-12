@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "mode": "verify",
+  "status": "PASS",
+  "startedAt": "2026-10-11T16:37:10.461Z",
+  "durationMs": 486803,
+  "lockfileSha256": "be29a554f8d40b5722408eef0b59e4114dced472f1578b7caf123750c4188074",
+  "results": [
+    {
+      "command": "frozen install",
+      "status": "PASS",
+      "durationMs": 1413
+    },
+    {
+      "command": "container runtime",
+      "status": "PASS",
+      "durationMs": 553
+    },
+    {
+      "command": "ci:validate",
+      "status": "PASS",
+      "durationMs": 655
+    },
+    {
+      "command": "ci:supply-chain",
+      "status": "PASS",
+      "durationMs": 3453
+    },
+    {
+      "command": "format:check",
+      "status": "PASS",
+      "durationMs": 6810
+    },
+    {
+      "command": "lint",
+      "status": "PASS",
+      "durationMs": 12016
+    },
+    {
+      "command": "typecheck",
+      "status": "PASS",
+      "durationMs": 85150
+    },
+    {
+      "command": "workspace:check",
+      "status": "PASS",
+      "durationMs": 700
+    },
+    {
+      "command": "build",
+      "status": "PASS",
+      "durationMs": 50395
+    },
+    {
+      "command": "test",
+      "status": "PASS",
+      "durationMs": 319561
+    },
+    {
+      "command": "ci:budget",
+      "status": "PASS",
+      "durationMs": 727
+    },
+    {
+      "command": "security:dependencies",
+      "status": "PASS",
+      "durationMs": 1809
+    },
+    {
+      "command": "security:secrets",
+      "status": "PASS",
+      "durationMs": 3254
+    },
+    {
+      "command": "container cleanup inventory",
+      "status": "PASS",
+      "durationMs": 305
+    }
+  ],
+  "providerExecution": "NOT_VERIFIED"
+}
