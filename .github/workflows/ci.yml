@@ -1,0 +1,99 @@
+{
+  "name": "CI",
+  "on": {
+    "pull_request": {},
+    "push": {
+      "branches": ["main"]
+    },
+    "workflow_dispatch": {}
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "concurrency": {
+    "group": "ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}",
+    "cancel-in-progress": true
+  },
+  "env": {
+    "APP_ENV": "ci",
+    "NODE_OPTIONS": "--max-old-space-size=1536",
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "TURBO_TELEMETRY_DISABLED": "1",
+    "DO_NOT_TRACK": "1",
+    "CI": "true",
+    "CI_BASE_SHA": "${{ github.event.pull_request.base.sha || github.event.before || '' }}"
+  },
+  "jobs": {
+    "verify": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 14,
+      "steps": [
+        {
+          "name": "Fetch exact event commit",
+          "shell": "bash",
+          "env": {
+            "CHECKOUT_TOKEN": "${{ github.token }}"
+          },
+          "run": "set -euo pipefail\ntest \"$GITHUB_SERVER_URL\" = https://github.com\ngit init .\ngit remote add origin \"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY\"\nexport GIT_CONFIG_COUNT=1\nexport GIT_CONFIG_KEY_0=http.https://github.com/.extraheader\nexport GIT_CONFIG_VALUE_0=\"AUTHORIZATION: basic $(printf 'x-access-token:%s' \"$CHECKOUT_TOKEN\" | base64 -w0)\"\ngit fetch --no-tags --depth=1 origin \"$GITHUB_REF\"\ngit checkout --detach FETCH_HEAD\ntest \"$(git rev-parse HEAD)\" = \"$GITHUB_SHA\"\nif [[ \"$CI_BASE_SHA\" =~ ^[a-f0-9]{40}$ && ! \"$CI_BASE_SHA\" =~ ^0+$ ]]; then git fetch --no-tags --depth=1 origin \"$CI_BASE_SHA\"; fi\nunset GIT_CONFIG_VALUE_0 GIT_CONFIG_KEY_0 GIT_CONFIG_COUNT CHECKOUT_TOKEN"
+        },
+        {
+          "name": "Pinned toolchain",
+          "shell": "bash",
+          "run": "bash scripts/ci-bootstrap.sh"
+        },
+        {
+          "name": "Install frozen dependencies and Chromium",
+          "shell": "bash",
+          "run": "pnpm install --frozen-lockfile --ignore-scripts\npnpm exec playwright install --with-deps chromium"
+        },
+        {
+          "name": "Run verify gates",
+          "id": "gates",
+          "shell": "bash",
+          "run": "pnpm ci:verify"
+        },
+        {
+          "name": "Publish sanitized evidence",
+          "if": "${{ always() && steps.gates.outcome != 'skipped' }}",
+          "uses": "./.github/actions/evidence",
+          "with": {
+            "gate": "verify"
+          }
+        }
+      ]
+    },
+    "images": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 14,
+      "steps": [
+        {
+          "name": "Fetch exact event commit",
+          "shell": "bash",
+          "env": {
+            "CHECKOUT_TOKEN": "${{ github.token }}"
+          },
+          "run": "set -euo pipefail\ntest \"$GITHUB_SERVER_URL\" = https://github.com\ngit init .\ngit remote add origin \"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY\"\nexport GIT_CONFIG_COUNT=1\nexport GIT_CONFIG_KEY_0=http.https://github.com/.extraheader\nexport GIT_CONFIG_VALUE_0=\"AUTHORIZATION: basic $(printf 'x-access-token:%s' \"$CHECKOUT_TOKEN\" | base64 -w0)\"\ngit fetch --no-tags --depth=1 origin \"$GITHUB_REF\"\ngit checkout --detach FETCH_HEAD\ntest \"$(git rev-parse HEAD)\" = \"$GITHUB_SHA\"\nif [[ \"$CI_BASE_SHA\" =~ ^[a-f0-9]{40}$ && ! \"$CI_BASE_SHA\" =~ ^0+$ ]]; then git fetch --no-tags --depth=1 origin \"$CI_BASE_SHA\"; fi\nunset GIT_CONFIG_VALUE_0 GIT_CONFIG_KEY_0 GIT_CONFIG_COUNT CHECKOUT_TOKEN"
+        },
+        {
+          "name": "Pinned toolchain",
+          "shell": "bash",
+          "run": "bash scripts/ci-bootstrap.sh"
+        },
+        {
+          "name": "Run images gates",
+          "id": "gates",
+          "shell": "bash",
+          "run": "pnpm ci:images"
+        },
+        {
+          "name": "Publish sanitized evidence",
+          "if": "${{ always() && steps.gates.outcome != 'skipped' }}",
+          "uses": "./.github/actions/evidence",
+          "with": {
+            "gate": "images"
+          }
+        }
+      ]
+    }
+  }
+}
