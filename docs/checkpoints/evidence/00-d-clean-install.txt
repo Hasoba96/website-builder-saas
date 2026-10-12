@@ -1,0 +1,63 @@
+Scope: all 8 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +356
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 356, reused 32, downloaded 0, added 0
+Progress: resolved 356, reused 108, downloaded 0, added 0
+Progress: resolved 356, reused 158, downloaded 0, added 0
+Progress: resolved 356, reused 191, downloaded 0, added 0
+Progress: resolved 356, reused 200, downloaded 0, added 0
+Progress: resolved 356, reused 220, downloaded 0, added 0
+Progress: resolved 356, reused 229, downloaded 0, added 0
+Progress: resolved 356, reused 239, downloaded 0, added 0
+Progress: resolved 356, reused 251, downloaded 0, added 0
+Progress: resolved 356, reused 294, downloaded 0, added 0
+Progress: resolved 356, reused 355, downloaded 0, added 11
+Progress: resolved 356, reused 355, downloaded 0, added 20
+Progress: resolved 356, reused 355, downloaded 0, added 21
+Progress: resolved 356, reused 355, downloaded 0, added 49
+Progress: resolved 356, reused 355, downloaded 0, added 50
+Progress: resolved 356, reused 355, downloaded 0, added 56
+Progress: resolved 356, reused 355, downloaded 0, added 89
+Progress: resolved 356, reused 355, downloaded 0, added 93
+Progress: resolved 356, reused 355, downloaded 0, added 99
+Progress: resolved 356, reused 355, downloaded 0, added 107
+Progress: resolved 356, reused 356, downloaded 0, added 118
+Progress: resolved 356, reused 356, downloaded 0, added 119
+Progress: resolved 356, reused 356, downloaded 0, added 120
+Progress: resolved 356, reused 356, downloaded 0, added 133
+Progress: resolved 356, reused 356, downloaded 0, added 134
+Progress: resolved 356, reused 356, downloaded 0, added 192
+Progress: resolved 356, reused 356, downloaded 0, added 193
+Progress: resolved 356, reused 356, downloaded 0, added 311
+Progress: resolved 356, reused 356, downloaded 0, added 312
+Progress: resolved 356, reused 356, downloaded 0, added 322
+Progress: resolved 356, reused 356, downloaded 0, added 329
+Progress: resolved 356, reused 356, downloaded 0, added 330
+Progress: resolved 356, reused 356, downloaded 0, added 355
+Progress: resolved 356, reused 356, downloaded 0, added 356
+Progress: resolved 356, reused 356, downloaded 0, added 356, done
+
+devDependencies:
++ @axe-core/playwright 4.13.0
++ @eslint/js 10.0.1
++ @next/env 16.3.7
++ @playwright/test 1.63.0
++ @types/node 24.19.0
++ @types/pg 8.23.1
++ @website-builder/config 0.0.0 <- packages\config
++ @website-builder/database 0.0.0 <- packages\database
++ eslint 10.11.0
++ jiti 2.7.0
++ node-pg-migrate 9.0.0
++ pg 8.23.0
++ playwright-core 1.63.0
++ prettier 3.9.9
++ turbo 2.11.5
++ typescript 6.0.3
++ typescript-eslint 8.71.0
++ vite 8.3.1
++ vitest 5.0.2
+
+Done in 2m 42.7s using pnpm v10.34.6
