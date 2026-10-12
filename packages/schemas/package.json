@@ -1,0 +1,25 @@
+{
+  "name": "@website-builder/schemas",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist",
+    "*.json"
+  ],
+  "type": "module",
+  "exports": {
+    "./operations": "./dist/operations.js",
+    "./queues": "./dist/queues.js",
+    "./database": "./dist/database.js",
+    "./configuration": "./dist/configuration.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  }
+}
