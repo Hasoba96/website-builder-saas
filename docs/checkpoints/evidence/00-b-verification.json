@@ -1,0 +1,208 @@
+{
+  "checkpoint": "00-B",
+  "status": "PASS",
+  "verifiedOn": "2026-10-01",
+  "scope": "Application Skeletons only; not Stage 00 or production closure",
+  "toolchain": {
+    "node": "24.21.0",
+    "pnpm": "10.34.6",
+    "typescript": "6.0.3",
+    "turbo": "2.11.5",
+    "vitest": "5.0.2",
+    "playwright": "1.63.0",
+    "gitleaks": "8.30.1",
+    "platform": "Windows x64",
+    "defaultBuildCheckConcurrency": 2,
+    "developmentAgentFileGeneration": "disabled through official Next agentRules option"
+  },
+  "lockfileSHA256": "30d36d2bcba1384e18066c941b3bb7b879bacfb3242fd3d8259e36f8daeb5fd5",
+  "checks": [
+    {
+      "command": "pnpm install --frozen-lockfile --ignore-scripts --store-dir .pnpm-store",
+      "location": "new source-only verification copy",
+      "result": "PASS",
+      "downloaded": 323,
+      "reused": 0,
+      "lockfileUnchanged": true
+    },
+    {
+      "command": "pnpm format:check",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm lint",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm typecheck",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm workspace:check",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm build",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm test",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm security:dependencies",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm security:secrets",
+      "location": "real repository root and fresh verification copy root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm --filter @website-builder/api build",
+      "location": "real repository root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm --filter @website-builder/worker build",
+      "location": "real repository root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm --filter @website-builder/dashboard-web build",
+      "location": "real repository root",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm --filter @website-builder/public-renderer build",
+      "location": "real repository root",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "location": "real repository root",
+      "result": "PASS"
+    }
+  ],
+  "tasks": {
+    "workspacePackages": 5,
+    "build": {
+      "passed": 5,
+      "total": 5
+    },
+    "typecheck": {
+      "passed": 6,
+      "total": 6,
+      "includesConfigBuild": true
+    },
+    "test": {
+      "passed": 10,
+      "total": 10,
+      "includesFiveBuilds": true
+    },
+    "turboCacheHits": 0
+  },
+  "tests": {
+    "vitest": {
+      "api": 2,
+      "worker": 2,
+      "config": 5,
+      "dashboardWeb": 4,
+      "publicRenderer": 4,
+      "root": 12,
+      "total": 29
+    },
+    "browser": {
+      "passed": 11,
+      "retries": 0,
+      "apps": 2,
+      "locales": ["ar", "en"],
+      "viewports": [
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 1440,
+          "height": 900
+        }
+      ],
+      "visualBaselines": 8,
+      "stressCapturesReviewed": 8,
+      "axeViolations": 0
+    }
+  },
+  "security": {
+    "reviewedUniqueVersions": 408,
+    "newDirectVersions": 18,
+    "totalDirectVersions": 26,
+    "pnpmAuditVulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "osvAdvisories": 0,
+    "sourceSecretFindings": 0,
+    "lifecycleScripts": "disabled",
+    "strictPeerValidation": true,
+    "strictEngineValidation": true,
+    "minimumReleaseAgeMinutes": 1440,
+    "telemetry": "Next and Turbo disabled by launchers",
+    "provenanceAttestations": "not independently verified; official sources and package integrity checked"
+  },
+  "tracking": {
+    "transitiveTotal": 143,
+    "deprecated": {
+      "count": 1,
+      "package": "estree-walker@3.0.3",
+      "disposition": "ACCEPT WITH TRACKING",
+      "reviewBy": "2026-12-30"
+    },
+    "ageOnly": {
+      "count": 142,
+      "disposition": "ACCEPT WITH TRACKING",
+      "reviewBy": "2027-03-30"
+    },
+    "directAgeExceptions": ["reflect-metadata@0.2.2", "rxjs@7.8.2"],
+    "owner": "engineering platform / checkpoint maintainer",
+    "eventTriggers": "Immediate re-evaluation under CORE-002; periodic deadlines are not grace periods"
+  },
+  "historicalReports": [
+    {
+      "path": "docs/checkpoints/00-b-vitest-resolution-investigation.md",
+      "sha256": "A168BC68CAFCDAA3EEE817ECB1A2487AF24C44D3F85D1287FACC8EBC43315CF5",
+      "unchanged": true
+    },
+    {
+      "path": "docs/checkpoints/00-b-supply-chain-governance-review.md",
+      "sha256": "83BF7C0989DD8F141B8BFCB94B8C1FE08B7BEDC12DD3828A4DE21D3934ABB197",
+      "unchanged": true
+    },
+    {
+      "path": "docs/checkpoints/00-b-closure-report.md",
+      "sha256": "346006D6FC71732F1AA23877ED7831B3176E95F5B6B9C948121027905BD6347E",
+      "unchanged": true
+    }
+  ],
+  "limitations": [
+    "Clean source/dependency installation, not a clean OS; existing pinned tools, browser binaries and reviewed private SWC cache were shared.",
+    "Windows Chromium only; no Linux/container/staging/production verification.",
+    "Portable Windows pnpm.cmd/Turbo may need a second Ctrl+C for batch-shell cleanup; application graceful closure independently passed.",
+    "Artifact exclusion applies only to inspected Next traces/client assets, not deployment filesystems.",
+    "No DB, Redis, queues, tenant-capable surface, probes or 00-C implementation."
+  ],
+  "evidence": {
+    "dependencyInventory": "00-b-dependency-inventory.json",
+    "artifactInspection": "00-b-artifact-check.json",
+    "rawLogs": "Local-only .local/00b/clean-final-*.log, post-dev-clean-*.log, final-*.log, individual-*-build.log"
+  }
+}

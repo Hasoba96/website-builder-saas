@@ -1,0 +1,46 @@
+{
+  "name": "@website-builder/config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist",
+    "*.json"
+  ],
+  "type": "module",
+  "exports": {
+    "./migration": {
+      "types": "./dist/migration.d.ts",
+      "browser": null,
+      "default": "./dist/migration.js"
+    },
+    "./api": {
+      "types": "./dist/api.d.ts",
+      "browser": null,
+      "default": "./dist/api.js"
+    },
+    "./worker": {
+      "types": "./dist/worker.d.ts",
+      "browser": null,
+      "default": "./dist/worker.js"
+    },
+    "./web-server": {
+      "types": "./dist/web-server.d.ts",
+      "browser": null,
+      "default": "./dist/web-server.js"
+    },
+    "./public": "./dist/public.js",
+    "./base.json": "./base.json",
+    "./locales": "./dist/locales.js",
+    "./node.json": "./node.json",
+    "./next.json": "./next.json"
+  },
+  "dependencies": {
+    "@website-builder/schemas": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run"
+  }
+}

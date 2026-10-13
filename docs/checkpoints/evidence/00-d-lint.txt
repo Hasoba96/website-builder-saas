@@ -1,0 +1,30 @@
+
+> website-builder@0.0.0 lint F:\Website Builder Proj
+> eslint . --max-warnings 0 && pnpm boundaries:check
+
+
+> website-builder@0.0.0 boundaries:check F:\Website Builder Proj
+> node scripts/turbo.ts run build --filter=@website-builder/config && node scripts/check-boundaries.ts
+
+
+   • turbo 2.11.5
+   • Packages in scope: @website-builder/config
+   • Running build in 1 package
+   • Remote caching disabled
+
+@website-builder/schemas:build: cache bypass, force executing 00f7994da0d40aac
+@website-builder/schemas:build: 
+@website-builder/schemas:build: > @website-builder/schemas@0.0.0 build F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:build: > tsc -p tsconfig.json
+@website-builder/schemas:build: 
+@website-builder/config:build: cache bypass, force executing 056e39c5c27702d8
+@website-builder/config:build: 
+@website-builder/config:build: > @website-builder/config@0.0.0 build F:\Website Builder Proj\packages\config
+@website-builder/config:build: > tsc -p tsconfig.json
+@website-builder/config:build: 
+
+ Tasks:    2 successful, 2 total
+Cached:    0 cached, 2 total
+  Time:    16.52s 
+
+Application/package boundaries and local import cycles: PASS

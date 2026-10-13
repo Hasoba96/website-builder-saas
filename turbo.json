@@ -1,0 +1,86 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "stream",
+  "globalPassThroughEnv": [
+    "SWC_NATIVE_BINDING_CACHE",
+    "NODE_ENV",
+    "APP_ENV",
+    "HOST",
+    "PORT",
+    "HTTP_ALLOWED_HOSTS",
+    "HTTP_CANONICAL_ORIGIN",
+    "HTTP_CORS_ORIGINS",
+    "HTTP_BODY_MAX_BYTES",
+    "HTTP_RATE_LIMIT",
+    "HTTP_RATE_WINDOW_MS",
+    "SHUTDOWN_TIMEOUT_MS",
+    "NEXT_PUBLIC_*"
+  ],
+  "remoteCache": {
+    "enabled": false
+  },
+  "tasks": {
+    "@website-builder/worker#dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true,
+      "passThroughEnv": [
+        "REDIS_HOST",
+        "PROBE_HOST",
+        "PROBE_PORT",
+        "READINESS_TIMEOUT_MS",
+        "REDIS_PORT",
+        "REDIS_USERNAME",
+        "REDIS_PASSWORD",
+        "REDIS_TLS",
+        "REDIS_CA",
+        "REDIS_CONNECT_TIMEOUT_MS",
+        "REDIS_COMMAND_TIMEOUT_MS",
+        "REDIS_OUTAGE_TIMEOUT_MS",
+        "REDIS_RECONNECT_LIMIT",
+        "REDIS_RECONNECT_DELAY_MS"
+      ]
+    },
+    "@website-builder/api#dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true,
+      "passThroughEnv": [
+        "DB_HOST",
+        "READINESS_TIMEOUT_MS",
+        "DB_PORT",
+        "DB_NAME",
+        "DB_USER",
+        "DB_PASSWORD",
+        "DB_TLS",
+        "DB_CA",
+        "DB_POOL_MAX",
+        "DB_CONNECT_TIMEOUT_MS",
+        "DB_IDLE_TIMEOUT_MS",
+        "DB_STATEMENT_TIMEOUT_MS",
+        "DB_QUERY_TIMEOUT_MS",
+        "DB_LOCK_TIMEOUT_MS"
+      ]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^build", "^typecheck"],
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

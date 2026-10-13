@@ -1,0 +1,995 @@
+{
+  "date": "2026-10-01",
+  "inventory": [
+    {
+      "name": "@types/node",
+      "version": "24.19.0",
+      "date": "2026-09-25T22:09:25.850Z",
+      "latest": "26.6.3",
+      "latestDate": "2026-09-25T22:06:16.779Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {
+        "undici-types": ">=7.24.0 <7.24.7"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "type": "git",
+        "directory": "types/node"
+      },
+      "source": "https://registry.npmjs.org/@types/node/-/node-24.19.0.tgz",
+      "integrity": "sha512-zY+5tKxXdhGh1PYI0ac+7juvEu4OI6vWtVVoj5i2m42jxAY1U+zHGt6QCyOFwykdP62sM3MJ9stoYYUw5aCWew==",
+      "compressedBytes": 474718,
+      "unpackedBytes": 2613291,
+      "installHooks": {}
+    },
+    {
+      "name": "@types/pg",
+      "version": "8.23.1",
+      "date": "2026-08-17T20:10:18.296Z",
+      "latest": "8.23.1",
+      "latestDate": "2026-08-17T20:10:18.296Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {
+        "pg-types": "^2.2.0",
+        "@types/node": "*",
+        "pg-protocol": "*"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "type": "git",
+        "directory": "types/pg"
+      },
+      "source": "https://registry.npmjs.org/@types/pg/-/pg-8.23.1.tgz",
+      "integrity": "sha512-fKVHpikPdg4GKks3JuLEhvwSyvwzF23hnabPy6DD8ljVbC7+6J5dQzdv4arV6jqq57djnMgs1HKBxX4P8aBI3A==",
+      "compressedBytes": 5484,
+      "unpackedBytes": 19802,
+      "installHooks": {}
+    },
+    {
+      "name": "ansi-regex",
+      "version": "6.4.0",
+      "date": "2026-09-27T03:34:44.568Z",
+      "latest": "6.4.0",
+      "latestDate": "2026-09-27T03:34:44.568Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/chalk/ansi-regex.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.4.0.tgz",
+      "integrity": "sha512-KzTVk2tCWAHtYrvvvaP8bJKJq2pVinhLcGEQdtLIYPbmNGNyYe8QwNaTUYQp2J7/vIsUKt5QCqAfUkYyG9DkOw==",
+      "compressedBytes": 3025,
+      "unpackedBytes": 6208,
+      "installHooks": {}
+    },
+    {
+      "name": "ansi-styles",
+      "version": "6.2.3",
+      "date": "2025-09-08T14:52:15.705Z",
+      "latest": "7.0.0",
+      "latestDate": "2026-07-26T14:57:36.835Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/chalk/ansi-styles.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz",
+      "integrity": "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==",
+      "compressedBytes": 5836,
+      "unpackedBytes": 17488,
+      "installHooks": {}
+    },
+    {
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "date": "2026-02-22T11:38:25.951Z",
+      "latest": "4.0.4",
+      "latestDate": "2026-02-22T11:38:25.951Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": "18 || 20 || >=22"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/juliangruber/balanced-match.git"
+      },
+      "source": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz",
+      "integrity": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==",
+      "compressedBytes": 4199,
+      "unpackedBytes": 17584,
+      "installHooks": {}
+    },
+    {
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "date": "2026-09-14T21:59:00.288Z",
+      "latest": "5.0.12",
+      "latestDate": "2026-09-14T21:59:00.288Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": "20 || >=22"
+      },
+      "dependencies": {
+        "balanced-match": "^4.0.2"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/juliangruber/brace-expansion.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz",
+      "integrity": "sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==",
+      "compressedBytes": 12620,
+      "unpackedBytes": 84997,
+      "installHooks": {}
+    },
+    {
+      "name": "cliui",
+      "version": "9.0.1",
+      "date": "2025-03-17T02:36:25.499Z",
+      "latest": "9.0.1",
+      "latestDate": "2025-03-17T02:36:25.499Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": ">=20"
+      },
+      "dependencies": {
+        "string-width": "^7.2.0",
+        "strip-ansi": "^7.1.0",
+        "wrap-ansi": "^9.0.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yargs/cliui.git"
+      },
+      "source": "https://registry.npmjs.org/cliui/-/cliui-9.0.1.tgz",
+      "integrity": "sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==",
+      "compressedBytes": 19175,
+      "unpackedBytes": 57360,
+      "installHooks": {}
+    },
+    {
+      "name": "emoji-regex",
+      "version": "10.6.0",
+      "date": "2025-10-13T08:13:51.804Z",
+      "latest": "11.0.0",
+      "latestDate": "2026-09-15T17:11:44.000Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/mathiasbynens/emoji-regex.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.6.0.tgz",
+      "integrity": "sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==",
+      "compressedBytes": 5610,
+      "unpackedBytes": 34544,
+      "installHooks": {}
+    },
+    {
+      "name": "escalade",
+      "version": "3.2.0",
+      "date": "2024-08-29T22:59:36.690Z",
+      "latest": "3.2.0",
+      "latestDate": "2024-08-29T22:59:36.690Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=6"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukeed/escalade.git"
+      },
+      "source": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz",
+      "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
+      "compressedBytes": 4483,
+      "unpackedBytes": 12385,
+      "installHooks": {}
+    },
+    {
+      "name": "get-caller-file",
+      "version": "2.0.5",
+      "date": "2019-03-09T21:48:30.527Z",
+      "latest": "2.0.5",
+      "latestDate": "2019-03-09T21:48:30.527Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": "6.* || 8.* || >= 10.*"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stefanpenner/get-caller-file.git"
+      },
+      "source": "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz",
+      "integrity": "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==",
+      "compressedBytes": 2383,
+      "unpackedBytes": 4719,
+      "installHooks": {}
+    },
+    {
+      "name": "get-east-asian-width",
+      "version": "1.7.0",
+      "date": "2026-09-17T05:04:29.873Z",
+      "latest": "1.7.0",
+      "latestDate": "2026-09-17T05:04:29.873Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=18"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/sindresorhus/get-east-asian-width.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.7.0.tgz",
+      "integrity": "sha512-XjH1AECxf0giL2V1aU8vKyRR2ppRUb5c0EvT7zuJTokQ74bNo52zOtghqdWIqrhUD79fo3x0WfKZdOqxF6LG1Q==",
+      "compressedBytes": 5431,
+      "unpackedBytes": 14724,
+      "installHooks": {}
+    },
+    {
+      "name": "glob",
+      "version": "13.0.6",
+      "date": "2026-02-19T17:26:33.269Z",
+      "latest": "13.0.6",
+      "latestDate": "2026-02-19T17:26:33.269Z",
+      "license": "BlueOak-1.0.0",
+      "deprecated": null,
+      "engines": {
+        "node": "18 || 20 || >=22"
+      },
+      "dependencies": {
+        "minimatch": "^10.2.2",
+        "minipass": "^7.1.3",
+        "path-scurry": "^2.0.2"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/isaacs/node-glob.git"
+      },
+      "source": "https://registry.npmjs.org/glob/-/glob-13.0.6.tgz",
+      "integrity": "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==",
+      "compressedBytes": 364690,
+      "unpackedBytes": 1607230,
+      "installHooks": {}
+    },
+    {
+      "name": "jiti",
+      "version": "2.7.0",
+      "date": "2026-05-05T21:02:47.918Z",
+      "latest": "2.7.0",
+      "latestDate": "2026-05-05T21:02:47.918Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unjs/jiti.git"
+      },
+      "source": "https://registry.npmjs.org/jiti/-/jiti-2.7.0.tgz",
+      "integrity": "sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==",
+      "compressedBytes": 427320,
+      "unpackedBytes": 1751293,
+      "installHooks": {}
+    },
+    {
+      "name": "lru-cache",
+      "version": "11.5.3",
+      "date": "2026-09-18T23:46:33.023Z",
+      "latest": "11.5.3",
+      "latestDate": "2026-09-18T23:46:33.023Z",
+      "license": "BlueOak-1.0.0",
+      "deprecated": null,
+      "engines": {
+        "node": "20 || >=22"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+ssh://git@github.com/isaacs/node-lru-cache.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.3.tgz",
+      "integrity": "sha512-U4N8FgzmWxc8k1VH8Kr6lQg18U7Fjvby6wXHVRX/ZZ7IwWbRMgrRbP0Wrb5q5NVinryp4SQampHKdvtecItxUg==",
+      "compressedBytes": 697866,
+      "unpackedBytes": 3334485,
+      "installHooks": {}
+    },
+    {
+      "name": "minimatch",
+      "version": "10.2.6",
+      "date": "2026-07-27T19:00:09.469Z",
+      "latest": "10.2.6",
+      "latestDate": "2026-07-27T19:00:09.469Z",
+      "license": "BlueOak-1.0.0",
+      "deprecated": null,
+      "engines": {
+        "node": "18 || 20 || >=22"
+      },
+      "dependencies": {
+        "brace-expansion": "^5.0.8"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+ssh://git@github.com/isaacs/minimatch.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz",
+      "integrity": "sha512-vpLQEs+VLCr1nU0BXS07maYoFwlDAH0gngQuuttxIwutDFEMHq2blX+8vpgxDdK3J1PwjCJiep77OitTZ4Ll1A==",
+      "compressedBytes": 117068,
+      "unpackedBytes": 536122,
+      "installHooks": {}
+    },
+    {
+      "name": "minipass",
+      "version": "7.1.3",
+      "date": "2026-02-19T00:34:33.886Z",
+      "latest": "7.1.3",
+      "latestDate": "2026-02-19T00:34:33.886Z",
+      "license": "BlueOak-1.0.0",
+      "deprecated": null,
+      "engines": {
+        "node": ">=16 || 14 >=14.17"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/minipass.git"
+      },
+      "source": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz",
+      "integrity": "sha512-tEBHqDnIoM/1rXME1zgka9g6Q2lcoCkxHLuc7ODJ5BxbP5d4c2Z5cGgtXAku59200Cx7diuHTOYfSBD8n6mm8A==",
+      "compressedBytes": 83605,
+      "unpackedBytes": 366791,
+      "installHooks": {}
+    },
+    {
+      "name": "node-pg-migrate",
+      "version": "9.0.0",
+      "date": "2026-07-17T08:50:59.857Z",
+      "latest": "9.0.0",
+      "latestDate": "2026-07-17T08:50:59.857Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=20.11.0"
+      },
+      "dependencies": {
+        "glob": "~13.0.0",
+        "jiti": "~2.7.0",
+        "yargs": "~18.0.0"
+      },
+      "optionalDependencies": {},
+      "peers": {
+        "pg": ">=4.3.0 <9.0.0",
+        "@types/pg": ">=6.0.0 <9.0.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/salsita/node-pg-migrate.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/node-pg-migrate/-/node-pg-migrate-9.0.0.tgz",
+      "integrity": "sha512-lp5+UZx1KKgOz/y0h6BYGPuJ5wVlZTgiBPGXCGoX6Bs6X9LtiIhrI4V2yW4mPwnJBfptVq0KtLQtXHcoEKOyig==",
+      "compressedBytes": 120909,
+      "unpackedBytes": 560783,
+      "installHooks": {}
+    },
+    {
+      "name": "path-scurry",
+      "version": "2.0.2",
+      "date": "2026-02-19T17:20:00.211Z",
+      "latest": "2.0.2",
+      "latestDate": "2026-02-19T17:20:00.211Z",
+      "license": "BlueOak-1.0.0",
+      "deprecated": null,
+      "engines": {
+        "node": "18 || 20 || >=22"
+      },
+      "dependencies": {
+        "lru-cache": "^11.0.0",
+        "minipass": "^7.1.2"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/path-scurry.git"
+      },
+      "source": "https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.2.tgz",
+      "integrity": "sha512-3O/iVVsJAPsOnpwWIeD+d6z/7PmqApyQePUtCndjatj/9I5LylHvt5qluFaBT3I5h3r1ejfR056c+FCv+NnNXg==",
+      "compressedBytes": 101468,
+      "unpackedBytes": 535680,
+      "installHooks": {}
+    },
+    {
+      "name": "pg-cloudflare",
+      "version": "1.4.0",
+      "date": "2026-05-18T12:00:18.454Z",
+      "latest": "1.4.1",
+      "latestDate": "2026-09-30T15:38:46.171Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git://github.com/brianc/node-postgres.git",
+        "type": "git",
+        "directory": "packages/pg-cloudflare"
+      },
+      "source": "https://registry.npmjs.org/pg-cloudflare/-/pg-cloudflare-1.4.0.tgz",
+      "integrity": "sha512-Vo7z/6rrQYxpNRylp4Tlob2elzbh+N/MOQbxFVWCxS7oEx6jF53GTJFxK2WWpKuBRkmiin4Mt+xofFDjx09R0A==",
+      "compressedBytes": 6938,
+      "unpackedBytes": 23542,
+      "installHooks": {}
+    },
+    {
+      "name": "pg-connection-string",
+      "version": "2.14.0",
+      "date": "2026-06-19T00:53:53.717Z",
+      "latest": "2.14.1",
+      "latestDate": "2026-09-30T15:39:05.233Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git://github.com/brianc/node-postgres.git",
+        "type": "git",
+        "directory": "packages/pg-connection-string"
+      },
+      "source": "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.14.0.tgz",
+      "integrity": "sha512-XwWDGcLRGCXAR8F/AM5bG7Q+A3Wm2s6QeEjlOKZLlH3UYcguiqCWKyWXVag5TLTIjR7oOJUY8kcADaZgWPyLeg==",
+      "compressedBytes": 5825,
+      "unpackedBytes": 16144,
+      "installHooks": {}
+    },
+    {
+      "name": "pg-int8",
+      "version": "1.0.1",
+      "date": "2017-11-14T22:39:49.993Z",
+      "latest": "1.0.1",
+      "latestDate": "2017-11-14T22:39:49.993Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/charmander/pg-int8.git"
+      },
+      "source": "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz",
+      "integrity": "sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==",
+      "compressedBytes": 1508,
+      "installHooks": {}
+    },
+    {
+      "name": "pg-pool",
+      "version": "3.14.0",
+      "date": "2026-05-18T12:00:18.362Z",
+      "latest": "3.14.0",
+      "latestDate": "2026-05-18T12:00:18.362Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {
+        "pg": ">=8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/brianc/node-postgres.git",
+        "directory": "packages/pg-pool"
+      },
+      "source": "https://registry.npmjs.org/pg-pool/-/pg-pool-3.14.0.tgz",
+      "integrity": "sha512-gKtPkFdQPU3DksooVLi9LsjZxrsBUZIpa+7aVx+LV5pNh0KzP4Zleud2po+ConrxbuXGBJ6Hfer6hdgpIBpBaw==",
+      "compressedBytes": 9579,
+      "unpackedBytes": 29835,
+      "installHooks": {}
+    },
+    {
+      "name": "pg-protocol",
+      "version": "1.16.0",
+      "date": "2026-08-08T19:26:03.882Z",
+      "latest": "1.16.1",
+      "latestDate": "2026-09-30T15:41:58.793Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git://github.com/brianc/node-postgres.git",
+        "type": "git",
+        "directory": "packages/pg-protocol"
+      },
+      "source": "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.16.0.tgz",
+      "integrity": "sha512-sILXutLVjCLjcDuOmvhX5e2Z4cS5qG/6Bu3VkpFwdf/633ElGLpEh9bgmuI5I4sqKqkifQiGyiCcx1HdtrK7tg==",
+      "compressedBytes": 39412,
+      "unpackedBytes": 200886,
+      "installHooks": {}
+    },
+    {
+      "name": "pg-types",
+      "version": "2.2.0",
+      "date": "2019-08-07T01:15:33.099Z",
+      "latest": "4.1.0",
+      "latestDate": "2025-07-30T15:37:01.820Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {
+        "pg-int8": "1.0.1",
+        "postgres-date": "~1.0.4",
+        "postgres-array": "~2.0.0",
+        "postgres-bytea": "~1.0.0",
+        "postgres-interval": "^1.1.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git://github.com/brianc/node-pg-types.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz",
+      "integrity": "sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==",
+      "compressedBytes": 10344,
+      "unpackedBytes": 35296,
+      "installHooks": {}
+    },
+    {
+      "name": "pg",
+      "version": "8.23.0",
+      "date": "2026-08-08T19:27:05.108Z",
+      "latest": "8.23.1",
+      "latestDate": "2026-09-30T15:39:58.489Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">= 16.0.0"
+      },
+      "dependencies": {
+        "pgpass": "1.0.5",
+        "pg-pool": "^3.14.0",
+        "pg-types": "2.2.0",
+        "pg-protocol": "^1.16.0",
+        "pg-cloudflare": "^1.4.0",
+        "pg-connection-string": "^2.14.0"
+      },
+      "optionalDependencies": {
+        "pg-cloudflare": "^1.4.0"
+      },
+      "peers": {
+        "pg-native": ">=3.0.1"
+      },
+      "repository": {
+        "url": "git://github.com/brianc/node-postgres.git",
+        "type": "git",
+        "directory": "packages/pg"
+      },
+      "source": "https://registry.npmjs.org/pg/-/pg-8.23.0.tgz",
+      "integrity": "sha512-Ip2EQCngowJLGOfCwkFhPXU7/ljlhn6Rxlmy4XYfL2Y+vyRM59+8uR2xqRWKdYmbXmxCFOAmKxBuSUCdF34qLg==",
+      "compressedBytes": 27821,
+      "unpackedBytes": 100044,
+      "installHooks": {}
+    },
+    {
+      "name": "pgpass",
+      "version": "1.0.5",
+      "date": "2021-12-19T11:51:52.599Z",
+      "latest": "1.0.6",
+      "latestDate": "2026-06-20T17:57:37.304Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {
+        "split2": "^4.1.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/hoegaarden/pgpass.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz",
+      "integrity": "sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==",
+      "compressedBytes": 4280,
+      "unpackedBytes": 10323,
+      "installHooks": {}
+    },
+    {
+      "name": "postgres-array",
+      "version": "2.0.0",
+      "date": "2018-10-22T18:12:08.067Z",
+      "latest": "3.0.4",
+      "latestDate": "2025-03-06T16:20:51.517Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/bendrucker/postgres-array.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz",
+      "integrity": "sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==",
+      "compressedBytes": 2213,
+      "unpackedBytes": 4903,
+      "installHooks": {}
+    },
+    {
+      "name": "postgres-bytea",
+      "version": "1.0.1",
+      "date": "2025-12-17T04:53:23.864Z",
+      "latest": "3.0.0",
+      "latestDate": "2020-06-11T17:25:13.447Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/bendrucker/postgres-bytea.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.1.tgz",
+      "integrity": "sha512-5+5HqXnsZPE65IJZSMkZtURARZelel2oXUEO8rH83VS/hxH5vv1uHquPg5wZs8yMAfdv971IU+kcPUczi7NVBQ==",
+      "compressedBytes": 1724,
+      "unpackedBytes": 3095,
+      "installHooks": {}
+    },
+    {
+      "name": "postgres-date",
+      "version": "1.0.7",
+      "date": "2020-08-28T21:29:03.410Z",
+      "latest": "2.1.0",
+      "latestDate": "2021-12-08T16:38:22.555Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bendrucker/postgres-date.git"
+      },
+      "source": "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz",
+      "integrity": "sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==",
+      "compressedBytes": 2836,
+      "unpackedBytes": 5915,
+      "installHooks": {}
+    },
+    {
+      "name": "postgres-interval",
+      "version": "1.2.0",
+      "date": "2019-02-23T00:06:51.959Z",
+      "latest": "4.1.0",
+      "latestDate": "2026-06-30T04:53:55.799Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {
+        "xtend": "^4.0.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/bendrucker/postgres-interval.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz",
+      "integrity": "sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==",
+      "compressedBytes": 2926,
+      "unpackedBytes": 6727,
+      "installHooks": {}
+    },
+    {
+      "name": "split2",
+      "version": "4.2.0",
+      "date": "2023-03-26T08:33:02.359Z",
+      "latest": "4.2.0",
+      "latestDate": "2023-03-26T08:33:02.359Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": ">= 10.x"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/split2.git"
+      },
+      "source": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
+      "integrity": "sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==",
+      "compressedBytes": 4668,
+      "unpackedBytes": 17419,
+      "installHooks": {}
+    },
+    {
+      "name": "string-width",
+      "version": "7.2.0",
+      "date": "2024-06-30T14:48:16.656Z",
+      "latest": "8.3.0",
+      "latestDate": "2026-09-24T14:37:52.226Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=18"
+      },
+      "dependencies": {
+        "strip-ansi": "^7.1.0",
+        "emoji-regex": "^10.3.0",
+        "get-east-asian-width": "^1.0.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/sindresorhus/string-width.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/string-width/-/string-width-7.2.0.tgz",
+      "integrity": "sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==",
+      "compressedBytes": 2989,
+      "unpackedBytes": 7773,
+      "installHooks": {}
+    },
+    {
+      "name": "strip-ansi",
+      "version": "7.2.0",
+      "date": "2026-02-26T13:51:11.099Z",
+      "latest": "7.2.0",
+      "latestDate": "2026-02-26T13:51:11.099Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=12"
+      },
+      "dependencies": {
+        "ansi-regex": "^6.2.2"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/strip-ansi.git"
+      },
+      "source": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz",
+      "integrity": "sha512-yDPMNjp4WyfYBkHnjIRLfca1i6KMyGCtsVgoKe/z1+6vukgaENdgGBZt+ZmKPc4gavvEZ5OgHfHdrazhgNyG7w==",
+      "compressedBytes": 2156,
+      "unpackedBytes": 4276,
+      "installHooks": {}
+    },
+    {
+      "name": "undici-types",
+      "version": "7.24.6",
+      "date": "2026-03-25T16:01:36.357Z",
+      "latest": "8.11.2",
+      "latestDate": "2026-09-24T08:41:03.829Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {},
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/nodejs/undici.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz",
+      "integrity": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
+      "compressedBytes": 28510,
+      "unpackedBytes": 116546,
+      "installHooks": {}
+    },
+    {
+      "name": "wrap-ansi",
+      "version": "9.0.2",
+      "date": "2025-09-08T15:10:49.479Z",
+      "latest": "10.0.2",
+      "latestDate": "2026-09-21T04:09:32.260Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=18"
+      },
+      "dependencies": {
+        "strip-ansi": "^7.1.0",
+        "ansi-styles": "^6.2.1",
+        "string-width": "^7.0.0"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/chalk/wrap-ansi.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz",
+      "integrity": "sha512-42AtmgqjV+X1VpdOfyTGOYRi0/zsoLqtXQckTmqTeybT+BDIbM/Guxo7x3pE2vtpr1ok6xRqM9OpBe+Jyoqyww==",
+      "compressedBytes": 4316,
+      "unpackedBytes": 11484,
+      "installHooks": {}
+    },
+    {
+      "name": "xtend",
+      "version": "4.0.2",
+      "date": "2019-07-08T13:35:45.491Z",
+      "latest": "4.0.2",
+      "latestDate": "2019-07-08T13:35:45.491Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": ">=0.4"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/xtend.git"
+      },
+      "source": "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz",
+      "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==",
+      "compressedBytes": 2529,
+      "unpackedBytes": 6465,
+      "installHooks": {}
+    },
+    {
+      "name": "y18n",
+      "version": "5.0.8",
+      "date": "2021-04-07T18:57:33.969Z",
+      "latest": "5.0.8",
+      "latestDate": "2021-04-07T18:57:33.969Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": ">=10"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/yargs/y18n.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz",
+      "integrity": "sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==",
+      "compressedBytes": 6157,
+      "unpackedBytes": 23435,
+      "installHooks": {}
+    },
+    {
+      "name": "yargs-parser",
+      "version": "22.0.0",
+      "date": "2025-05-26T20:12:00.864Z",
+      "latest": "22.0.0",
+      "latestDate": "2025-05-26T20:12:00.864Z",
+      "license": "ISC",
+      "deprecated": null,
+      "engines": {
+        "node": "^20.19.0 || ^22.12.0 || >=23"
+      },
+      "dependencies": {},
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/yargs/yargs-parser.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-22.0.0.tgz",
+      "integrity": "sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==",
+      "compressedBytes": 21743,
+      "unpackedBytes": 85628,
+      "installHooks": {}
+    },
+    {
+      "name": "yargs",
+      "version": "18.0.0",
+      "date": "2025-05-27T14:27:19.495Z",
+      "latest": "18.2.0",
+      "latestDate": "2026-09-20T22:34:11.798Z",
+      "license": "MIT",
+      "deprecated": null,
+      "engines": {
+        "node": "^20.19.0 || ^22.12.0 || >=23"
+      },
+      "dependencies": {
+        "y18n": "^5.0.5",
+        "cliui": "^9.0.1",
+        "escalade": "^3.1.1",
+        "string-width": "^7.2.0",
+        "yargs-parser": "^22.0.0",
+        "get-caller-file": "^2.0.5"
+      },
+      "optionalDependencies": {},
+      "peers": {},
+      "repository": {
+        "url": "git+https://github.com/yargs/yargs.git",
+        "type": "git"
+      },
+      "source": "https://registry.npmjs.org/yargs/-/yargs-18.0.0.tgz",
+      "integrity": "sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==",
+      "compressedBytes": 47876,
+      "unpackedBytes": 231436,
+      "installHooks": {}
+    }
+  ]
+}

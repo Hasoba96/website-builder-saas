@@ -1,0 +1,8 @@
+title = "Website Builder repository secret scanning"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Dependencies, Git internals, and local generated caches only"
+paths = ['''(^|[\\/])(node_modules|\.git|\.turbo|\.local)([\\/]|$)''']

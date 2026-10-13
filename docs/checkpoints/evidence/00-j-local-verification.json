@@ -1,0 +1,112 @@
+{
+  "checkpoint": "00-J",
+  "date": "2026-10-08",
+  "status": "BLOCKED",
+  "host": "Windows, Node 24.21.0, pnpm 10.34.6",
+  "providerExecution": "NOT VERIFIED",
+  "lockfileSha256": "sha256:f96f654c436fc3b726f49c5dab8dce69a92dfcd04a517f669511e45ed27f5d7f",
+  "localChecks": {
+    "workflowProjectContract": "PASS; native JSON/YAML-subset parsing and narrow security assertions only",
+    "format": "PASS",
+    "lintAndBoundaries": "PASS",
+    "strictTypecheck": {
+      "status": "PASS",
+      "turboTasks": 14,
+      "durationSeconds": 130.5
+    },
+    "workspace": { "status": "PASS", "packages": 9 },
+    "build": {
+      "status": "PASS",
+      "turboTasks": 9,
+      "applications": 4,
+      "durationSeconds": 143.6
+    },
+    "focusedTests": {
+      "status": "PASS",
+      "files": 3,
+      "tests": 23,
+      "ciTests": 9,
+      "boundaryTests": 10,
+      "evidenceTests": 4,
+      "durationSeconds": 4.45
+    },
+    "productionBrowserWindows": {
+      "status": "PASS",
+      "tests": 25,
+      "durationSeconds": 41.1
+    },
+    "bundleBudget": {
+      "status": "PASS",
+      "maximumGzipBytesPerApp": 512000,
+      "dashboardBytes": 186189,
+      "rendererBytes": 186191
+    },
+    "dependencyAudit": {
+      "status": "PASS",
+      "critical": 0,
+      "high": 0,
+      "moderate": 0,
+      "low": 0
+    },
+    "dependencyReviewGate": "PASS",
+    "secretScan": "PASS; unsuppressed Git-eligible tracked/untracked source scan",
+    "freshInstall": {
+      "status": "PASS",
+      "isolatedSourceCopy": true,
+      "emptyStore": true,
+      "ignoreScripts": true,
+      "frozenLockfile": true,
+      "resolvedPackages": 516,
+      "durationSeconds": 332.9,
+      "lockfileUnchanged": true
+    },
+    "unavailableRuntimeNegativeCheck": {
+      "status": "PASS as a negative check, not pipeline success",
+      "command": "pnpm ci:verify",
+      "exitCode": 1,
+      "pipelineStatus": "FAIL",
+      "frozenInstall": "PASS",
+      "runtime": "FAIL",
+      "finalInventory": "FAIL",
+      "durationMs": 24777
+    }
+  },
+  "unverified": [
+    "Linux bootstrap execution",
+    "Linux browser visual baseline generation, manual review and comparison",
+    "Full guarded suite; 167 is expected minimum, not executed count",
+    "Real PostgreSQL, Redis/BullMQ and local Compose regressions",
+    "Live operational API/worker container regressions",
+    "Four application image builds and production image smoke/package exclusion",
+    "Full-suite coverage acceptance",
+    "Final Docker inventory after runtime failure",
+    "GitHub-hosted execution, artifact publication and full-path duration"
+  ],
+  "containerEvidence": {
+    "lastSuccessfulInventoryContainers": 0,
+    "newCheckpointTestContainersStarted": 0,
+    "existingOwnerVolumeDeleted": false,
+    "failure": "Image export: read-only file system; normal Desktop restart failed; WSL bootstrap could not determine filesystem size",
+    "rootCauseAndDataLoss": "Not established; no destructive recovery authorized or performed"
+  },
+  "git": {
+    "branch": "chore/infra-checkpoint-00-a",
+    "commits": 0,
+    "remotes": 0,
+    "onlyPreexistingStagedPath": ".githooks/pre-commit",
+    "writesToIndexOrHistory": false
+  },
+  "rulesBlockingClosure": [
+    "TS-024",
+    "IN-002",
+    "IN-030",
+    "IN-031",
+    "TS-060",
+    "TS-063",
+    "CORE-046",
+    "18 section 8",
+    "22 section 10",
+    "Playbook Stage 00 CI gate"
+  ],
+  "nextCheckpointStarted": false
+}

@@ -1,0 +1,360 @@
+{
+  "schema": 1,
+  "date": "2026-10-12",
+  "status": "LOCAL CORRECTIONS; PUBLICATION AND 00-J ACCEPTANCE BLOCKED",
+  "baselineHead": "2019a0ce8184c4313b6f872b98896fbb1cf9a19d",
+  "baselineTree": "f50671870a48c06b1bbc5f26d63f26bcb6f2b526",
+  "branchDeadlineUtc": "2026-10-15T00:20:09Z",
+  "originalManifestSha256": "5eb437b1afbbc9269246e8205949612d2b7aa3754cee5959c33e1771df62a977",
+  "originalPayloadIdentity": "4e00dd9aac8664f223142db9c9f9780d92097b2aba18f95698b862dff303886b",
+  "priorSupplementalSha256": "0d12c1973d7ec35d419491a14d2677648586fd0bccef5232f0853c159e44160a",
+  "lockfileSha256": "be29a554f8d40b5722408eef0b59e4114dced472f1578b7caf123750c4188074",
+  "preservation": {
+    "source": "F:/Website Builder Proj",
+    "gitEligibleFiles": 298,
+    "sourceAggregateSha256": "6d969547e3cd3db429eded882a072953a41b4ef5dfaf1285bed54fa58189c926",
+    "aggregateMethod": "SHA-256 of sorted Git-eligible filenames followed by original file bytes, concatenated without separators; same before/after procedure.",
+    "sourceIndexSha256": "19db3fce3a6a6e7e146a97a54e03516ecc17bbf76c15657cacf543f5e30afcec",
+    "sourceHead": "ecbf9d6ccde2a00bf3587b02cbd8bd3f6b5d2e83",
+    "sourceBranch": "chore/infra-checkpoint-00-a",
+    "candidateIndex": "No staged changes against original reviewed HEAD"
+  },
+  "scope": "Three owner-authorized local CI corrections: exact license acceptance, image host prerequisites and clean boundary shared-package prerequisites, with focused tests/evidence. No publication authorization.",
+  "excluded": [
+    ".local verification helpers and raw logs",
+    "node_modules, dist, coverage, .next and test-results",
+    "all local environment/credential files",
+    "original source checkout"
+  ],
+  "packets": [
+    {
+      "id": "JFIX-01",
+      "file": "docs/checkpoints/00-j-dependency-review.md",
+      "originalPacket": "P268",
+      "proposedCommit": "JFIX-C01",
+      "after": null,
+      "sha256": "abdf55d6cc175d6c048506c42064106749ef2106dcd9c4f8a7dcf99041474861",
+      "normalizedLfSha256": "abdf55d6cc175d6c048506c42064106749ef2106dcd9c4f8a7dcf99041474861",
+      "originalBlob": "e1025cf143e26d74a58d6858aea4218651d64571",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 53,
+          "oldCount": 0,
+          "newStart": 54,
+          "newCount": 16
+        }
+      ],
+      "addedLines": 16,
+      "deletedLines": 0,
+      "realCodeChangedLines": 0,
+      "diffSha256": "f97af4ee19fbc2d08fb9f16229eb3a22c112332034b4e4a2728a2a6b38021d28",
+      "counting": "Narrative documentation excluded from code count, but all changed lines and disclosure reviewed.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-02",
+      "file": "docs/checkpoints/evidence/00-j-dependency-acceptance.json",
+      "originalPacket": "P293",
+      "proposedCommit": "JFIX-C01",
+      "after": "JFIX-01",
+      "sha256": "ba6d69be128460deb04e3023886e91be2f3b65e703e97eca06fb90c561d1c109",
+      "normalizedLfSha256": "ba6d69be128460deb04e3023886e91be2f3b65e703e97eca06fb90c561d1c109",
+      "originalBlob": "53ec7d72a7a004b588deea8dcace895295010f01",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 26,
+          "oldCount": 1,
+          "newStart": 26,
+          "newCount": 27
+        }
+      ],
+      "addedLines": 27,
+      "deletedLines": 1,
+      "realCodeChangedLines": 28,
+      "diffSha256": "f1c0a2e54dfbf71f53b238236eb87db7b1c274ecc969df108364c7113ee71c14",
+      "counting": "All nonblank added/deleted lines, including comments/braces and acceptance JSON, counted conservatively.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-03",
+      "file": "scripts/ci-supply-chain.ts",
+      "originalPacket": "P234",
+      "proposedCommit": "JFIX-C01",
+      "after": "JFIX-02",
+      "sha256": "b92739927be2b064eb019c770f5ad21013e046fca85c8197c803faf3eb879f5d",
+      "normalizedLfSha256": "b92739927be2b064eb019c770f5ad21013e046fca85c8197c803faf3eb879f5d",
+      "originalBlob": "15167b3d88f7bec762e7b9ddeb91c99cce06c78e",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 69,
+          "oldCount": 0,
+          "newStart": 70,
+          "newCount": 13
+        },
+        {
+          "oldStart": 71,
+          "oldCount": 0,
+          "newStart": 85,
+          "newCount": 6
+        },
+        {
+          "oldStart": 77,
+          "oldCount": 2,
+          "newStart": 95,
+          "newCount": 0
+        },
+        {
+          "oldStart": 85,
+          "oldCount": 2,
+          "newStart": 102,
+          "newCount": 12
+        }
+      ],
+      "addedLines": 31,
+      "deletedLines": 4,
+      "realCodeChangedLines": 35,
+      "diffSha256": "77661caeb1f287c92e51eda30692386451f7448a74aa6139ee2a78f900e20827",
+      "counting": "All nonblank added/deleted lines, including comments/braces and acceptance JSON, counted conservatively.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-04",
+      "file": "scripts/ci.ts",
+      "originalPacket": "P237",
+      "proposedCommit": "JFIX-C01",
+      "after": "JFIX-03",
+      "sha256": "cda4414018f32a5e0899eaa7be4142f29716186b09390fe0895f8aac2eea1d99",
+      "normalizedLfSha256": "cda4414018f32a5e0899eaa7be4142f29716186b09390fe0895f8aac2eea1d99",
+      "originalBlob": "b129767d949fd47f9f6288f99bca2ad94d5d716d",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 64,
+          "oldCount": 0,
+          "newStart": 65,
+          "newCount": 7
+        }
+      ],
+      "addedLines": 7,
+      "deletedLines": 0,
+      "realCodeChangedLines": 7,
+      "diffSha256": "46ab7775b88efad1be4de2ee51653a072dae6c50e34ba8df23deb405de25d075",
+      "counting": "All nonblank added/deleted lines, including comments/braces and acceptance JSON, counted conservatively.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-05",
+      "file": "scripts/ci.spec.ts",
+      "originalPacket": "P236",
+      "proposedCommit": "JFIX-C01",
+      "after": "JFIX-04",
+      "sha256": "4c76a17e3a9b33daa91c9d8199f5d9ceebf403799d5e4afecb0065f8234e0802",
+      "normalizedLfSha256": "4c76a17e3a9b33daa91c9d8199f5d9ceebf403799d5e4afecb0065f8234e0802",
+      "originalBlob": "811ef32f885bba5a128219da22e23f0c1107db4f",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 17,
+          "oldCount": 0,
+          "newStart": 18,
+          "newCount": 1
+        },
+        {
+          "oldStart": 30,
+          "oldCount": 0,
+          "newStart": 32,
+          "newCount": 184
+        }
+      ],
+      "addedLines": 185,
+      "deletedLines": 0,
+      "realCodeChangedLines": 180,
+      "diffSha256": "4df9da73dd9d42149b580037caa0a2c2778fcf503c50016981874331112c8e8e",
+      "counting": "All nonblank added/deleted lines, including comments/braces and acceptance JSON, counted conservatively.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-06",
+      "file": "package.json",
+      "originalPacket": "P074",
+      "proposedCommit": "JFIX-C02",
+      "after": "JFIX-05",
+      "sha256": "07625095e13720a9c696b374536424a674234e411c56b7e0666067988bff5528",
+      "normalizedLfSha256": "07625095e13720a9c696b374536424a674234e411c56b7e0666067988bff5528",
+      "originalBlob": "0561b45a0340ea0e350cc21aa31296647386db3a",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 30,
+          "oldCount": 1,
+          "newStart": 30,
+          "newCount": 1
+        }
+      ],
+      "addedLines": 1,
+      "deletedLines": 1,
+      "realCodeChangedLines": 2,
+      "diffSha256": "05a61672595d210c9fdb34233c1b47fb5dae86f743be87561172273fa910728b",
+      "counting": "All nonblank added/deleted lines, including comments/braces and acceptance JSON, counted conservatively.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-07",
+      "file": "scripts/check-boundaries.spec.ts",
+      "originalPacket": "P078",
+      "proposedCommit": "JFIX-C02",
+      "after": "JFIX-06",
+      "sha256": "1bcd7585fcf54ce4df2ecc6ce17291b6bc56ce4ead6c8f20d12241fcf4711561",
+      "normalizedLfSha256": "1bcd7585fcf54ce4df2ecc6ce17291b6bc56ce4ead6c8f20d12241fcf4711561",
+      "originalBlob": "b7138e59b2e1a02da8a67563c46ef2847d6a596e",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 2,
+          "oldCount": 1,
+          "newStart": 2,
+          "newCount": 14
+        },
+        {
+          "oldStart": 155,
+          "oldCount": 0,
+          "newStart": 169,
+          "newCount": 108
+        }
+      ],
+      "addedLines": 122,
+      "deletedLines": 1,
+      "realCodeChangedLines": 123,
+      "diffSha256": "ea17353188e918afbe47f12fc10822ad640d535e9849ca73e2ce6f3ea20d2aa1",
+      "counting": "All nonblank added/deleted lines, including comments/braces and acceptance JSON, counted conservatively.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-08",
+      "file": "docs/runbooks/ci.md",
+      "originalPacket": "P056",
+      "proposedCommit": "JFIX-C03",
+      "after": "JFIX-07",
+      "sha256": "d9dca50725b048f49a58b90d499fe884454356a85ba8311de27dca03e8c8b95a",
+      "normalizedLfSha256": "d9dca50725b048f49a58b90d499fe884454356a85ba8311de27dca03e8c8b95a",
+      "originalBlob": "b351916bc9ee3744a11924813e35e6ed00a64b7c",
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 10,
+          "oldCount": 1,
+          "newStart": 10,
+          "newCount": 2
+        },
+        {
+          "oldStart": 37,
+          "oldCount": 0,
+          "newStart": 39,
+          "newCount": 2
+        }
+      ],
+      "addedLines": 4,
+      "deletedLines": 1,
+      "realCodeChangedLines": 0,
+      "diffSha256": "9b300ebeb202af913af4cbddcd43bb83e38cb3b26e5ef8a13df3c97dfab1337b",
+      "counting": "Narrative documentation excluded from code count, but all changed lines and disclosure reviewed.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    },
+    {
+      "id": "JFIX-09",
+      "file": "docs/checkpoints/00-j-ci-corrections.md",
+      "originalPacket": null,
+      "proposedCommit": "JFIX-C03",
+      "after": "JFIX-08",
+      "sha256": "2bbec7e15531afa5fa42eed0db263747ed8ed823b4a60e64a4cd24099aff6662",
+      "normalizedLfSha256": "2bbec7e15531afa5fa42eed0db263747ed8ed823b4a60e64a4cd24099aff6662",
+      "originalBlob": null,
+      "proposedMode": "100644",
+      "changedRanges": [
+        {
+          "oldStart": 0,
+          "oldCount": 0,
+          "newStart": 1,
+          "newCount": 97
+        }
+      ],
+      "addedLines": 97,
+      "deletedLines": 0,
+      "realCodeChangedLines": 0,
+      "diffSha256": "1c95c8c307e3fee1ea43a0a8ea7a76fedc195e996f0e5e1529f856b0ae68c110",
+      "counting": "Narrative documentation excluded from code count, but all changed lines and disclosure reviewed.",
+      "risk": "Sensitive reversible CI/supply-chain correction or supporting evidence; no production activation.",
+      "review": "Separate technical, security and disclosure AI-assisted passes: docs/checkpoints/00-j-ci-corrections.md. Not independent human review.",
+      "owner": "Hasoba96",
+      "ownerAcceptance": "Local correction authorized; corrected publication/commit/merge NOT AUTHORIZED"
+    }
+  ],
+  "proposedCommits": [
+    {
+      "id": "JFIX-C01",
+      "message": "fix(infra): review platform licenses and build image prerequisites",
+      "files": [
+        "docs/checkpoints/00-j-dependency-review.md",
+        "docs/checkpoints/evidence/00-j-dependency-acceptance.json",
+        "scripts/ci-supply-chain.ts",
+        "scripts/ci.ts",
+        "scripts/ci.spec.ts"
+      ],
+      "realCodeChangedLines": 250,
+      "status": "PROPOSED ONLY; owner approval required"
+    },
+    {
+      "id": "JFIX-C02",
+      "message": "fix(infra): build shared exports before boundary validation",
+      "files": ["package.json", "scripts/check-boundaries.spec.ts"],
+      "realCodeChangedLines": 125,
+      "status": "PROPOSED ONLY; owner approval required"
+    },
+    {
+      "id": "JFIX-C03",
+      "message": "docs(infra): record reviewed CI correction evidence",
+      "files": [
+        "docs/runbooks/ci.md",
+        "docs/checkpoints/00-j-ci-corrections.md",
+        "docs/checkpoints/00-j-ci-correction-packets.json"
+      ],
+      "realCodeChangedLines": 0,
+      "status": "PROPOSED ONLY; owner approval required"
+    }
+  ],
+  "controlRecord": {
+    "file": "docs/checkpoints/00-j-ci-correction-packets.json",
+    "mode": "100644",
+    "purpose": "Generated supplemental inventory; inspect and hash externally after formatting, no recursive self hash.",
+    "realCodeChangedLines": 0
+  },
+  "fullReviewRecord": "docs/checkpoints/00-j-ci-corrections.md",
+  "nextAuthorization": "Final combined packet identities require explicit owner review/approval before local commits; actual commit/tree require separate approval before PR branch push. No merge acceptance or deadline reset."
+}

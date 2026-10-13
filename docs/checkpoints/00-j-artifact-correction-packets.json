@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "date": "2026-10-13",
+  "baselineHead": "61cdb7c5d06da744f413c44d3d5648007d1fbde2",
+  "baselineTree": "2a12f82873e86851c29f4f5ae441cb7dabe05554",
+  "branchDeadlineUtc": "2026-10-15T00:20:09Z",
+  "authorization": "LOCAL CORRECTION/TEST/REVIEW ONLY; no commits or publication",
+  "priorManifestSha256": "479f0076c6b58b53484f61311a8b5e9ae7bd2f2686fb02475bfe88bf0fd78bb4",
+  "lockfileSha256": "be29a554f8d40b5722408eef0b59e4114dced472f1578b7caf123750c4188074",
+  "packets": [
+    {
+      "id": "JART-01",
+      "file": "playwright.config.ts",
+      "baselineBlob": "c75d6b89f6184c02c910f8a86ed0853d0a58b919",
+      "mode": "100644",
+      "sha256": "935c2c160b14d1f7326f965d7b5fa2f6ded0e6dfeb088963cb68a4d6e7ef688e",
+      "normalizedLfSha256": "935c2c160b14d1f7326f965d7b5fa2f6ded0e6dfeb088963cb68a4d6e7ef688e",
+      "hunks": [
+        {
+          "oldStart": 4,
+          "oldCount": 0,
+          "newStart": 5,
+          "newCount": 1,
+          "added": 1,
+          "removed": 0,
+          "sha256": "e549afcf3fafe740e3d19204397a2cc7fc4952b6d18f7fca5d5e6493aa82ab17"
+        }
+      ],
+      "realCodeLines": 1,
+      "excludedLinesReason": null,
+      "classification": "Sensitive reversible pre-production CI security/test change",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": []
+    },
+    {
+      "id": "JART-02",
+      "file": "scripts/ci-artifacts.ts",
+      "baselineBlob": "926dd7f5a63bfc4a71507510781494d04fc56683",
+      "mode": "100644",
+      "sha256": "bb3cea93a9fa3851790c549bab5741f552e69bd60df0a7715a64eb7366d72263",
+      "normalizedLfSha256": "bb3cea93a9fa3851790c549bab5741f552e69bd60df0a7715a64eb7366d72263",
+      "hunks": [
+        {
+          "oldStart": 35,
+          "oldCount": 1,
+          "newStart": 35,
+          "newCount": 44,
+          "added": 44,
+          "removed": 1,
+          "sha256": "3b097ac01b440103e2caa7fcd35a277ef07b70bc6f2dac6eea33d4865f5e997f"
+        },
+        {
+          "oldStart": 38,
+          "oldCount": 3,
+          "newStart": 81,
+          "newCount": 8,
+          "added": 8,
+          "removed": 3,
+          "sha256": "0e14c14a609c8f9e2cbd43fe6dd32e5a0c265dfe98dc29184118a0cc96731f90"
+        },
+        {
+          "oldStart": 42,
+          "oldCount": 6,
+          "newStart": 90,
+          "newCount": 8,
+          "added": 8,
+          "removed": 6,
+          "sha256": "1493f33ce908815833e0d0ce4fe176b3d6df1e89adfa3b88da6593285febe926"
+        },
+        {
+          "oldStart": 55,
+          "oldCount": 0,
+          "newStart": 106,
+          "newCount": 2,
+          "added": 2,
+          "removed": 0,
+          "sha256": "49545df7c5f109fe67ff5eada4c865a07c0b1c3d8434809c5c8913e7a4783044"
+        },
+        {
+          "oldStart": 204,
+          "oldCount": 4,
+          "newStart": 256,
+          "newCount": 4,
+          "added": 4,
+          "removed": 4,
+          "sha256": "f405d705560ce03cc62d50e85b0108d69bbc1165e4d1f12ee2af2cd69babfdbe"
+        }
+      ],
+      "realCodeLines": 80,
+      "excludedLinesReason": null,
+      "classification": "Sensitive reversible pre-production CI security/test change",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-01"]
+    },
+    {
+      "id": "JART-03",
+      "file": "scripts/ci-upload.ts",
+      "baselineBlob": "d929b222e262d31ad535fbb43e00c567462520af",
+      "mode": "100644",
+      "sha256": "cf74663225d826025e26e3efc5a99a23f117fb0524e41288d442c7d3eb171980",
+      "normalizedLfSha256": "cf74663225d826025e26e3efc5a99a23f117fb0524e41288d442c7d3eb171980",
+      "hunks": [
+        {
+          "oldStart": 1,
+          "oldCount": 2,
+          "newStart": 1,
+          "newCount": 3,
+          "added": 3,
+          "removed": 2,
+          "sha256": "018b325fd11c2d306c873419d2e394b622c2a8118bf0f8daf6cab3e9a436cac7"
+        },
+        {
+          "oldStart": 4,
+          "oldCount": 10,
+          "newStart": 5,
+          "newCount": 15,
+          "added": 15,
+          "removed": 10,
+          "sha256": "7ee808a24b0268d10d47b3344f13ff13acef67aba42e525b19ef90d12d5ab53a"
+        },
+        {
+          "oldStart": 15,
+          "oldCount": 1,
+          "newStart": 21,
+          "newCount": 25,
+          "added": 25,
+          "removed": 1,
+          "sha256": "17c5085ba9fafd7948242ba1a4ca0a7a0ddd62df4b4632df5f67d0fe402566f2"
+        }
+      ],
+      "realCodeLines": 56,
+      "excludedLinesReason": null,
+      "classification": "Sensitive reversible pre-production CI security/test change",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-02"]
+    },
+    {
+      "id": "JART-04",
+      "file": ".github/actions/evidence/upload.mjs",
+      "baselineBlob": "945da1f54a497877849fabc59f8c0b6de892cf8b",
+      "mode": "100644",
+      "sha256": "2d8bf1db2a90123397ae40d8ec238d1f1de233a1155ffed1b0dafbaf009fb798",
+      "normalizedLfSha256": "2d8bf1db2a90123397ae40d8ec238d1f1de233a1155ffed1b0dafbaf009fb798",
+      "hunks": [
+        {
+          "oldStart": 2,
+          "oldCount": 0,
+          "newStart": 3,
+          "newCount": 1,
+          "added": 1,
+          "removed": 0,
+          "sha256": "b90c5c2e47f102c32253123d4217f2e6c1ceb7967461fc8885d0f5aebabfd6d7"
+        },
+        {
+          "oldStart": 12,
+          "oldCount": 1,
+          "newStart": 13,
+          "newCount": 11,
+          "added": 11,
+          "removed": 1,
+          "sha256": "671299ad41d1637cfaed2b663df7f4861ed2a22c56e750ce0f8a409be116a5cf"
+        },
+        {
+          "oldStart": 17,
+          "oldCount": 1,
+          "newStart": 28,
+          "newCount": 1,
+          "added": 1,
+          "removed": 1,
+          "sha256": "6018e9a37ee61f783d812221e10aa92e46eb753a36f35404e206c27936e27c39"
+        }
+      ],
+      "realCodeLines": 15,
+      "excludedLinesReason": null,
+      "classification": "Sensitive reversible pre-production CI security/test change",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-03"]
+    },
+    {
+      "id": "JART-05",
+      "file": "scripts/ci.spec.ts",
+      "baselineBlob": "a97f2f15aacbf421c5a0b4c1dd7effa29725413d",
+      "mode": "100644",
+      "sha256": "b2cd775b33c2a8d1a2a17e530b789edee242541550c062f27ea3d78a0cc664a5",
+      "normalizedLfSha256": "b2cd775b33c2a8d1a2a17e530b789edee242541550c062f27ea3d78a0cc664a5",
+      "hunks": [
+        {
+          "oldStart": 18,
+          "oldCount": 0,
+          "newStart": 19,
+          "newCount": 1,
+          "added": 1,
+          "removed": 0,
+          "sha256": "ff59e870192eddc4c4bee371ff55fda83dd2f9963b12df0d35f948d980dc32ac"
+        },
+        {
+          "oldStart": 476,
+          "oldCount": 0,
+          "newStart": 478,
+          "newCount": 208,
+          "added": 208,
+          "removed": 0,
+          "sha256": "6b3ae99959f2bdf78509aaedb4198201adbf7930feac6035bc9b3ece110492f2"
+        }
+      ],
+      "realCodeLines": 209,
+      "excludedLinesReason": null,
+      "classification": "Sensitive reversible pre-production CI security/test change",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-04"]
+    },
+    {
+      "id": "JART-06",
+      "file": "docs/runbooks/ci.md",
+      "baselineBlob": "9bf9cfa3c421e9704758ae67904e057a8bf284ac",
+      "mode": "100644",
+      "sha256": "bcc3a57d877ed41570d0cdc3be9e6f2e657e28b04963b0162c268e68f4018c50",
+      "normalizedLfSha256": "bcc3a57d877ed41570d0cdc3be9e6f2e657e28b04963b0162c268e68f4018c50",
+      "hunks": [
+        {
+          "oldStart": 38,
+          "oldCount": 0,
+          "newStart": 39,
+          "newCount": 8,
+          "added": 8,
+          "removed": 0,
+          "sha256": "8f22d73cc2bac42a5a0d691427453395f8066a8d24f6d2eeac30a1b22377fb51"
+        }
+      ],
+      "realCodeLines": 0,
+      "excludedLinesReason": "Reviewed documentation, not real code",
+      "classification": "Sensitive CI evidence/disclosure",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-05"]
+    },
+    {
+      "id": "JART-07",
+      "file": "docs/checkpoints/00-j-closure-report.md",
+      "baselineBlob": "f8ecb7d4831f2118430ea2e0501376866bb65ad4",
+      "mode": "100644",
+      "sha256": "e9fc3c892873178c2c876ace49abfa662444b64e9dae37540e3a46badf867ad1",
+      "normalizedLfSha256": "e9fc3c892873178c2c876ace49abfa662444b64e9dae37540e3a46badf867ad1",
+      "hunks": [
+        {
+          "oldStart": 2,
+          "oldCount": 0,
+          "newStart": 3,
+          "newCount": 4,
+          "added": 4,
+          "removed": 0,
+          "sha256": "d65591936346a93e0c1ae146669c9d3a420bbc7ae2d0a4d146f2ff9d8d7c5ee6"
+        }
+      ],
+      "realCodeLines": 0,
+      "excludedLinesReason": "Reviewed documentation, not real code",
+      "classification": "Sensitive CI evidence/disclosure",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-06"]
+    },
+    {
+      "id": "JART-08",
+      "file": "docs/checkpoints/00-j-artifact-corrections.md",
+      "baselineBlob": null,
+      "mode": "100644",
+      "sha256": "a35189503de6a1d746b5f94517f95f9de22c693142eb63613358e4358e032cfb",
+      "normalizedLfSha256": "a35189503de6a1d746b5f94517f95f9de22c693142eb63613358e4358e032cfb",
+      "hunks": [
+        {
+          "oldStart": 0,
+          "oldCount": 0,
+          "newStart": 1,
+          "newCount": 41,
+          "added": 41,
+          "removed": 0,
+          "sha256": "0cfb99f30333586241254933bc29d779398a167ac6998f088851a3a08b8bcf24"
+        }
+      ],
+      "realCodeLines": 0,
+      "excludedLinesReason": "Reviewed documentation, not real code",
+      "classification": "Sensitive CI evidence/disclosure",
+      "review": "Separate AI-assisted technical, security and disclosure passes recorded; owner acceptance pending",
+      "dependsOn": ["JART-07"]
+    }
+  ],
+  "totalRealCodeLines": 361,
+  "proposedCommitGroups": [
+    {
+      "id": "JART-C01",
+      "packets": ["JART-01", "JART-02", "JART-03", "JART-04", "JART-05"],
+      "realCodeLines": 361
+    },
+    {
+      "id": "JART-C02",
+      "packets": ["JART-06", "JART-07", "JART-08"],
+      "realCodeLines": 0
+    }
+  ],
+  "exclusions": [
+    "Original checkout",
+    "Previous manifests/history",
+    "Lockfile",
+    "Workflow",
+    "Application code",
+    "All Linux/Windows snapshots",
+    ".local logs/reports/helpers",
+    "Environment and credentials"
+  ],
+  "selfInventory": {
+    "file": "docs/checkpoints/00-j-artifact-correction-packets.json",
+    "mode": "100644",
+    "realCodeLines": 0,
+    "classification": "Generated inventory, manually reviewed; checksum recorded externally to avoid self-reference"
+  }
+}

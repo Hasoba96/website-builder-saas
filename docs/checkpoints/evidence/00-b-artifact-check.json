@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-01T06:49:52.273Z",
+  "scope": "Next server route traces and static client artifacts only; not a container or deployment filesystem exclusion claim",
+  "artifacts": [
+    {
+      "app": "dashboard-web",
+      "serverTraceCount": 6,
+      "tracedFileEntries": 1454,
+      "testToolTraceMatches": 0,
+      "clientFilesChecked": 13,
+      "totalClientAssetBytes": 608381,
+      "generatedKeyClientMatches": 0
+    },
+    {
+      "app": "public-renderer",
+      "serverTraceCount": 6,
+      "tracedFileEntries": 1454,
+      "testToolTraceMatches": 0,
+      "clientFilesChecked": 13,
+      "totalClientAssetBytes": 608381,
+      "generatedKeyClientMatches": 0
+    }
+  ]
+}

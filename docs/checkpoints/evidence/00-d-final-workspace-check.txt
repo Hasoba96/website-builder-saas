@@ -1,0 +1,41 @@
+
+> website-builder@0.0.0 workspace:check F:\Website Builder Proj
+> node scripts/turbo.ts ls --output=json
+
+• turbo 2.11.5
+{
+  "packageManager": "pnpm9",
+  "packages": {
+    "count": 7,
+    "items": [
+      {
+        "name": "@website-builder/api",
+        "path": "apps/api"
+      },
+      {
+        "name": "@website-builder/config",
+        "path": "packages/config"
+      },
+      {
+        "name": "@website-builder/dashboard-web",
+        "path": "apps/dashboard-web"
+      },
+      {
+        "name": "@website-builder/database",
+        "path": "packages/database"
+      },
+      {
+        "name": "@website-builder/public-renderer",
+        "path": "apps/public-renderer"
+      },
+      {
+        "name": "@website-builder/schemas",
+        "path": "packages/schemas"
+      },
+      {
+        "name": "@website-builder/worker",
+        "path": "apps/worker"
+      }
+    ]
+  }
+}

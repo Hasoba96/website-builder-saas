@@ -1,0 +1,87 @@
+{
+  "checkpoint": "00-C",
+  "date": "2026-10-01",
+  "status": "PASS",
+  "platform": "Windows x64",
+  "node": "24.21.0",
+  "pnpm": "10.34.6",
+  "lockfileSha256": "088acd52725e79ca0e3b28373b50b0b8701556823d4f73a93458301be87f4a14",
+  "commands": {
+    "pnpm format:check": "PASS",
+    "pnpm lint": "PASS",
+    "pnpm typecheck": "PASS: root strict check and 8 Turbo tasks",
+    "pnpm workspace:check": "PASS: 4 apps and 2 shared packages",
+    "pnpm build": "PASS: 6 real tasks, no Turbo cache",
+    "pnpm test": "PASS: 12 Turbo tasks, 65 Vitest tests, 17 Chromium tests",
+    "pnpm security:dependencies": "PASS: no known vulnerabilities",
+    "pnpm security:secrets": "PASS: no leaks",
+    "git diff --check": "PASS"
+  },
+  "vitestTests": {
+    "schemas": 12,
+    "config": 22,
+    "api": 2,
+    "worker": 2,
+    "dashboard": 4,
+    "renderer": 4,
+    "root": 19,
+    "total": 65
+  },
+  "browserTests": {
+    "existingShell": 11,
+    "hydration": 4,
+    "configurationExposure": 2,
+    "total": 17,
+    "coverage": "Both applications, Arabic and English; correct lang/dir; no hydration errors; runtime server canary absent from HTML and loaded scripts"
+  },
+  "cleanInstall": {
+    "command": "pnpm install --frozen-lockfile --ignore-scripts --store-dir .pnpm-store",
+    "freshSourceCopy": true,
+    "freshStore": true,
+    "downloaded": 324,
+    "reused": 0,
+    "lockfileUnchanged": true,
+    "buildTasksPassed": 6,
+    "scope": "Clean dependencies/source; existing host toolchain and private SWC cache, not a clean OS"
+  },
+  "negativeControls": {
+    "apiWorkerInvalidConfiguration": "PASS: exit 1 before successful startup; values redacted",
+    "nextInvalidConfiguration": "PASS: invalid deployment, port and unapproved public variable rejected",
+    "browserPackageConditions": "PASS: server config exports unavailable; public config empty",
+    "nextClientServerImport": "PASS: actual Next compiler rejected a client import of config/web-server in disposable copy; probe removed; clean six-task build passed afterward",
+    "ownership": "PASS: cross-application config imports rejected",
+    "publicExposure": "PASS: arbitrary secret input cannot appear in public config"
+  },
+  "lifecycle": {
+    "apiTestMode": "PASS: boot and clean shutdown",
+    "workerTestMode": "PASS: boot and clean shutdown",
+    "apiProductionMode": "PASS: explicit valid settings, boot and exit 0 on shutdown",
+    "workerProductionMode": "PASS: explicit valid settings, boot and exit 0 on shutdown"
+  },
+  "graph": {
+    "uniqueThirdPartyVersions": 409,
+    "newResolvedVersions": ["zod@4.6.5"],
+    "promotedToDirect": ["@next/env@16.3.7"],
+    "overridesOrSecuritySuppressionsAdded": false
+  },
+  "historicalIntegrity": {
+    "00-b-closure-report.md": "346006d6fc71732f1aa23877ed7831b3176e95f5b6b9c948121027905bd6347e",
+    "00-b-vitest-resolution-investigation.md": "a168bc68cafcdaa3eee817ecb1a2487af24c44d3f85d1287facc8ebc43315cf5",
+    "00-b-supply-chain-governance-review.md": "83bf7c0989dd8f141b8bfcb94b8c1fe08b7bedc12dd3828a4de21d3934abb197"
+  },
+  "notImplemented": [
+    "00-D",
+    "database",
+    "Redis",
+    "queues",
+    "provider integration",
+    "domain features",
+    "CI workflow"
+  ],
+  "limitations": [
+    "Windows/Chromium only",
+    "No cloud deployment or production sizing claim",
+    "No standalone container packaging verification",
+    "Optional provenance attestations not independently verified"
+  ]
+}

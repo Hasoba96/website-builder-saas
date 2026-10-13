@@ -1,0 +1,6 @@
+{
+  "name": "Sanitized CI evidence",
+  "description": "Upload scanned evidence through the official Artifact SDK",
+  "inputs": { "gate": { "description": "verify or images", "required": true } },
+  "runs": { "using": "node24", "main": "upload.mjs" }
+}

@@ -1,0 +1,69 @@
+
+> website-builder@0.0.0 typecheck F:\Website Builder Proj
+> tsc --noEmit && node scripts/turbo.ts run typecheck
+
+
+   • turbo 2.11.5
+   • Packages in scope: @website-builder/api, @website-builder/config, @website-builder/dashboard-web, @website-builder/database, @website-builder/public-renderer, @website-builder/schemas, @website-builder/worker
+   • Running typecheck in 7 packages
+   • Remote caching disabled
+
+@website-builder/schemas:build: cache bypass, force executing 00f7994da0d40aac
+@website-builder/schemas:typecheck: cache bypass, force executing 03dcacd75e705b6b
+@website-builder/schemas:build: 
+@website-builder/schemas:build: > @website-builder/schemas@0.0.0 build F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:build: > tsc -p tsconfig.json
+@website-builder/schemas:build: 
+@website-builder/schemas:typecheck: 
+@website-builder/schemas:typecheck: > @website-builder/schemas@0.0.0 typecheck F:\Website Builder Proj\packages\schemas
+@website-builder/schemas:typecheck: > tsc -p tsconfig.test.json
+@website-builder/schemas:typecheck: 
+@website-builder/config:build: cache bypass, force executing 056e39c5c27702d8
+@website-builder/config:build: 
+@website-builder/config:build: > @website-builder/config@0.0.0 build F:\Website Builder Proj\packages\config
+@website-builder/config:build: > tsc -p tsconfig.json
+@website-builder/config:build: 
+@website-builder/database:build: cache bypass, force executing ffcb8ff108921a6f
+@website-builder/database:build: 
+@website-builder/database:build: > @website-builder/database@0.0.0 build F:\Website Builder Proj\packages\database
+@website-builder/database:build: > tsc -p tsconfig.json
+@website-builder/database:build: 
+@website-builder/database:typecheck: cache bypass, force executing 0bdfaed2283b9991
+@website-builder/database:typecheck: 
+@website-builder/database:typecheck: > @website-builder/database@0.0.0 typecheck F:\Website Builder Proj\packages\database
+@website-builder/database:typecheck: > tsc -p tsconfig.json --noEmit
+@website-builder/database:typecheck: 
+@website-builder/config:typecheck: cache bypass, force executing ade4be3cd59659d4
+@website-builder/config:typecheck: 
+@website-builder/config:typecheck: > @website-builder/config@0.0.0 typecheck F:\Website Builder Proj\packages\config
+@website-builder/config:typecheck: > tsc -p tsconfig.test.json
+@website-builder/config:typecheck: 
+@website-builder/public-renderer:typecheck: cache bypass, force executing a45a07be8b29bcc6
+@website-builder/api:typecheck: cache bypass, force executing 775e31f52542715a
+@website-builder/public-renderer:typecheck: 
+@website-builder/public-renderer:typecheck: > @website-builder/public-renderer@0.0.0 typecheck F:\Website Builder Proj\apps\public-renderer
+@website-builder/public-renderer:typecheck: > node ../../scripts/next.ts typegen && tsc --noEmit
+@website-builder/public-renderer:typecheck: 
+@website-builder/api:typecheck: 
+@website-builder/api:typecheck: > @website-builder/api@0.0.0 typecheck F:\Website Builder Proj\apps\api
+@website-builder/api:typecheck: > tsc --noEmit
+@website-builder/api:typecheck: 
+@website-builder/public-renderer:typecheck: Generating route types...
+@website-builder/public-renderer:typecheck: ✓ Types generated successfully
+@website-builder/dashboard-web:typecheck: cache bypass, force executing 3f942168f0a48801
+@website-builder/dashboard-web:typecheck: 
+@website-builder/dashboard-web:typecheck: > @website-builder/dashboard-web@0.0.0 typecheck F:\Website Builder Proj\apps\dashboard-web
+@website-builder/dashboard-web:typecheck: > node ../../scripts/next.ts typegen && tsc --noEmit
+@website-builder/dashboard-web:typecheck: 
+@website-builder/dashboard-web:typecheck: Generating route types...
+@website-builder/dashboard-web:typecheck: ✓ Types generated successfully
+@website-builder/worker:typecheck: cache bypass, force executing 7e35805b8a5f2759
+@website-builder/worker:typecheck: 
+@website-builder/worker:typecheck: > @website-builder/worker@0.0.0 typecheck F:\Website Builder Proj\apps\worker
+@website-builder/worker:typecheck: > tsc --noEmit
+@website-builder/worker:typecheck: 
+
+ Tasks:    10 successful, 10 total
+Cached:    0 cached, 10 total
+  Time:    29.079s 
+

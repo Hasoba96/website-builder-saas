@@ -1,0 +1,14 @@
+{
+  "Foundation": {
+    "title": "Dashboard",
+    "status": "Application foundation",
+    "language": "Language",
+    "english": "English",
+    "arabic": "العربية",
+    "skip": "Skip to content",
+    "loading": "Loading",
+    "error": "Unable to display this page",
+    "retry": "Try again",
+    "home": "Return to start"
+  }
+}

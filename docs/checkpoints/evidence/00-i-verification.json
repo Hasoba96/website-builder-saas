@@ -1,0 +1,341 @@
+{
+  "checkpoint": "00-I",
+  "status": "PASS",
+  "verifiedLocalDate": "2026-10-08",
+  "timezone": "Africa/Cairo",
+  "scope": "Containers and local infrastructure only; 00-J not started",
+  "toolchain": {
+    "node": "24.21.0",
+    "pnpm": "10.34.6",
+    "dockerEngine": "29.8.1",
+    "dockerDesktop": "4.93.0",
+    "compose": "5.5.1",
+    "host": "Windows 11",
+    "containerPlatform": "linux/amd64"
+  },
+  "services": {
+    "postgres": {
+      "version": "18.6",
+      "image": "postgres@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+      "published": "127.0.0.1:15432",
+      "memoryMiB": 512,
+      "cpus": 1,
+      "pids": 128,
+      "persistence": "exact project-owned named volume",
+      "runtimeRole": "wb_runtime",
+      "migrationRole": "wb_migrator"
+    },
+    "redis": {
+      "version": "7.2.16",
+      "image": "redis@sha256:29e8589c3f9ba699b5f7aa4b3c7733c58852a3626439e619aa0ee78de08c6ca0",
+      "published": "127.0.0.1:16379",
+      "memoryMiB": 256,
+      "cpus": 1,
+      "pids": 64,
+      "maxMemoryMiB": 96,
+      "maxClients": 64,
+      "persistence": "none; tmpfs",
+      "authentication": "default user disabled; scoped Worker ACL and separate PING-only health identity"
+    }
+  },
+  "checks": {
+    "freshFrozenInstall": {
+      "status": "PASS",
+      "packages": 382,
+      "durationSeconds": 290.2,
+      "freshNodeModules": true,
+      "downloadCacheReused": true,
+      "lockfileUnchanged": true,
+      "lifecycleScriptsDisabled": true
+    },
+    "format": {
+      "status": "PASS",
+      "command": "pnpm format:check"
+    },
+    "lint": {
+      "status": "PASS",
+      "command": "pnpm lint",
+      "durationSeconds": 17.39
+    },
+    "typecheck": {
+      "status": "PASS",
+      "command": "pnpm typecheck",
+      "tasks": 14,
+      "cachedTasks": 0,
+      "durationSeconds": 98.94
+    },
+    "workspace": {
+      "status": "PASS",
+      "command": "pnpm workspace:check",
+      "packages": 9
+    },
+    "build": {
+      "status": "PASS",
+      "command": "pnpm build",
+      "tasks": 9,
+      "cachedTasks": 0,
+      "durationSeconds": 125.55
+    },
+    "fullTest": {
+      "status": "PASS",
+      "command": "pnpm test",
+      "durationMs": 302804,
+      "total": 158,
+      "groups": 11,
+      "counts": {
+        "root": 46,
+        "api": 4,
+        "worker": 2,
+        "config": 29,
+        "schemas": 12,
+        "dashboard-web": 4,
+        "public-renderer": 4,
+        "database": 11,
+        "redis": 15,
+        "local": 6,
+        "browser": 25
+      },
+      "skipped": 0,
+      "todo": 0,
+      "flakyBrowserTests": 0,
+      "applicationTurboTasks": 15,
+      "fixturePreparationBuildTasks": [7, 5, 5],
+      "suiteSeconds": {
+        "local": 53.18,
+        "redis": 23.08,
+        "database": 13.66,
+        "browser": 35.6
+      },
+      "developerServicesHealthyDuringRun": true
+    },
+    "dependencyAudit": {
+      "status": "PASS",
+      "command": "pnpm security:dependencies",
+      "result": "No known vulnerabilities found",
+      "suppressionAdded": false
+    },
+    "secretScan": {
+      "status": "PASS",
+      "command": "pnpm security:secrets",
+      "preClosureDocumentPaths": 267,
+      "postClosureDocumentPaths": 269,
+      "postClosureDocumentResult": "PASS: no leaks found",
+      "suppressionsAdded": false
+    },
+    "migrationCommands": {
+      "status": "PASS",
+      "commands": [
+        "pnpm infra migrate status",
+        "pnpm infra migrate up",
+        "pnpm infra migrate check"
+      ],
+      "applied": ["1790812800000_application-schema"],
+      "pending": [],
+      "repeatedUpExecuted": []
+    },
+    "linksAndWhitespace": {
+      "status": "PASS",
+      "scope": "new checkpoint documentation and README local links; git diff --check"
+    }
+  },
+  "applicationImages": [
+    {
+      "app": "api",
+      "id": "sha256:3b72fc863f522255c68bc0b3e3d3924ae27a404d84779ed868c4a7ef28c43ea7",
+      "buildSeconds": 272.52,
+      "installedPackageIdentities": 115,
+      "status": "PASS",
+      "runtimeUid": 1000,
+      "readOnly": true,
+      "readiness": true,
+      "healthSchema": true,
+      "installedVersionsMatchLock": true,
+      "noInstalledTestRunners": true,
+      "structuredLogs": true,
+      "shutdownExitCode": 0,
+      "oomKilled": false,
+      "locales": []
+    },
+    {
+      "app": "worker",
+      "id": "sha256:e2cdf0f5d03ebd9ee512752d9a1840ecda93a912ee718bc6da4f62ecefc188df",
+      "buildSeconds": 130.71,
+      "installedPackageIdentities": 131,
+      "status": "PASS",
+      "runtimeUid": 1000,
+      "readOnly": true,
+      "readiness": true,
+      "healthSchema": true,
+      "installedVersionsMatchLock": true,
+      "noInstalledTestRunners": true,
+      "structuredLogs": true,
+      "shutdownExitCode": 0,
+      "oomKilled": false,
+      "locales": []
+    },
+    {
+      "app": "dashboard-web",
+      "id": "sha256:eae9e59890d42a4fcce894f5bd2040772fa5429462434ca43cdf6c054fcb4a75",
+      "buildSeconds": 61.48,
+      "installedPackageIdentities": 17,
+      "status": "PASS",
+      "runtimeUid": 1000,
+      "readOnly": true,
+      "readiness": true,
+      "healthSchema": true,
+      "installedVersionsMatchLock": true,
+      "noInstalledTestRunners": true,
+      "structuredLogs": true,
+      "shutdownExitCode": 0,
+      "oomKilled": false,
+      "locales": ["ar:rtl", "en:ltr"]
+    },
+    {
+      "app": "public-renderer",
+      "id": "sha256:c57889700bf5e8b59e5309bab77103c68429352f519fda1803a0cb7e69aa273e",
+      "buildSeconds": 62.17,
+      "installedPackageIdentities": 17,
+      "status": "PASS",
+      "runtimeUid": 1000,
+      "readOnly": true,
+      "readiness": true,
+      "healthSchema": true,
+      "installedVersionsMatchLock": true,
+      "noInstalledTestRunners": true,
+      "structuredLogs": true,
+      "shutdownExitCode": 0,
+      "oomKilled": false,
+      "locales": ["ar:rtl", "en:ltr"]
+    }
+  ],
+  "dependencyChanges": {
+    "directAdded": [],
+    "transitiveUpdates": [
+      {
+        "package": "source-map-js",
+        "from": "1.2.1",
+        "to": "1.2.2",
+        "reason": "High GHSA-68fv-2mgg-jv7q",
+        "license": "BSD-3-Clause",
+        "disposition": "ACCEPT",
+        "preInstallReview": "docs/checkpoints/00-i-image-review.md"
+      }
+    ],
+    "otherVersionChanges": 0,
+    "overridesAdded": false,
+    "strictPeersRetained": true
+  },
+  "lockfileSha256": "98e2996baf017a1ee2efbf2c22690c0c50e712228763cc9dd2f8f30893320f58",
+  "finalDockerState": {
+    "containers": 0,
+    "testContainers": 0,
+    "testVolumes": 0,
+    "projectNetworks": 0,
+    "developerPostgresqlVolumes": 1,
+    "developerConfigurationRetained": true,
+    "applicationImagesRetained": 4,
+    "unrelatedResourcesDeleted": false
+  },
+  "limitations": [
+    "Linux amd64 only verified",
+    "No OS-wide image CVE certification",
+    "No production TLS/ingress/HSTS/staging or sizing validation",
+    "Private host ACLs and trusted Docker administrators required",
+    "No backup/restore or DR implementation"
+  ],
+  "na": {
+    "crossTenant": "ADR-001: no tenant-capable surface",
+    "productJobs": "No Product Jobs",
+    "authTenant": "Stage 01, not implemented",
+    "ciWorkflow": "00-J, not started",
+    "backupRestore": "00-K, not started"
+  },
+  "git": {
+    "preexistingStagedIntentToAddAndUntrackedWork": true,
+    "commitsCreated": 0,
+    "stagingPerformed": false,
+    "historicalReportsRewritten": false
+  },
+  "rawLocalEvidence": [
+    {
+      "bytes": 7173,
+      "path": ".local/evidence/00i-clean-final.log",
+      "sha256": "6526f171d308089309b13eef942cac05fbd7e76ada0a92415a60cadc28a6a24a"
+    },
+    {
+      "bytes": 156,
+      "path": ".local/evidence/00i-close-format-check.log",
+      "sha256": "92b0efe2d7286a9112fce583d6d43243c04e26b41a72908562c72408d855860c"
+    },
+    {
+      "bytes": 1207,
+      "path": ".local/evidence/00i-close-lint.log",
+      "sha256": "a3dcd2527c4c2df9c2dfb4488e7c117c034f92d73344b0524cd59941cfa1ed4a"
+    },
+    {
+      "bytes": 5729,
+      "path": ".local/evidence/00i-close-typecheck.log",
+      "sha256": "4c4f634ea47751b84e9a8f9e2bf9edd8709b8ae4adb3a3d2c49006b6051618bd"
+    },
+    {
+      "bytes": 1138,
+      "path": ".local/evidence/00i-close-workspace-check.log",
+      "sha256": "b1cec570b7302f36ea5a1eeab10ecba143fdfda5e3e144d0f407ba90fc45c8cd"
+    },
+    {
+      "bytes": 6935,
+      "path": ".local/evidence/00i-final-build.log",
+      "sha256": "46fba49e5c64868f5c354a1943405be1190354ee91be02dc49532e1af053b58b"
+    },
+    {
+      "bytes": 34291,
+      "path": ".local/evidence/00i-final-test.log",
+      "sha256": "580c8648937e6cb2cd98c2cbc7e6265c3ae56c61adbd3941937c95f7fc092efb"
+    },
+    {
+      "bytes": 140,
+      "path": ".local/evidence/00i-final-audit.log",
+      "sha256": "1b6720b022f405dd2500b46202c0ea692a820b5ea5447c1d4fb402dae558642c"
+    },
+    {
+      "bytes": 278,
+      "path": ".local/evidence/00i-close-security-secrets.log",
+      "sha256": "fc9f6743c3afae97c3e021065d3ee2e07fde819a38cf9eb5f1d82a802dd48b20"
+    },
+    {
+      "bytes": 13911,
+      "path": ".local/evidence/00i-image-final-api.log",
+      "sha256": "290e6e32cb9b1bbf080aeaabe5dd5f2b6406cd8c9f8b0bd39f556c42721027d0"
+    },
+    {
+      "bytes": 9777,
+      "path": ".local/evidence/00i-image-final-worker.log",
+      "sha256": "b3c492266c2029b37b3ddddc7d1262cafcf7362b505a045b4a660049949ca682"
+    },
+    {
+      "bytes": 8697,
+      "path": ".local/evidence/00i-image-final-dashboard-web.log",
+      "sha256": "cdfb9eb0f14ef4f9a657d8648d34644b483dbe3c7cec08950e4eb727fd092eee"
+    },
+    {
+      "bytes": 8585,
+      "path": ".local/evidence/00i-image-final-public-renderer.log",
+      "sha256": "3b47664e3991486b91d7988bbd4ab06ea68ae6c450a3a88071d0f8ff556ab293"
+    },
+    {
+      "bytes": 607,
+      "path": ".local/evidence/00i-image-final-smoke.log",
+      "sha256": "95afbe09640fef7451f8e46c7e46be3c3a28b139bdcf26fd61d73a10d9fc525c"
+    },
+    {
+      "bytes": 1021,
+      "path": ".local/evidence/00i-coexistence.log",
+      "sha256": "c0145a309e4f1cbcaebc1952ecfe50ab8bfcd39caca22962dd51fd2d51805ef5"
+    },
+    {
+      "bytes": 391780,
+      "path": ".local/evidence/00i-final-graph.json",
+      "sha256": "bc284672eb46f5bad0279c75ba391ded73e008f77b02cd3ad7d8595abfcc2c2e"
+    }
+  ]
+}

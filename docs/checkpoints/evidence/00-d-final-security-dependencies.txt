@@ -1,0 +1,5 @@
+
+> website-builder@0.0.0 security:dependencies F:\Website Builder Proj
+> pnpm audit --audit-level high
+
+No known vulnerabilities found
