@@ -62,6 +62,13 @@ try {
   if (mode === 'verify') {
     for (const gate of verificationGates) pnpm(gate);
   } else {
+    // Docker build outputs stay inside images; the host smoke harness imports config.
+    run('image smoke prerequisites', process.execPath, [
+      'scripts/turbo.ts',
+      'run',
+      'build',
+      '--filter=@website-builder/config',
+    ]);
     for (const app of ['api', 'worker', 'dashboard-web', 'public-renderer']) {
       run(`image ${app}`, 'docker', [
         'build',

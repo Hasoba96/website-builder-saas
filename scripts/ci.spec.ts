@@ -15,6 +15,7 @@ import { validateWorkflow, verificationGates } from './ci-policy.js';
 import { executeCheck } from './ci-command.js';
 import { assertSafeArtifact, sanitizeReport } from './ci-artifacts.js';
 import { validateCoverage } from './test-evidence.js';
+import { createHash } from 'node:crypto';
 
 interface WorkflowFixture {
   permissions: { contents: string };
@@ -28,6 +29,190 @@ interface WorkflowFixture {
     }
   >;
 }
+
+function licenseFixture(license: string, name: string, versions: string[]) {
+  const directory = mkdtempSync(resolve(tmpdir(), 'wbp-license-'));
+  try {
+    mkdirSync(resolve(directory, 'docs/checkpoints/evidence'), {
+      recursive: true,
+    });
+    const lock = 'reviewed-fixture';
+    writeFileSync(resolve(directory, 'pnpm-lock.yaml'), lock);
+    writeFileSync(
+      resolve(
+        directory,
+        'docs/checkpoints/evidence/00-j-dependency-acceptance.json',
+      ),
+      JSON.stringify({
+        lockfileSha256: `sha256:${createHash('sha256').update(lock).digest('hex')}`,
+        reviewBy: new Date(Date.now() + 60000).toISOString(),
+      }),
+    );
+    const manager = resolve(directory, 'manager.cjs');
+    writeFileSync(
+      manager,
+      `const command=process.argv[2];
+      require('node:fs').appendFileSync('invocations',command+'\\n');
+      const responses={list:[],licenses:${JSON.stringify({ [license]: [{ name, versions }] })},audit:{metadata:{vulnerabilities:{high:0,critical:0}}}};
+      if(!(command in responses))process.exit(1);
+      require('node:fs').writeFileSync(1,JSON.stringify(responses[command]));`,
+    );
+    const result = spawnSync(
+      process.execPath,
+      [resolve('scripts/ci-supply-chain.ts')],
+      {
+        cwd: directory,
+        // Policy fixtures need no real infrastructure credentials or pnpm lifecycle state.
+        env: {
+          ...Object.fromEntries(
+            Object.entries(process.env).filter(([key]) =>
+              /^(path|systemroot|windir|temp|tmp)$/i.test(key),
+            ),
+          ),
+          npm_execpath: manager,
+          CI_BASE_SHA: '',
+        },
+        encoding: 'utf8',
+        timeout: 15000,
+      },
+    );
+    expect(
+      readFileSync(resolve(directory, 'invocations'), 'utf8')
+        .trim()
+        .split('\n')
+        .slice(0, 2),
+    ).toEqual(['list', 'licenses']);
+    return result;
+  } finally {
+    expect(dirname(directory)).toBe(resolve(tmpdir()));
+    rmSync(directory, { recursive: true, force: true });
+  }
+}
+
+it('accepts only reviewed Sharp copyleft platform identities', () => {
+  for (const [name, version, license] of [
+    ['@img/sharp-libvips-linux-x64', '1.3.4', 'LGPL-3.0-or-later'],
+    ['@img/sharp-libvips-linuxmusl-x64', '1.3.4', 'LGPL-3.0-or-later'],
+    ['@img/sharp-win32-x64', '0.35.5', 'Apache-2.0 AND LGPL-3.0-or-later'],
+  ]) {
+    const result = licenseFixture(license!, name!, [version!]);
+    expect(result.error).toBeUndefined();
+    expect(result.status, result.stderr).toBe(0);
+  }
+});
+
+it('rejects unreviewed Sharp versions, packages and expressions with safe identities', () => {
+  for (const [license, name, versions] of [
+    ['LGPL-3.0-or-later', '@img/sharp-libvips-linux-x64', ['1.3.5']],
+    [
+      'LGPL-3.0-or-later',
+      '@img/sharp-libvips-linuxmusl-x64',
+      ['1.3.4', '1.3.5'],
+    ],
+    ['LGPL-3.0-or-later', '@img/sharp-libvips-linux-arm64', ['1.3.4']],
+    ['LGPL-3.0-or-later', 'unreviewed-library', ['1.3.4']],
+    ['LGPL-3.0-only', '@img/sharp-libvips-linux-x64', ['1.3.4']],
+    ['MIT', '@img/sharp-libvips-linux-x64', ['1.3.4']],
+    ['Unknown', '@img/sharp-libvips-linux-x64', ['1.3.4']],
+    ['Apache-2.0 AND LGPL-3.0-or-later', '@img/sharp-win32-x64', ['0.35.6']],
+    ['Apache-2.0 AND LGPL-3.0-or-later', '@img/sharp-unreviewed', ['0.35.5']],
+    ['LGPL-3.0-or-later', '@img/sharp-libvips-linux-x64', []],
+  ] as [string, string, string[]][]) {
+    const result = licenseFixture(license, name, versions);
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toContain('Unreviewed license obligation');
+    expect(result.stderr).toContain(name);
+    expect(result.stderr).toContain(license);
+    for (const version of versions) expect(result.stderr).toContain(version);
+  }
+});
+
+it('does not reflect unsafe license metadata or paths in rejection diagnostics', () => {
+  const unsafe = 'https://user:private@host/\nforged-log';
+  const result = licenseFixture(unsafe, unsafe, [unsafe]);
+  expect(result.error).toBeUndefined();
+  expect(result.status).not.toBe(0);
+  expect(result.stderr).toContain('Unreviewed license obligation');
+  expect(result.stderr).toContain('[invalid metadata]');
+  expect(result.stderr).not.toContain('user:private');
+  expect(result.stderr).not.toContain('forged-log');
+});
+
+it('builds fresh host smoke prerequisites first and stops when their build fails', () => {
+  const directory = mkdtempSync(resolve(tmpdir(), 'wbp-image-order-'));
+  try {
+    mkdirSync(resolve(directory, 'scripts'));
+    copyFileSync('scripts/ci.ts', resolve(directory, 'scripts/ci.ts'));
+    copyFileSync(
+      'scripts/ci-policy.ts',
+      resolve(directory, 'scripts/ci-policy.ts'),
+    );
+    writeFileSync(resolve(directory, 'pnpm-lock.yaml'), 'unchanged');
+    // Command-boundary fixture only; real container acceptance remains mandatory.
+    writeFileSync(
+      resolve(directory, 'scripts/ci-command.ts'),
+      `
+      import assert from 'node:assert/strict';
+      import {appendFileSync,existsSync,writeFileSync} from 'node:fs';
+      export function executeCheck(executable,args){
+        appendFileSync('commands.jsonl',JSON.stringify(args)+'\\n');
+        if(args[0]==='scripts/turbo.ts'){
+          assert.deepEqual(args,['scripts/turbo.ts','run','build','--filter=@website-builder/config']);
+          assert.equal(existsSync('host-built'),false);
+          if(process.env.FIXTURE_BUILD_FAILURE==='1')throw new Error('fixture build failure');
+          writeFileSync('host-built','fresh');
+        }
+        if(args.includes('test:images'))assert.ok(existsSync('host-built'),'missing fresh host outputs');
+      }`,
+    );
+    for (const fail of [false, true]) {
+      rmSync(resolve(directory, 'host-built'), { force: true });
+      rmSync(resolve(directory, 'commands.jsonl'), { force: true });
+      const result = spawnSync(process.execPath, ['scripts/ci.ts', 'images'], {
+        cwd: directory,
+        env: {
+          ...process.env,
+          npm_execpath: 'fixture-manager',
+          FIXTURE_BUILD_FAILURE: fail ? '1' : '0',
+        },
+        encoding: 'utf8',
+        timeout: 15000,
+      });
+      expect(result.error).toBeUndefined();
+      expect(result.status, result.stderr).toBe(fail ? 1 : 0);
+      const commands = readFileSync(
+        resolve(directory, 'commands.jsonl'),
+        'utf8',
+      )
+        .trim()
+        .split('\n')
+        .map((line) => JSON.parse(line) as string[]);
+      const build = commands.findIndex(
+        (args) => args[0] === 'scripts/turbo.ts',
+      );
+      const smoke = commands.findIndex((args) => args.includes('test:images'));
+      expect(build).toBeGreaterThan(-1);
+      expect(smoke).toBe(fail ? -1 : commands.length - 2);
+      if (!fail) expect(build).toBeLessThan(smoke);
+      expect(commands.filter((args) => args[0] === 'build')).toHaveLength(
+        fail ? 0 : 4,
+      );
+      expect(commands.at(-1)).toEqual(['scripts/ci-containers.ts']);
+    }
+    const turbo = JSON.parse(readFileSync('turbo.json', 'utf8'));
+    expect(turbo.tasks.build).toMatchObject({
+      dependsOn: ['^build'],
+      cache: false,
+    });
+    const config = JSON.parse(
+      readFileSync('packages/config/package.json', 'utf8'),
+    );
+    expect(config.dependencies['@website-builder/schemas']).toBe('workspace:*');
+  } finally {
+    expect(dirname(directory)).toBe(resolve(tmpdir()));
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
 const workflow = () =>
   JSON.parse(
     readFileSync('.github/workflows/ci.yml', 'utf8'),

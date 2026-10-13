@@ -23,5 +23,31 @@
   ],
   "ageOnlyReviewBy": "2027-04-06",
   "eventDrivenReview": "CORE-002 triggers apply immediately; periodic dates never waive hard blockers",
-  "priorApprovals": "A-I approvals and earlier tracking deadlines remain binding; the global gate uses an earlier conservative deadline"
+  "priorApprovals": "A-I approvals and earlier tracking deadlines remain binding; the global gate uses an earlier conservative deadline",
+  "platformLicenseReview": {
+    "date": "2026-10-12",
+    "scope": "Local correction only; no dependency or lockfile change; no publication approval",
+    "record": "docs/checkpoints/00-j-dependency-review.md#targeted-platform-license-correction---2026-10-12",
+    "packages": [
+      {
+        "name": "@img/sharp-libvips-linux-x64",
+        "version": "1.3.4",
+        "license": "LGPL-3.0-or-later"
+      },
+      {
+        "name": "@img/sharp-libvips-linuxmusl-x64",
+        "version": "1.3.4",
+        "license": "LGPL-3.0-or-later"
+      },
+      {
+        "name": "@img/sharp-win32-x64",
+        "version": "0.35.5",
+        "license": "Apache-2.0 AND LGPL-3.0-or-later"
+      }
+    ],
+    "disposition": "ACCEPT WITH TRACKING",
+    "reviewBy": "2026-12-29T00:00:00Z",
+    "owner": "Hasoba96",
+    "obligations": "Preserve supplied licensing tables and notices; review source, notice and relinking obligations before binary/image redistribution. No waiver for bundled components. CORE-002 event triggers remain immediate."
+  }
 }

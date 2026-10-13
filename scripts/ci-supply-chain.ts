@@ -67,23 +67,50 @@ const permissive = new Set([
   '0BSD',
   'BlueOak-1.0.0',
 ]);
+// Exact existing identities reviewed in 00-j-dependency-review.md; no LGPL wildcard.
+const sharpObligations = new Map([
+  ['@img/sharp-libvips-linux-x64', ['1.3.4', 'LGPL-3.0-or-later']],
+  ['@img/sharp-libvips-linuxmusl-x64', ['1.3.4', 'LGPL-3.0-or-later']],
+  ['@img/sharp-win32-x64', ['0.35.5', 'Apache-2.0 AND LGPL-3.0-or-later']],
+]);
+function diagnostic(value: string, pattern: RegExp) {
+  return value.length <= 214 &&
+    /^[\x20-\x7e]+$/.test(value) &&
+    pattern.test(value)
+    ? value
+    : '[invalid metadata]';
+}
 for (const [license, packages] of Object.entries(licenses))
   for (const pkg of packages) {
+    const sharp = sharpObligations.get(pkg.name);
+    const reviewedSharp =
+      sharp !== undefined &&
+      license === sharp[1] &&
+      pkg.versions.length > 0 &&
+      pkg.versions.every((version) => version === sharp[0]);
     const existingObligation =
       (license === 'MPL-2.0' &&
         /^(?:@axe-core\/playwright|axe-core|lightningcss(?:-.+)?)$/.test(
           pkg.name,
         )) ||
-      (license === 'Apache-2.0 AND LGPL-3.0-or-later' &&
-        pkg.name.startsWith('@img/sharp-')) ||
       (license === 'CC-BY-4.0' && pkg.name === 'caniuse-lite');
     const recordedMit =
       license === 'Unknown' &&
       pkg.name === 'buffers' &&
       pkg.versions.every((version) => version === '0.1.1');
     assert.ok(
-      permissive.has(license) || existingObligation || recordedMit,
-      'Unreviewed license obligation',
+      /^@img\/sharp-(?:libvips-|win32-)/.test(pkg.name)
+        ? reviewedSharp
+        : permissive.has(license) || existingObligation || recordedMit,
+      `Unreviewed license obligation: ${JSON.stringify({
+        package: diagnostic(pkg.name, /^(?:@[a-z0-9._-]+\/)?[a-z0-9._-]+$/),
+        versions: pkg.versions
+          .slice(0, 20)
+          .map((version) =>
+            diagnostic(version, /^\d+\.\d+\.\d+(?:[-+][a-zA-Z0-9.-]+)?$/),
+          ),
+        license: diagnostic(license, /^[a-zA-Z0-9 .()+/-]+$/),
+      })}`,
     );
   }
 const audit = spawnSync(process.execPath, [manager, 'audit', '--json'], {
