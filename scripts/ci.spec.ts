@@ -16,6 +16,7 @@ import { executeCheck } from './ci-command.js';
 import { assertSafeArtifact, sanitizeReport } from './ci-artifacts.js';
 import { validateCoverage } from './test-evidence.js';
 import { createHash } from 'node:crypto';
+import browserConfig from '../playwright.config.js';
 
 interface WorkflowFixture {
   permissions: { contents: string };
@@ -469,6 +470,214 @@ it('prepares scanned failure evidence but rejects an unsafe unprojected field', 
     expect(rejected.stderr).toContain(
       'Artifact may contain private runtime data',
     );
+  } finally {
+    expect(dirname(directory)).toBe(resolve(tmpdir()));
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+it('withholds hosted Git/source metadata without changing results or coverage', () => {
+  expect(browserConfig.captureGitInfo).toEqual({ commit: false, diff: false });
+  const canary = 'origin-' + 'canary.example';
+  const ci = {
+    commitHash: 'a'.repeat(40),
+    prBaseHash: 'b'.repeat(40),
+    headSha: 'c'.repeat(40),
+    runId: '38420180954',
+    buildHref:
+      'https://github.com/Hasoba96/website-builder-saas/actions/runs/38420180954',
+  };
+  const metadata = {
+    ci: { ...ci, prTitle: canary },
+    gitDiff: canary,
+    gitCommit: { body: canary },
+    actualWorkers: 1,
+    unknown: canary,
+  };
+  const coverage = {
+    total: { statements: { total: 10, covered: 8, pct: 80 } },
+  };
+  const report = {
+    config: { metadata, projects: [{ metadata }] },
+    stats: { expected: 17, unexpected: 8, skipped: 0, flaky: 0 },
+    numTotalTests: 25,
+    numPassedTests: 17,
+    success: false,
+    coverage,
+    metadata: { vulnerabilities: { high: 0, critical: 0 } },
+    source: canary,
+    sources: [canary],
+    sourcesContent: [canary],
+    codeFrame: canary,
+  };
+  const clean = sanitizeReport(report);
+  expect(clean).toMatchObject({
+    config: { metadata: { ci, actualWorkers: 1 } },
+    stats: report.stats,
+    numTotalTests: 25,
+    numPassedTests: 17,
+    success: false,
+    coverage,
+    metadata: report.metadata,
+  });
+  expect(JSON.stringify(clean)).not.toContain(canary);
+  expect(() =>
+    assertSafeArtifact(Buffer.from(JSON.stringify(clean))),
+  ).not.toThrow();
+  expect(
+    sanitizeReport({
+      config: {
+        metadata: {
+          ci: {
+            commitHash: canary,
+            runId: canary,
+            buildHref: ci.buildHref + '?token=' + canary,
+          },
+        },
+      },
+    }),
+  ).toEqual({ config: { metadata: { ci: {} } } });
+  expect(() =>
+    assertSafeArtifact(
+      Buffer.from(JSON.stringify(sanitizeReport({ unsafe: canary }))),
+    ),
+  ).toThrow();
+});
+
+it('publishes scanned failure reports locally and keeps validation, scan and transport failures fatal', () => {
+  const directory = mkdtempSync(resolve(tmpdir(), 'wbp-artifact-publish-'));
+  const startedAt = new Date(Date.now() - 1000).toISOString();
+  try {
+    mkdirSync(resolve(directory, '.local/ci/verify'), { recursive: true });
+    mkdirSync(resolve(directory, '.local/test-evidence'), { recursive: true });
+    mkdirSync(resolve(directory, 'coverage/root'), { recursive: true });
+    copyFileSync(
+      '.gitleaks-staged.toml',
+      resolve(directory, '.gitleaks-staged.toml'),
+    );
+    const summary = resolve(directory, '.local/ci/verify/summary.json');
+    const reportPath = resolve(directory, '.local/test-evidence/browser.json');
+    const canary = 'origin-' + 'canary.example';
+    const report = {
+      config: { metadata: { gitDiff: canary } },
+      stats: { expected: 17, unexpected: 8, skipped: 0, flaky: 0 },
+      errors: [],
+    };
+    writeFileSync(reportPath, JSON.stringify(report));
+    const coverage = {
+      total: { statements: { total: 10, covered: 8, pct: 80 } },
+    };
+    writeFileSync(
+      resolve(directory, 'coverage/root/coverage-summary.json'),
+      JSON.stringify(coverage),
+    );
+    const source = `import {publishEvidence} from ${JSON.stringify(pathToFileURL(resolve('scripts/ci-upload.ts')).href)};
+      import {writeFileSync} from 'node:fs';
+      process.exitCode = await publishEvidence('verify', async (name,files,directory) => {
+        writeFileSync('called.json',JSON.stringify({name,files,directory}));
+        if(process.env.FIXTURE_UPLOAD==='failure')throw new Error('https://host/?secret=private');
+        return process.env.FIXTURE_UPLOAD==='missing-id' ? {} : {id:1};
+      });`;
+    const run = (
+      status: string,
+      mode = 'success',
+      path = process.env['PATH'],
+    ) => {
+      rmSync(resolve(directory, 'called.json'), { force: true });
+      writeFileSync(
+        summary,
+        JSON.stringify({
+          startedAt,
+          status,
+        }),
+      );
+      return spawnSync(
+        process.execPath,
+        ['--input-type=module', '-e', source],
+        {
+          cwd: directory,
+          env: { ...process.env, PATH: path, FIXTURE_UPLOAD: mode },
+          encoding: 'utf8',
+          timeout: 15000,
+        },
+      );
+    };
+    expect(run('FAIL').status).toBe(0);
+    expect(
+      JSON.parse(readFileSync(resolve(directory, 'called.json'), 'utf8')).name,
+    ).toBe('evidence-verify');
+    const output = readFileSync(
+      resolve(directory, '.local/ci/verify/upload/test-evidence/browser.json'),
+      'utf8',
+    );
+    expect(output).not.toContain(canary);
+    expect(JSON.parse(output).stats).toEqual(report.stats);
+    expect(
+      JSON.parse(
+        readFileSync(
+          resolve(
+            directory,
+            '.local/ci/verify/upload/coverage/root/coverage-summary.json',
+          ),
+          'utf8',
+        ),
+      ),
+    ).toEqual(coverage);
+    for (const mode of ['failure', 'missing-id']) {
+      const failed = run('FAIL', mode);
+      expect(failed.status).toBe(33);
+      expect(failed.stdout + failed.stderr).not.toContain('secret=private');
+    }
+    expect(run('PASS').status).toBe(31); // Missing mandatory suites/coverage cannot publish as PASS.
+    expect(run('FAIL', 'success', directory).status).toBe(32); // Scanner unavailable.
+    writeFileSync(reportPath, JSON.stringify({ ...report, unsafe: canary }));
+    expect(run('FAIL').status).toBe(31);
+    expect(() => readFileSync(resolve(directory, 'called.json'))).toThrow();
+  } finally {
+    expect(dirname(directory)).toBe(resolve(tmpdir()));
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+it('prints only fixed action diagnostic codes and preserves nonzero failures', () => {
+  const directory = mkdtempSync(resolve(tmpdir(), 'wbp-artifact-action-'));
+  try {
+    mkdirSync(resolve(directory, 'scripts'));
+    copyFileSync(
+      '.github/actions/evidence/upload.mjs',
+      resolve(directory, 'upload.mjs'),
+    );
+    writeFileSync(
+      resolve(directory, 'scripts/ci-upload.ts'),
+      `
+      process.stdout.write('fixture-private-output');
+      process.stderr.write('https://host/?token=fixture-private-output');
+      process.exitCode = Number(process.env.FIXTURE_STATUS);`,
+    );
+    for (const [status, code] of [
+      [31, 'VALIDATION:REJECTED'],
+      [32, 'SCAN:FAILED'],
+      [33, 'PUBLICATION:FAILED'],
+      [99, 'PROCESS:FAILED'],
+      [0, 'uploaded'],
+    ] as const) {
+      const result = spawnSync(process.execPath, ['upload.mjs'], {
+        cwd: directory,
+        env: {
+          ...process.env,
+          FIXTURE_STATUS: String(status),
+          INPUT_GATE: 'verify',
+        },
+        encoding: 'utf8',
+        timeout: 10000,
+      });
+      expect(result.status).toBe(status === 0 ? 0 : 1);
+      expect(result.stdout + result.stderr).toContain(code);
+      expect(result.stdout + result.stderr).not.toContain(
+        'fixture-private-output',
+      );
+      expect(result.stdout + result.stderr).not.toContain('https://');
+    }
   } finally {
     expect(dirname(directory)).toBe(resolve(tmpdir()));
     rmSync(directory, { recursive: true, force: true });

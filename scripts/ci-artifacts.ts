@@ -32,19 +32,69 @@ export function assertSafeArtifact(bytes: Buffer) {
 
 // Preserve native report shape/status/counts; strip diagnostic payloads, never turn failure into success.
 export function sanitizeReport(value: unknown): unknown {
-  if (Array.isArray(value)) return value.map(sanitizeReport);
+  return projectReport(value, '');
+}
+
+function reportMetadata(value: unknown) {
+  if (!value || typeof value !== 'object') return {};
+  const input = value as Record<string, unknown>;
+  const output: Record<string, unknown> = {};
+  if (
+    Number.isSafeInteger(input['actualWorkers']) &&
+    Number(input['actualWorkers']) > 0
+  )
+    output['actualWorkers'] = input['actualWorkers'];
+  const ci = input['ci'];
+  if (ci && typeof ci === 'object') {
+    const safe: Record<string, string> = {};
+    for (const [key, child] of Object.entries(ci)) {
+      if (typeof child !== 'string') continue;
+      if (
+        ['commitHash', 'prBaseHash', 'headSha', 'baseSha'].includes(key) &&
+        /^[a-f0-9]{40}$/.test(child)
+      )
+        safe[key] = child;
+      if (key === 'runId' && /^[1-9][0-9]{0,19}$/.test(child))
+        safe[key] = child;
+      if (
+        key === 'buildHref' &&
+        /^https:\/\/github\.com\/Hasoba96\/website-builder-saas\/actions\/runs\/[1-9][0-9]{0,19}$/.test(
+          child,
+        )
+      )
+        safe[key] = child;
+    }
+    output['ci'] = safe;
+  }
+  return output;
+}
+
+function projectReport(value: unknown, path: string): unknown {
+  if (/^config(?:\.projects\.\d+)?\.metadata$/.test(path))
+    return reportMetadata(value);
+  if (Array.isArray(value))
+    return value.map((child, index) =>
+      projectReport(child, `${path}.${index}`),
+    );
   if (value && typeof value === 'object')
     return Object.fromEntries(
-      Object.entries(value).map(([key, child]) => [
-        key,
-        /^(?:message|stack|actual|expected|stdout|stderr|snippet|failureMessages|errorMessage|attachments)$/i.test(
+      Object.entries(value)
+        .filter(
+          ([key]) =>
+            !/^(?:gitDiff|gitCommit|sources?|sourcesContent|codeFrame)$/i.test(
+              key,
+            ),
+        )
+        .map(([key, child]) => [
           key,
-        ) && typeof child !== 'number'
-          ? Array.isArray(child)
-            ? child.map(() => '[diagnostic withheld]')
-            : '[diagnostic withheld]'
-          : sanitizeReport(child),
-      ]),
+          /^(?:message|stack|actual|expected|stdout|stderr|snippet|failureMessages|errorMessage|attachments)$/i.test(
+            key,
+          ) && typeof child !== 'number'
+            ? Array.isArray(child)
+              ? child.map(() => '[diagnostic withheld]')
+              : '[diagnostic withheld]'
+            : projectReport(child, path ? `${path}.${key}` : key),
+        ]),
     );
   if (typeof value === 'string')
     return value
@@ -52,6 +102,8 @@ export function sanitizeReport(value: unknown): unknown {
       .replaceAll(process.cwd().replaceAll('\\', '/'), '<workspace>');
   return value;
 }
+
+export class ArtifactScanError extends Error {}
 
 export function prepareArtifacts(gate: unknown) {
   assert.ok(gate === 'verify' || gate === 'images', 'Invalid artifact gate');
@@ -201,9 +253,9 @@ export function prepareArtifacts(gate: unknown) {
     ],
     { stdio: 'ignore', timeout: 65000 },
   );
-  assert.ok(
-    !scan.error && scan.status === 0,
-    'Artifact sanitization gate failed; upload prohibited',
-  );
+  if (scan.error || scan.status !== 0)
+    throw new ArtifactScanError(
+      'Artifact sanitization gate failed; upload prohibited',
+    );
   return { directory, files };
 }

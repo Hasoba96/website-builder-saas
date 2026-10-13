@@ -2,6 +2,7 @@ import { defineConfig } from '@playwright/test';
 import { evidenceDirectory } from './scripts/test-policy.ts';
 import { resolve } from 'node:path';
 export default defineConfig({
+  captureGitInfo: { commit: false, diff: false },
   testDir: './tests/browser',
   forbidOnly: true,
   reporter: [
