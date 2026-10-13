@@ -1,5 +1,9 @@
 # CHECKPOINT 00-J CLOSURE REPORT
 
+## Local artifact correction addendum - 2026-10-13
+
+**00-J remains BLOCKED.** Hosted run [38420180954](https://github.com/Hasoba96/website-builder-saas/actions/runs/38420180954), at approved head `61cdb7c5d06da744f413c44d3d5648007d1fbde2`, passed all four image builds/smokes and published image evidence, but verify failed on eight missing Linux visual baselines and rejected verify evidence. This dated fact does not rewrite the earlier recovery evidence below. The narrowly authorized local artifact correction and its verification/review are recorded in [00-j-artifact-corrections.md](00-j-artifact-corrections.md). No new hosted result, baseline acceptance, commit, push, settings change or merge is claimed. The publication deadline remains **2026-10-15T00:20:09Z**.
+
 ## Recovery and final closure review — 2026-10-11
 
 ### STATUS

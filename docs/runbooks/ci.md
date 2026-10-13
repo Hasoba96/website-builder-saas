@@ -36,6 +36,14 @@ Linux Chromium screenshots are platform-specific acceptance evidence. Generate o
 
 ## Evidence and failure behavior
 
+### Local artifact correction, 2026-10-13
+
+Playwright Git commit/diff capture is explicitly disabled. The report projection also removes raw Git/source fields and projects Playwright configuration metadata onto positive worker counts and validated CI identifiers only: 40-character lowercase commit/base/head hashes, bounded numeric run IDs, and this repository's query-free HTTPS run URL. PR titles, author identities, commit bodies, arbitrary metadata and source diffs are not publication evidence. Native conclusions, assertion counts, audit metadata and coverage measurements remain unchanged. This is data minimization, not a canary or secret-scanner exception.
+
+The artifact child communicates failure only through fixed exit codes: 31 is `VALIDATION:REJECTED`, 32 is `SCAN:FAILED`, and 33 is `PUBLICATION:FAILED`. The action maps unexpected termination to `PROCESS:FAILED` and its bounded timeout to `PROCESS:TIMEOUT`. Raw child/SDK output remains suppressed. Successful publication requires a positive, safe-integer artifact ID from the SDK. Missing reports, stale evidence, rejected content, scanner unavailability, transport failure or an invalid publication receipt cannot become successful publication. The existing scan, archive, size, freshness, coverage and retention controls remain enabled.
+
+Local transport-injection tests do not contact GitHub and are not hosted publication evidence. The first follow-up hosted run must still prove safe trace/screenshot/native-report/coverage publication. The previous run's missing Linux baselines remain unresolved: no Linux baseline generation, acceptance, snapshot threshold change or workflow rerun is authorized by this correction. See the [supplemental review](../checkpoints/00-j-artifact-corrections.md).
+
 The 2026-10-12 targeted correction records platform-specific Sharp/libvips obligations in the [dependency review](../checkpoints/00-j-dependency-review.md#targeted-platform-license-correction---2026-10-12). Package name, every resolved version and declared expression must match the reviewed copyleft identity. Unknown identities fail with bounded sanitized metadata, not package paths or arbitrary raw errors. Platform-specific license inventories are not interchangeable: Windows, Ubuntu/glibc and Alpine/musl require their applicable evidence. No blanket LGPL acceptance or change to advisory thresholds is permitted.
 
 The root CI commands clear their own previous summary, retain per-command exit status/timing and lockfile hash, and return nonzero on any failure. The test command clears its own previous native/coverage evidence before execution. Missing or empty coverage is rejected. Docker/fixture/image failures propagate; no native database fallback exists.
