@@ -27,7 +27,7 @@
     "test:database": "node scripts/test-database.ts",
     "db:migrate": "node --env-file-if-exists=.env.migration scripts/migrate.ts",
     "dev": "node scripts/turbo.ts run dev",
-    "boundaries:check": "node scripts/turbo.ts run build --filter=@website-builder/config && node scripts/check-boundaries.ts",
+    "boundaries:check": "node scripts/turbo.ts run build --filter=./packages/* && node scripts/check-boundaries.ts",
     "build": "node scripts/turbo.ts run build",
     "workspace:check": "node scripts/turbo.ts ls --output=json",
     "lint:workspaces": "node scripts/turbo.ts run lint",
