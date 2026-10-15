@@ -1,5 +1,9 @@
 # Foundation publication preparation and separate review
 
+## Status reconciliation - 2026-10-15
+
+The dated review below is preserved unchanged. Later owner-approved fixes, Linux baseline acceptance, protected PR #1 merge and fresh main CI resolved its publication blockers; see the [final reconciliation](00-j-closure-report.md#final-reconciliation---2026-10-15) and [exact hosted evidence](evidence/00-j-final-hosted-evidence.md). PR #1 merged before its original deadline; no expired exception is reused. This update is a status record, not a claim that the historical reviewer inspected future changes or supplied independent human approval. The new documentation-only PR requires its own separate AI-assisted review and full protected-PR/main verification under the owner's 2026-10-15 conditional authorization.
+
 Date: **2026-10-12, Africa/Cairo**. Reviewer: **Codex, AI-assisted review**, separate from the implementation pass. Accountable owner/module owner: **Hasoba96**. This is not independent human review, owner acceptance, publication authority, or checkpoint acceptance. **00-J remains BLOCKED.** No Git mutation or GitHub settings change is authorized by this record.
 
 ## Remote verification

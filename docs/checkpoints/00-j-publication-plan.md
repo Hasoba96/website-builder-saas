@@ -1,5 +1,11 @@
 # 00-J initial publication plan
 
+## Final publication status - 2026-10-15
+
+The authorized foundation import completed through [PR #1](https://github.com/Hasoba96/website-builder-saas/pull/1) at **2026-10-13T18:03:21Z**, before **2026-10-15T00:20:09Z**. Main became `2dff420aee5e6123e7c26b8d6514f2976ab56094`, preserving tree `8236bf53070f7bef5b3e8d52f310e0665869159e`; fresh main CI passed. CORE-040/044 single-use exceptions are consumed. No deadline extension or bootstrap exception is available for this ordinary closure-documentation PR. See the [final reconciliation](00-j-closure-report.md#final-reconciliation---2026-10-15) and [evidence inventory](evidence/00-j-final-hosted-evidence.md).
+
+The owner authorized a separate documentation-only protected PR on 2026-10-15, including review, publication and conditional squash merge/main verification. Ordinary limits, short branch lifetime, owner accountability and every CI gate remain required. The preparation/operation instructions below are dated history, not permission to repeat foundation assembly, genesis or publication. Final checkpoint closure remains subject to the reconciliation's explicit documentation/main-CI condition.
+
 ## Current preparation addendum — 2026-10-12
 
 This addendum supersedes current-state assumptions below; their genesis operation examples are historical, **not instructions to repeat genesis**. Remote main is now the verified empty root `ecbf9d6ccde2a00bf3587b02cbd8bd3f6b5d2e83`; CORE-040's exception is consumed. Main PR ruleset 24885869 is active with zero required approving reviews. Its required-check list is empty: this is not complete merge protection compliance.
