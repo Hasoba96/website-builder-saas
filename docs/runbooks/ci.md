@@ -1,6 +1,10 @@
 # CI baseline
 
-Status: implementation present; [00-J acceptance is BLOCKED](../checkpoints/00-j-closure-report.md) pending all mandatory image/Linux, publication/protection and provider gates. Docker was healthy during the 2026-10-11 recovery inspection; this does not by itself verify application images or a hosted run. A real GitHub-hosted execution is **NOT VERIFIED**. Do not infer provider success from this document, workflow syntax checks or local test reports. Infrastructure system 18 section 8, Testing system 22 section 10, and the Stage 00 CI gate require green CI before final acceptance/merge.
+Current status, **2026-10-15**: the foundation was merged in PR #1 before its original deadline, and actual PR/main `verify` and `images` runs passed with validated artifacts. See [final 00-J reconciliation](../checkpoints/00-j-closure-report.md#final-reconciliation---2026-10-15) and [sanitized hosted evidence](../checkpoints/evidence/00-j-final-hosted-evidence.md). Formal closure also requires this ordinary documentation PR and its resulting main CI to pass; no future run is claimed here. The original import exception is consumed, not extended. Historical dated observations below remain evidence of their respective dates, not current blockers.
+
+Main ruleset 24885869 now enforces strict `verify`/`images` checks from GitHub Actions app 15368, resolved threads, squash-only PRs, zero approvals under approved solo mode, stale-review dismissal and no bypass/force push/main deletion. All external contributors require workflow approval; default token is read-only and workflow PR approval disabled. Future changes still require complete fresh protected-PR gates. No current or historical report authorizes bypass, direct main publication or Stage 00-K work.
+
+Historical opening status, retained: implementation was present but blocked pending image/Linux, publication/protection and provider verification. Docker health alone did not verify images or hosted execution. The final reconciliation above supplies the later actual evidence; static validation and local reports remain insufficient substitutes for hosted success.
 
 ## Entry points
 

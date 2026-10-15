@@ -1,5 +1,9 @@
 # Solo governance adoption and reconciliation
 
+## Operational status reconciliation - 2026-10-15
+
+This paragraph updates operational facts only; all adopted policy, review classes and renewal requirements below remain unchanged. CORE-040's empty genesis and CORE-044's aggregate foundation import are **CONSUMED**. Owner-authorized PR #1 merged at **2026-10-13T18:03:21Z**, before the original **2026-10-15T00:20:09Z** deadline; the deadline is neither renewed nor applied to later ordinary maintenance PRs. The owner explicitly accepted eligible solo-review and public-disclosure risks. See the [final 00-J reconciliation](00-j-closure-report.md#final-reconciliation---2026-10-15) for exact identities, hosted evidence and current closure conditions. Earlier UNUSED/BLOCKED statements below describe their dates only. The 2027-01-09 solo-mode reassessment deadline remains unchanged. This documentation operation uses ordinary protected-PR rules and grants no additional waiver or Stage 00-K authority.
+
 Effective date: **2026-10-11**. Responsible owner and module owner for the current foundation: **Project owner, GitHub `Hasoba96`**. Repository: `Hasoba96/website-builder-saas`. Authority: the owner's explicit adoption/reconciliation instruction in this task and [CORE-040/044/045](../en/00-PROJECT-RULES.md#7-git--branches-commits-pull-requests), not an invented independent approval.
 
 ## Decision and limits
