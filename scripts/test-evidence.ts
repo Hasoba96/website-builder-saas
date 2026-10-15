@@ -7,6 +7,7 @@ import { evidenceDirectory, repository } from './test-policy.ts';
 
 export const suites = {
   root: [
+    'scripts/backup-scope.spec.ts',
     'scripts/ci.spec.ts',
     'scripts/local-infrastructure.spec.ts',
     'scripts/check-boundaries.spec.ts',
@@ -39,6 +40,7 @@ export const suites = {
     'apps/public-renderer/tests/translations.spec.ts',
   ],
   database: [
+    'tests/database/backup.spec.ts',
     'tests/database/foundation.spec.ts',
     'tests/database/operations.spec.ts',
   ],
@@ -55,7 +57,7 @@ export const suites = {
 const normalize = (path: string) => path.replaceAll('\\', '/');
 
 export const minimumTests: Record<keyof typeof suites, number> = {
-  root: 55,
+  root: 64,
   local: 6,
   api: 4,
   worker: 2,
@@ -63,7 +65,7 @@ export const minimumTests: Record<keyof typeof suites, number> = {
   schemas: 12,
   'dashboard-web': 4,
   'public-renderer': 4,
-  database: 11,
+  database: 15,
   redis: 15,
   browser: 25,
 };

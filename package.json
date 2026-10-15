@@ -25,6 +25,7 @@
     "test:redis": "node scripts/test-redis.ts",
     "test:browser": "playwright test",
     "test:database": "node scripts/test-database.ts",
+    "test:backup": "node scripts/test-database.ts --backup",
     "db:migrate": "node --env-file-if-exists=.env.migration scripts/migrate.ts",
     "dev": "node scripts/turbo.ts run dev",
     "boundaries:check": "node scripts/turbo.ts run build --filter=./packages/* && node scripts/check-boundaries.ts",

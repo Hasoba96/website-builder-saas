@@ -22,7 +22,11 @@ export function testPolicy(name: string): InlineConfig {
       reportsDirectory: resolve(repository, 'coverage', name),
       reporter: ['text-summary', 'json-summary', 'html'],
       include: ['root', 'database', 'redis', 'local'].includes(name)
-        ? ['packages/*/dist/**/*.js', 'scripts/**/*.ts']
+        ? [
+            'packages/*/dist/**/*.js',
+            'scripts/**/*.ts',
+            'tests/database/backup-smoke.ts',
+          ]
         : ['src/**/*.{ts,tsx}'],
       exclude: ['**/*.spec.ts', '**/*.d.ts', '**/test-*.ts'],
     },
