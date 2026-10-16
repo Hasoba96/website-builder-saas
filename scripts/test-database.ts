@@ -187,6 +187,9 @@ try {
       'run',
       '--config',
       'vitest.database.config.ts',
+      ...(process.argv.includes('--backup')
+        ? ['tests/database/backup.spec.ts']
+        : []),
     ],
     environment,
   );

@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "checkpoint": "00-K",
+  "date": "2026-10-15",
+  "status": "LOCAL_PASS_PUBLICATION_NOT_AUTHORIZED",
+  "owner": "Hasoba96",
+  "approvedMain": "aabbf416c6c0cd789c345b08552c946fc7b15659",
+  "sourceHead": "16766c19b08d2331ca33d5bd155018996c1ba982",
+  "sourceTree": "6e2b1ebfb9fe481a81d0b0addc198a20a53b4131",
+  "sourceBranch": "codex/00-j-documentation-closure",
+  "lockfileSha256": "be29a554f8d40b5722408eef0b59e4114dced472f1578b7caf123750c4188074",
+  "packet": {
+    "id": "00-K-01",
+    "dependencyOrder": [
+      "tests/database/backup-smoke.ts",
+      "scripts/backup-scope.spec.ts",
+      "tests/database/backup.spec.ts",
+      "package.json",
+      "scripts/test-database.ts",
+      "scripts/test-evidence.ts",
+      "scripts/test-policy.ts",
+      "docs/runbooks/backup-restore-smoke.md",
+      "docs/checkpoints/00-k-closure-report.md"
+    ],
+    "realCodeLines": 399,
+    "maximum": 400,
+    "counting": "Added plus deleted physical lines, including code blanks; Markdown and generated inventory excluded from code count but reviewed.",
+    "proposedBranch": "codex/00-k-backup-restore-smoke",
+    "proposedCommit": "test(infra): verify isolated PostgreSQL backup restore",
+    "commitsCreated": 0,
+    "pushes": 0
+  },
+  "reviews": {
+    "technical": "Separate same-agent AI-assisted pass; findings and resolutions in closure report; not independent human review.",
+    "security": "Sensitive reversible isolated synthetic infrastructure; no production activation. Owner residual-risk acceptance pending.",
+    "disclosure": "No raw backup/archive/key/credentials or local logs in payload; public pins, synthetic fixtures and sanitized evidence metadata only."
+  },
+  "localEvidence": {
+    "ciStatus": "PASS",
+    "tests": 180,
+    "browserTests": 25,
+    "databaseTests": 15,
+    "redisTests": 15,
+    "composeTests": 6,
+    "hostedExecution": "NOT_VERIFIED",
+    "imageBuilds": "NOT_EXECUTED_FOR_THIS_CANDIDATE"
+  },
+  "files": [
+    {
+      "path": "tests/database/backup-smoke.ts",
+      "change": "added",
+      "mode": "100644",
+      "bytes": 5412,
+      "sha256": "07380ec9817e1fc11d7b566aa9c6dffe5a4080e10798fe73f794f05b61e0b931",
+      "gitBlob": "32b9e27a65eab780b30eeafa65f3515ddb4fde7a",
+      "addedLines": 182,
+      "deletedLines": 0,
+      "realCodeLines": 182,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "new file 1-182",
+          "sha256": "07380ec9817e1fc11d7b566aa9c6dffe5a4080e10798fe73f794f05b61e0b931"
+        }
+      ]
+    },
+    {
+      "path": "scripts/backup-scope.spec.ts",
+      "change": "added",
+      "mode": "100644",
+      "bytes": 402,
+      "sha256": "a366398771ba29f4533dd0ecf1ae184f9ac1c63f50dd42b830cf58f04150fd9b",
+      "gitBlob": "9c8a23d6ff91e1e1d4ac22f2164fc6c950aae520",
+      "addedLines": 10,
+      "deletedLines": 0,
+      "realCodeLines": 10,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "new file 1-10",
+          "sha256": "a366398771ba29f4533dd0ecf1ae184f9ac1c63f50dd42b830cf58f04150fd9b"
+        }
+      ]
+    },
+    {
+      "path": "tests/database/backup.spec.ts",
+      "change": "added",
+      "mode": "100644",
+      "bytes": 7124,
+      "sha256": "52ed102092a37f7ac9be6fed8444c3f341605c065107cffbb176aadcceb51364",
+      "gitBlob": "13c163a8051c0dc2df4358a7a3bb18eab6025bdc",
+      "addedLines": 191,
+      "deletedLines": 0,
+      "realCodeLines": 191,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "new file 1-191",
+          "sha256": "52ed102092a37f7ac9be6fed8444c3f341605c065107cffbb176aadcceb51364"
+        }
+      ]
+    },
+    {
+      "path": "package.json",
+      "change": "modified",
+      "mode": "100644",
+      "bytes": 2546,
+      "sha256": "b054aa56484188df208bbbc3413341c5d10e47f3184df1d7ed7dc0bacece59c2",
+      "gitBlob": "5e541397d613b42b9ba52c7c412c5abd99b4f4a5",
+      "addedLines": 1,
+      "deletedLines": 0,
+      "realCodeLines": 1,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "@@ -27,0 +28 @@",
+          "sha256": "6c51decd08717a499aca78def2e76a2973639f8e5cf9b079bed007f4af230f5d"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-database.ts",
+      "change": "modified",
+      "mode": "100644",
+      "bytes": 6849,
+      "sha256": "862c2d3eb28030ff7ab1b4d1d108408db040bf7055b13bdf6609e00d8d3c258d",
+      "gitBlob": "cc73d738a4d1f182398bd4c676b701861d63b073",
+      "addedLines": 3,
+      "deletedLines": 0,
+      "realCodeLines": 3,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "@@ -189,0 +190,3 @@ try {",
+          "sha256": "339fb73113fdcf820ae1cb3a5f33b500249ab7dbdc5ce132326a7fea5172129d"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-evidence.ts",
+      "change": "modified",
+      "mode": "100644",
+      "bytes": 5929,
+      "sha256": "7a32fd397bf30ece71092df56a5d0286da8f2fecb0e9b739fd9047f31551159a",
+      "gitBlob": "1cf837afc7268277bb3faa53f0aa28c5fd6790d4",
+      "addedLines": 4,
+      "deletedLines": 2,
+      "realCodeLines": 6,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "@@ -9,0 +10 @@ export const suites = {",
+          "sha256": "26e6f152e4074609fd54dcf928edee3cb920b825f1d850370470a688d9c45ae8"
+        },
+        {
+          "range": "@@ -41,0 +43 @@ export const suites = {",
+          "sha256": "91ba6d5e054848cea1c4fd4382d4ec0ff38fe060c2819b4e3ecc6e667030fec1"
+        },
+        {
+          "range": "@@ -58 +60 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "sha256": "8d2aa738986970ab8c6b440fe487940085121538eacf68d292955629b1c15654"
+        },
+        {
+          "range": "@@ -66 +68 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "sha256": "043a1baca50ddea1aec1e4ed87731927dcbc0ed0ddc6d7c131f9294399fb4ade"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-policy.ts",
+      "change": "modified",
+      "mode": "100644",
+      "bytes": 1153,
+      "sha256": "1df612ca067eee3a736e05166ed35bf5d7b8878d5ba04597bd05512112e8c4e7",
+      "gitBlob": "610bcbd5909e56550b5b5eb26e333a54f6c4228a",
+      "addedLines": 5,
+      "deletedLines": 1,
+      "realCodeLines": 6,
+      "classification": "sensitive non-production test infrastructure",
+      "hunks": [
+        {
+          "range": "@@ -25 +25,5 @@ export function testPolicy(name: string): InlineConfig {",
+          "sha256": "62dd8cbaa2ef5d50f92ce266cf8928c41e748f37b0980f0b415c2fa5ad094f4a"
+        }
+      ]
+    },
+    {
+      "path": "docs/runbooks/backup-restore-smoke.md",
+      "change": "added",
+      "mode": "100644",
+      "bytes": 8985,
+      "sha256": "715ea87dc88da61d1cce06731251f286019fadd1520f09b576f372c066aabdef",
+      "gitBlob": "6e99401739ac843e1f7b357c906e9286a65e7045",
+      "addedLines": 56,
+      "deletedLines": 0,
+      "realCodeLines": 0,
+      "classification": "non-code reviewed documentation",
+      "hunks": [
+        {
+          "range": "new file 1-56",
+          "sha256": "715ea87dc88da61d1cce06731251f286019fadd1520f09b576f372c066aabdef"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-k-closure-report.md",
+      "change": "added",
+      "mode": "100644",
+      "bytes": 15840,
+      "sha256": "c22fd0066088dfb79df858ab47e4af102f5788a5cb3da8b2d9c01f5b6283a92f",
+      "gitBlob": "99bb06434c27d93362a421037eaea79df2649c42",
+      "addedLines": 97,
+      "deletedLines": 0,
+      "realCodeLines": 0,
+      "classification": "non-code reviewed documentation",
+      "hunks": [
+        {
+          "range": "new file 1-97",
+          "sha256": "c22fd0066088dfb79df858ab47e4af102f5788a5cb3da8b2d9c01f5b6283a92f"
+        }
+      ]
+    }
+  ],
+  "selfRecord": {
+    "path": "docs/checkpoints/00-k-review-inventory.json",
+    "classification": "generated reviewed evidence, no executable code",
+    "sha256": "Recorded externally after generation; no self-hash cycle"
+  },
+  "exclusions": [
+    ".local/**",
+    "coverage/**",
+    "node_modules/**",
+    "build outputs",
+    "private SWC cache",
+    "persistent development data"
+  ],
+  "nextAuthorization": "Owner acceptance of exact inventory, then fresh protected-PR branch/commit/push authorization. Merge requires separate acceptance and all mandatory hosted gates."
+}
