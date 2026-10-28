@@ -1,5 +1,48 @@
 # Checkpoint 00-K - Backup/Restore Smoke
 
+## Final technical acceptance reconciliation - 2026-10-28
+
+**Technical acceptance: PASS.** Accountable owner/module owner: Hasoba96, infrastructure. This dated reconciliation supersedes the status conclusions in the historical local record below and the earlier canary/dependency resumption reports; it preserves their failed attempts and observations. Scope is the approved isolated synthetic PostgreSQL backup/restore smoke and its inherited verification/security foundation, not production backup/DR or overall Stage 00 acceptance.
+
+**Formal closure condition:** this reconciliation must reach main through its ordinary protected documentation PR, with successful `verify` and `images` on that PR and its resulting main commit, validated native evidence/artifact integrity and the owner's conditional acceptance. Only after those actual conditions hold may the final operational report state **00-K CLOSED/PASS**. That report records the documentation PR, squash SHA/tree and fresh main run; no future identity is invented here. This follows the existing 00-J documentation-closure pattern, without waiving any gate or creating an endless evidence-only commit loop.
+
+### Accepted implementation, corrections and owner decision
+
+The original implementation was published through [PR #3](https://github.com/Hasoba96/website-builder-saas/pull/3). Its main commit `5d86555402507d73f103713b198789c594a1811c` subsequently failed [main run 38828142735](https://github.com/Hasoba96/website-builder-saas/actions/runs/38828142735) when a valid generated request ID collided with a fragment-based test assertion. That failure remains a failure; later execution is not a relabelled rerun.
+
+[Correction PR #4](https://github.com/Hasoba96/website-builder-saas/pull/4) preserved production request-ID/error/logging contracts while adding precise API/PostgreSQL canary regressions, bounded Compose startup diagnostics and supported security dependency remediation. The ordinary packet is400 conservative changed real-code lines across20 inventoried files; Markdown, generated review inventories and lockfile were separately reviewed. No consumed foundation-import exception, dependency override, audit suppression, maturity-policy change or weakened assertion was used.
+
+Owner explicitly authorized and accepted the exact protected squash on 2026-10-28. Approved head: `73e46080dec672bb535fdd1adb14241bb66a4177`; base: `5d86555402507d73f103713b198789c594a1811c`; tree: `04add140f93c1651f59582378607988fb01e15a5`. PR #4 merged at **2026-10-28T19:36:19Z**, producing main `7f9e44cbc19d6f17f6a34536488d41766aa8154b`, sole parent the approved base and identical approved tree. Source and lockfile identity were verified after the merge. The branch was within its recorded 2026-10-31T18:41:30Z lifetime. Owner also authorized the required protected documentation closure operation; this is conditional acceptance under adopted solo governance, not independent human approval.
+
+The Windows verification environment required a supported process-only private SWC cache. Unsafe shared/F: ancestor permissions and an overlong265-character custom lock path were retained as failed evidence. A separately authorized220-character short-path experiment passed full owner/DACL/reparse validation and a genuine SWC1.16.12 native TypeScript transform. No guard, loader, registry, existing ACL or shared cache was changed; no cache setting was committed. The isolated Linux fallback was unnecessary. This is a tested local operational remedy, not an assertion that all Windows caches are safe.
+
+### Fresh actual acceptance evidence
+
+[PR run 40747950773](https://github.com/Hasoba96/website-builder-saas/actions/runs/40747950773) passed both required jobs on the approved candidate. Independently, [main push run 40755794236](https://github.com/Hasoba96/website-builder-saas/actions/runs/40755794236) passed on actual squash commit `7f9e44cbc19d6f17f6a34536488d41766aa8154b`: `verify` 19:36:25–19:41:44Z and `images` 19:36:25–19:39:21Z. This is fresh Ubuntu 24.04 execution, not substituted Windows/PR evidence. Native reports, coverage, logs, artifacts, source/run identity metadata and cleanup were downloaded and revalidated; see the [sanitized hosted evidence inventory](evidence/00-k-final-hosted-evidence.md).
+
+- Frozen scripts-disabled install, pinned Node.js 24.21.0/pnpm 10.34.6, unchanged 1440-minute release floor and strict engines/peers; supply-chain/license/source/integrity, format/lint/boundaries, workspace, typecheck 14/14 and builds 9/9: PASS.
+- Guarded tests **186/186**: root 64, API 7, Worker 2, config 29, schemas 12, Dashboard 4, Renderer 4, PostgreSQL 17, Redis/BullMQ 15, Compose 7 and production Chromium 25. No missing, skipped, todo, zero-suite or flaky success. Six regression tests increased the original 180 count; none were removed.
+- Browser 25/25 includes eight normal accepted Linux snapshot comparisons, AR/EN, RTL/LTR,390px/1440px, accessibility/keyboard/layout, hydration, CSP and browser-secret boundaries. No update flags or snapshot/tolerance edits.
+- Ten native nonempty coverage summaries passed existing policy. This is not a new global coverage percentage or full WCAG/security claim. Both hosted web gzip budgets are187778/512000 bytes.
+- Actual PostgreSQL backup/restore used the real pinned isolated fixture, recovered two synthetic records into a fresh target, proved source unchanged, schema/migration/grant/constraint/sequence consistency and negative/refusal paths. The main exercise used a 7039-byte encrypted archive, backup134.742264 ms, restore190.705924 ms and full exercise1311.187389 ms. These tiny-fixture timings do not establish production RPO/RTO.
+- Four independent Linux/musl application builds and four smoke checks passed non-root execution, readiness/health, locale HTML where applicable, installed-test-tooling exclusion, structured output, clean shutdown and no OOM. No image registry publication or deployment.
+- Audit reported no known vulnerabilities; full graph/license review and source/artifact secrets passed. Existing direct/transitive tracking obligations remain binding; no review deadline was extended. Lock SHA-256 is `60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af`. Local all-ref history scan after fetching the implementation merge reported302 scanned commits, no leaks and no new suppression; final closure-commit/history scans remain mandatory.
+- Both jobs reported zero owned PostgreSQL/Redis/local/image containers. Original development checkout and existing persistent volumes were preserved; no restore/reset/prune of persistent development or production data, WSL repair, destructive operation or production/customer-data use occurred.
+
+### Review, risks and final scope
+
+Separate AI-assisted technical/security/disclosure passes reviewed the 400-line candidate, all 53 new dependency identities, actual local evidence and hosted ZIP/native reports. Findings about historical status wording and authorized fetch metadata were corrected. No unresolved scoped technical/security blocker remains. Review is not independent human approval, a penetration test or a platform-wide security certification. Hasoba96 retains module ownership and conditional acceptance responsibility; independent-human-required production/irreversible cases under CORE-045 remain unchanged.
+
+Main ruleset24885869 remains active: required PR and resolved threads; strict successful `verify`/`images` from GitHub Actions15368; zero solo approvals with stale-review dismissal; squash only; no bypass, force push or main deletion. No security setting was changed. Mandatory documentation PR/main checks and reviews cannot be bypassed.
+
+Production scheduled backups/PITR, off-host durability/key recovery, remote backup transport, retention schedules, commercial RPO/RTO and regional DR remain future operational requirements. Redis is not a system of record; no R2 asset/object consumer exists. ADR-001's narrow domain-free cross-tenant runtime N/A remains unchanged. Real staging/provider activation, active error-tracker receipt/alerts and overall Foundation closure are **not** established by this backup checkpoint. K acceptance does not silently close Stage 00, approve a00-L charter or authorize Stage 01.
+
+Applied rules: CORE-002/016/040/041/043/044/045/046/130–134; BR-001/012/013/014/015/023/060; TS-020/021/024/026/027/060/063; SE-040/041/045/060–064; IN-002/030/031/033/034; ADR-001. Systems14/18/19/21/22, the Playbook and approved technical decisions remain unchanged. Rollback is a separately reviewed protected compatible repair/revert with all gates; reintroducing known vulnerable dependencies is not an acceptable shortcut. No persistent schema/data rollback is involved.
+
+**Next:** after the formal closure condition above, read-only00-L handoff may identify the existing proposed minimum scope and outstanding owner/ADR decisions. No00-L source or Stage 01 implementation starts from this report.
+
+## Historical local implementation record - 2026-10-15
+
 Date: 2026-10-15. Accountable owner/module owner: Hasoba96, infrastructure. Authorization covers local implementation, disposable verification and review only. No branch, commit, staging, push, PR, merge, deployment, persistent-data change or Stage 00-L/01 work is authorized or performed.
 
 ## Status and source identity

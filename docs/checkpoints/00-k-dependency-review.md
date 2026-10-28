@@ -1,5 +1,7 @@
 # 00-K supported dependency security remediation review
 
+**Later checkpoint disposition:** [final 00-K reconciliation](00-k-closure-report.md#final-technical-acceptance-reconciliation---2026-10-28) records actual protected publication, implementation squash/main verification and the formal documentation-closure condition. The pre-publication statuses, exact graph decisions and failed/successful local attempts below remain dated evidence, not a claim that later publication did not occur.
+
 **Current reconciliation, 2026-10-28:** canonical local verification and all four image builds/smokes have now passed in a separately owner-authorized resumption. Earlier failures and STOP decisions below remain dated history. Protected publication/hosted Linux acceptance and owner merge acceptance are still required; 00-K is not CLOSED. See the final resumption record below.
 
 Date: 2026-10-28. Owner/module owner: Hasoba96, Foundation/API/dependency security. Scope: the existing API/PostgreSQL canary and bounded Compose correction candidate plus supported security updates. Owner authorized investigation, minimal supported resolution, local verification and protected PR publication only if every gate passes. Merge, deployment, 00-L source and Stage 01 remain unauthorized. This is AI-assisted review, not independent human approval or global security certification.
