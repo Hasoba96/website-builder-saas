@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import assert from 'node:assert/strict';
 import { Writable } from 'node:stream';
 import { expect, it } from 'vitest';
 import { bootstrap } from '../../apps/api/src/bootstrap.js';
@@ -10,6 +11,103 @@ import {
   errorSchema,
   logSchema,
 } from '@website-builder/schemas/operations';
+
+const canaries = {
+  authorization: '00f-header-canary',
+  cookie: '00f-cookie-canary',
+  query: '00f-query-canary',
+  requestId: 'malformed-untrusted-id',
+} as const;
+
+function assertSafeLogs(output: string, password: string) {
+  for (const value of [...Object.values(canaries), password]) {
+    assert.ok(value.length > 0, 'Missing security fixture');
+    assert.ok(!output.includes(value), 'Complete sensitive value leaked');
+  }
+  assert.doesNotMatch(
+    output,
+    /foundation_test|stack|node_modules|(?:\\n|\n)\s*at\s/i,
+    'Internal diagnostic leaked',
+  );
+  return output
+    .trim()
+    .split('\n')
+    .map((line) => logSchema.parse(JSON.parse(line)));
+}
+
+const safeRecord = (requestId: string) => ({
+  timestamp: '2026-10-27T00:00:00.000Z',
+  level: 'info',
+  service: 'api',
+  environment: 'ci',
+  requestId,
+  organizationId: null,
+  siteId: null,
+  userId: null,
+  event: 'http_completed',
+  message: 'http_completed',
+  durationMs: 1,
+});
+const safeId = 'req_1f1dbd0c-dc3f-400f-850b-d9cd09f54bc5';
+const fixturePassword = 'database-fixture-private-value';
+
+it('accepts valid request IDs with hexadecimal canary fragments in PostgreSQL probe logs', () => {
+  expect(safeId).toMatch(/00f-/);
+  for (const id of [safeId, 'req_0000000f-000f-400f-800f-00f00000000f'])
+    expect(
+      assertSafeLogs(JSON.stringify(safeRecord(id)), fixturePassword)[0]
+        ?.requestId,
+    ).toBe(id);
+});
+
+it('rejects complete PostgreSQL probe canaries, credentials, diagnostics and forbidden log fields', () => {
+  const clean = JSON.stringify(safeRecord(safeId));
+  for (const value of [...Object.values(canaries), fixturePassword]) {
+    const leaked = JSON.stringify({
+      ...safeRecord(safeId),
+      message: `prefix ${value} suffix`,
+    });
+    expect(() =>
+      assertSafeLogs(`${clean}\n${leaked}\n`, fixturePassword),
+    ).toThrow('Complete sensitive value leaked');
+  }
+  for (const value of [
+    'foundation_test',
+    'stack trace',
+    '/srv/node_modules/pg/index.js',
+    'Error: failure\n    at query (/srv/app.js:1:1)',
+  ])
+    expect(() =>
+      assertSafeLogs(
+        JSON.stringify({ ...safeRecord(safeId), message: value }),
+        fixturePassword,
+      ),
+    ).toThrow('Internal diagnostic leaked');
+  for (const key of [
+    'password',
+    'authorization',
+    'cookie',
+    'headers',
+    'body',
+    'cause',
+  ]) {
+    expect(() =>
+      assertSafeLogs(
+        JSON.stringify({ ...safeRecord(safeId), [key]: 'unapproved' }),
+        fixturePassword,
+      ),
+    ).toThrow();
+    expect(() =>
+      assertSafeLogs(
+        JSON.stringify({
+          ...safeRecord(safeId),
+          details: { [key]: 'unapproved' },
+        }),
+        fixturePassword,
+      ),
+    ).toThrow();
+  }
+});
 
 it('real API probes preserve liveness and bounded private readiness across a PostgreSQL outage', async () => {
   const name = process.env['TEST_POSTGRES_CONTAINER'];
@@ -46,12 +144,12 @@ it('real API probes preserve liveness and bounded private readiness across a Pos
   );
   const address = await app.getUrl();
   let paused = false;
-  const get = (path: string, id = 'malformed-untrusted-id') =>
+  const get = (path: string, id: string = canaries.requestId) =>
     fetch(`${address}${path}`, {
       headers: {
         'x-request-id': id,
-        authorization: '00f-header-canary',
-        cookie: '00f-cookie-canary',
+        authorization: canaries.authorization,
+        cookie: canaries.cookie,
       },
       signal: AbortSignal.timeout(3000),
     });
@@ -68,7 +166,7 @@ it('real API probes preserve liveness and bounded private readiness across a Pos
       expect(response.status).toBe(200);
       const body = probeSchema.parse(await response.json());
       expect(response.headers.get('x-request-id')).toBe(body.requestId);
-      expect(body.requestId).not.toBe('malformed-untrusted-id');
+      expect(body.requestId).not.toBe(canaries.requestId);
       ids.push(body.requestId);
     }
     expect(new Set(ids).size).toBe(12);
@@ -89,13 +187,8 @@ it('real API probes preserve liveness and bounded private readiness across a Pos
     expect(calls).toBe(2);
     expect((await get('/ready')).status).toBe(503);
     expect(calls).toBe(2);
-    expect((await get('/health?private=00f-query-canary')).status).toBe(400);
-    expect(output).not.toMatch(/00f-|malformed-untrusted|foundation_test/);
-    expect(output).not.toContain(process.env['DB_PASSWORD']);
-    const records = output
-      .trim()
-      .split('\n')
-      .map((line) => logSchema.parse(JSON.parse(line)));
+    expect((await get(`/health?private=${canaries.query}`)).status).toBe(400);
+    const records = assertSafeLogs(output, readDatabaseConfig().DB_PASSWORD);
     for (const id of ids)
       expect(records.some((record) => record.requestId === id)).toBe(true);
   } finally {

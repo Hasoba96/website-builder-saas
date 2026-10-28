@@ -58,14 +58,14 @@ const normalize = (path: string) => path.replaceAll('\\', '/');
 
 export const minimumTests: Record<keyof typeof suites, number> = {
   root: 64,
-  local: 6,
-  api: 4,
+  local: 7,
+  api: 7,
   worker: 2,
   config: 29,
   schemas: 12,
   'dashboard-web': 4,
   'public-renderer': 4,
-  database: 15,
+  database: 17,
   redis: 15,
   browser: 25,
 };

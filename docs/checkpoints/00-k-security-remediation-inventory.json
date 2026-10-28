@@ -1,0 +1,2667 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "checkpoint": "00-K",
+  "owner": "Hasoba96",
+  "status": "LOCAL_PASS_HOSTED_VERIFICATION_PENDING",
+  "approvedMain": "5d86555402507d73f103713b198789c594a1811c",
+  "localHead": "105dbaab8eca8ddfa2e96c2a91db4ee2628b66be",
+  "baseTree": "752b2d37f2fbd8646e5c092099c5bd05a2319e96",
+  "localBranch": "codex/00-k-backup-restore-smoke",
+  "priorInventorySha256": "0b9d7167204e40e5a2a008528dc8220510c30c2fe4a0d346aced8b1920144812",
+  "lockfileSha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+  "codeBudget": {
+    "previousCorrection": 374,
+    "directPinChanges": 18,
+    "currentAcceptanceRecordChanges": 8,
+    "actualAggregate": 400,
+    "maximum": 400,
+    "generatedEvidenceSeparatelyReviewed": true,
+    "noBootstrapException": true
+  },
+  "audit": {
+    "before": {
+      "info": 0,
+      "low": 3,
+      "moderate": 11,
+      "high": 8,
+      "critical": 2
+    },
+    "after": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "auditedDependencies": 608,
+    "installedSupplyChain": "PASS",
+    "noSuppression": true,
+    "noOverride": true,
+    "minimumReleaseAge": 1440,
+    "final": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0
+      },
+      "dependencies": 608,
+      "devDependencies": 0,
+      "optionalDependencies": 0,
+      "totalDependencies": 608
+    }
+  },
+  "localVerification": {
+    "focused": {
+      "schemas": 12,
+      "config": 29,
+      "api": 7,
+      "worker": 2,
+      "total": 50,
+      "status": "PASS",
+      "execution": "HISTORICAL_FIRST_OCT28_ATTEMPT_SUBSUMED_BY_FRESH_FULL_CANONICAL"
+    },
+    "sharedBuilds": {
+      "passed": 5,
+      "total": 5,
+      "cached": 0
+    },
+    "canonical": {
+      "schema": 1,
+      "mode": "verify",
+      "status": "PASS",
+      "startedAt": "2026-10-28T18:12:48.887Z",
+      "durationMs": 614256,
+      "lockfileSha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+      "results": [
+        {
+          "command": "frozen install",
+          "status": "PASS",
+          "durationMs": 1235
+        },
+        {
+          "command": "container runtime",
+          "status": "PASS",
+          "durationMs": 609
+        },
+        {
+          "command": "ci:validate",
+          "status": "PASS",
+          "durationMs": 607
+        },
+        {
+          "command": "ci:supply-chain",
+          "status": "PASS",
+          "durationMs": 3686
+        },
+        {
+          "command": "format:check",
+          "status": "PASS",
+          "durationMs": 5305
+        },
+        {
+          "command": "lint",
+          "status": "PASS",
+          "durationMs": 28664
+        },
+        {
+          "command": "typecheck",
+          "status": "PASS",
+          "durationMs": 105753
+        },
+        {
+          "command": "workspace:check",
+          "status": "PASS",
+          "durationMs": 738
+        },
+        {
+          "command": "build",
+          "status": "PASS",
+          "durationMs": 93450
+        },
+        {
+          "command": "test",
+          "status": "PASS",
+          "durationMs": 369207
+        },
+        {
+          "command": "ci:budget",
+          "status": "PASS",
+          "durationMs": 637
+        },
+        {
+          "command": "security:dependencies",
+          "status": "PASS",
+          "durationMs": 1682
+        },
+        {
+          "command": "security:secrets",
+          "status": "PASS",
+          "durationMs": 2374
+        },
+        {
+          "command": "container cleanup inventory",
+          "status": "PASS",
+          "durationMs": 306
+        }
+      ],
+      "providerExecution": "NOT_VERIFIED"
+    },
+    "typecheck": {
+      "passed": 14,
+      "total": 14,
+      "cached": 0
+    },
+    "fullGuardedExpected": 186,
+    "fullGuardedExecuted": true,
+    "productionBuilds": {
+      "passed": 9,
+      "total": 9,
+      "cached": 0
+    },
+    "postgresRedisComposeBackup": "PASS_REAL_ISOLATED_FIXTURES",
+    "browserCoverageBudget": {
+      "browserPassed": 25,
+      "platform": "win32",
+      "snapshotComparisons": 8,
+      "coverageReports": 10,
+      "coveragePolicy": "PASS_UNCHANGED",
+      "webGzipBytes": 187736,
+      "maximumWebGzipBytes": 512000
+    },
+    "fourImages": {
+      "schema": 1,
+      "mode": "images",
+      "status": "PASS",
+      "startedAt": "2026-10-28T18:23:36.855Z",
+      "durationMs": 576337,
+      "lockfileSha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+      "results": [
+        {
+          "command": "frozen install",
+          "status": "PASS",
+          "durationMs": 1124
+        },
+        {
+          "command": "container runtime",
+          "status": "PASS",
+          "durationMs": 521
+        },
+        {
+          "command": "image smoke prerequisites",
+          "status": "PASS",
+          "durationMs": 8105
+        },
+        {
+          "command": "image api",
+          "status": "PASS",
+          "durationMs": 255598
+        },
+        {
+          "command": "image worker",
+          "status": "PASS",
+          "durationMs": 146338
+        },
+        {
+          "command": "image dashboard-web",
+          "status": "PASS",
+          "durationMs": 61442
+        },
+        {
+          "command": "image public-renderer",
+          "status": "PASS",
+          "durationMs": 59577
+        },
+        {
+          "command": "test:images",
+          "status": "PASS",
+          "durationMs": 43319
+        },
+        {
+          "command": "container cleanup inventory",
+          "status": "PASS",
+          "durationMs": 306
+        }
+      ],
+      "providerExecution": "NOT_VERIFIED"
+    },
+    "sourceHistoryScans": {
+      "source": {
+        "status": "PASS",
+        "paths": 325,
+        "suppressions": false
+      },
+      "localAllRefs": {
+        "status": "PASS",
+        "reachableCommits": 310,
+        "scannerReportedCommits": 300,
+        "suppressions": false
+      },
+      "refreshedRemoteHistory": "PASS_INCLUDES_FETCHED_APPROVED_MAIN"
+    },
+    "fullGuarded": {
+      "counts": {
+        "root": 64,
+        "api": 7,
+        "worker": 2,
+        "config": 29,
+        "schemas": 12,
+        "dashboard-web": 4,
+        "public-renderer": 4,
+        "database": 17,
+        "redis": 15,
+        "local": 7,
+        "browser": 25
+      },
+      "total": 186,
+      "durationMs": 368529
+    },
+    "swc": {
+      "status": "PASS_NATIVE_AND_TYPESCRIPT_TRANSFORM",
+      "version": "1.16.12",
+      "target": "x86_64-pc-windows-msvc",
+      "guardEnabled": true,
+      "noWasmFallback": true,
+      "processScoped": true,
+      "fullAncestorSecurity": "PASS",
+      "digestPathLength": 220,
+      "previousFailedPathLength": 265,
+      "existingAclAndRegistryChanges": false
+    }
+  },
+  "blocker": null,
+  "review": {
+    "method": "separate AI-assisted technical/security/disclosure review",
+    "independentHuman": false,
+    "metadataAndPinHardBlock": "none found; full local canonical and images PASS",
+    "signaturePresenceIsVerification": false,
+    "disposition": "PASS_LOCAL_TECHNICAL_SECURITY_DISCLOSURE_REVIEW_HOSTED_PENDING",
+    "findingsResolved": [
+      "Qualified historical failure/readiness statements against the latest successful resumption",
+      "Separated authorized fetch/ref/FETCH_HEAD writes from original checkout and HEAD/tree/branch/index preservation"
+    ]
+  },
+  "packageReviews": [
+    {
+      "name": "@babel/helper-string-parser",
+      "version": "7.29.11",
+      "published": "2026-10-23T22:45:03.879Z",
+      "eligible": "2026-10-24T22:45:03.879Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=6.9.0"
+      },
+      "latestStable": "8.0.8",
+      "latestPublished": "2026-10-23T14:50:36.068Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.29.11.tgz",
+      "integrity": "sha512-snZbO7MEDOof+hvNa97EjEY7qD7h2kwvQr5AJC3ZhQudKW5dnej6k3kP9NQV88hJwaS8vDqRLFo9rivLEhle2g==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@babel/parser",
+      "version": "7.29.11",
+      "published": "2026-10-23T22:45:14.946Z",
+      "eligible": "2026-10-24T22:45:14.946Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "latestStable": "8.0.8",
+      "latestPublished": "2026-10-23T14:50:46.977Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@babel/parser/-/parser-7.29.11.tgz",
+      "integrity": "sha512-OZ6+oaK7GMyg3IfCpj8JOmn8n+w2rJbDT0LLfVDTLb1ZFeKDh3AiNELgCMUw175IJHSkLl74hG0M0VLsvx+gag==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@babel/types",
+      "version": "7.29.11",
+      "published": "2026-10-23T22:45:13.368Z",
+      "eligible": "2026-10-24T22:45:13.368Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=6.9.0"
+      },
+      "latestStable": "8.0.8",
+      "latestPublished": "2026-10-23T14:49:30.970Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@babel/types/-/types-7.29.11.tgz",
+      "integrity": "sha512-WCsemW40Cpc6gouC1SrY6PBaZ+oLRlEVY9XBvZBI7il/HyUrb2nJ505wE1MHEFyDZNnrWDEuy4jL50WVHfTTSQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@nestjs/platform-express",
+      "version": "12.3.0",
+      "published": "2026-10-27T09:03:09.821Z",
+      "eligible": "2026-10-28T09:03:09.821Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "12.3.2",
+      "latestPublished": "2026-10-27T12:03:10.748Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@nestjs/platform-express/-/platform-express-12.3.0.tgz",
+      "integrity": "sha512-u3pERbuMfU/Ct30URhCrE36Ymy3WjPvBbAuT33oLxrjRSgz9mWXvwdx84kGCzE3JrxhxwrfoZksKg8loFYAMuw==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "@next/env",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:29:56.519Z",
+      "eligible": "2026-10-15T17:29:56.519Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:28:24.925Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/env/-/env-16.4.1.tgz",
+      "integrity": "sha512-5sUUrrSvs/2/2LnLoesybMGx12EtPB46fdZ6RhAw0XDGSPxU2LFyQBB7yuEiOFFJPKmBY6+q2jTr1/AMbnp0/g==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "@next/swc-darwin-arm64",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:28:49.343Z",
+      "eligible": "2026-10-15T17:28:49.343Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:28:27.602Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-16.4.1.tgz",
+      "integrity": "sha512-U+hQ5Gj3fpzf4fveTIF3dpUFYhaSW8vHhdAnbiIomzXzg7boreYFgBqprepXFtW4sw+aTttiNmg0gew/iFNhbg==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-darwin-x64",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:28:11.640Z",
+      "eligible": "2026-10-15T17:28:11.640Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:28:30.354Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-16.4.1.tgz",
+      "integrity": "sha512-/hqC3V1XLUjhMASf/WridKdO9FXoEgN3HBWmtKbj00MPgnltutfraWJ3bYTpCRIgEIpbjJyOVLpYgAhh/BkdcQ==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-linux-arm64-gnu",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:35:55.845Z",
+      "eligible": "2026-10-15T17:35:55.845Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:27:43.529Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-16.4.1.tgz",
+      "integrity": "sha512-GHzncHbcaS9g95kcvTNtKQW3aCLoR+xc3Jm7qrkpk1R+D2BjMHIPyvQGRPKCdMX95BsH/421jBUK06q9tEwzjw==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-linux-arm64-musl",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:30:50.610Z",
+      "eligible": "2026-10-15T17:30:50.610Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:27:17.999Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-16.4.1.tgz",
+      "integrity": "sha512-1SuJyDxW/PR9dHJat/ZRgcYLhuSZ+1psP4DlKb2tKIuXbjygqpLrJWRSq+onZQBv8LcmU67EIrmb6c3XTaJLjw==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-linux-x64-gnu",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:29:05.782Z",
+      "eligible": "2026-10-15T17:29:05.782Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:28:21.884Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-16.4.1.tgz",
+      "integrity": "sha512-Istng1hMGp9TGO4lUqeKLd70MPN/OOkucVTP2Nmj+gLkwBgmPqUw8CJYBCC7nbl/B/23bBCcjCI5Hsh6hazC1A==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-linux-x64-musl",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:29:20.557Z",
+      "eligible": "2026-10-15T17:29:20.557Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:37:40.117Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-16.4.1.tgz",
+      "integrity": "sha512-aSC9wMNiZRRFVpPkPWBzRwLQxIGm/CiQcXyFF1XNcgodb+uMxdk7aSSGGpDXCbnvZdf4itjHxpOd5h7i7zaiYw==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-win32-arm64-msvc",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:33:35.290Z",
+      "eligible": "2026-10-15T17:33:35.290Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:28:37.181Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-16.4.1.tgz",
+      "integrity": "sha512-t/myvwFDlypMUjRvbBf8qLPyuaB0iXYYdBtwMt6DM6f+60wtGr4bSYholdPqNeV5VUXZhrpMwfza829kmhS3iA==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@next/swc-win32-x64-msvc",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:29:09.511Z",
+      "eligible": "2026-10-15T17:29:09.511Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:28:17.836Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-16.4.1.tgz",
+      "integrity": "sha512-6ICqPo9awCkrtYNPhwkx1uU7rlFWrZRrIboDHS2LU+jv088UBYQtmJ25h6pCp27/+FZjF6BQ4Te4ErugyMeuBg==",
+      "installHookNames": [],
+      "exposure": "optional OS/CPU-specific native Next build; reviewed all targets"
+    },
+    {
+      "name": "@oxc-project/types",
+      "version": "0.155.0",
+      "published": "2026-10-19T14:27:36.193Z",
+      "eligible": "2026-10-20T14:27:36.193Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "0.156.0",
+      "latestPublished": "2026-10-27T03:22:38.894Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@oxc-project/types/-/types-0.155.0.tgz",
+      "integrity": "sha512-SeE8JPwW1xs1tHeNycjUtUBdhorRa8o4jlvjwk49R7/Z291i+4DQa7JJIgOm/TaYQZx+QrPQbVJ/9c8dMIZN8Q==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-android-arm-eabi",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:00:19.768Z",
+      "eligible": "2026-10-22T13:00:19.768Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:00:19.768Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-android-arm-eabi/-/binding-android-arm-eabi-1.2.15.tgz",
+      "integrity": "sha512-aLcgK9gIJ3YRvrrtfSBbRa27F5WrpiTaPulnFpsHPxpUHgFlSgnU4854MHwoRGEBhfRJDWCS2WQ7lIjskE9Olw==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-android-arm64",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:06:13.914Z",
+      "eligible": "2026-10-22T13:06:13.914Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:06:13.914Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-android-arm64/-/binding-android-arm64-1.2.15.tgz",
+      "integrity": "sha512-xD7DdZCrbThKuxNg7ooQmvp07ys4J/pnSEMTG3/OdOWl6daC67m/Q4fL78sRHMxTH/N4fGUbYhcPM0MF5WFHkg==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-darwin-arm64",
+      "version": "1.2.15",
+      "published": "2026-10-21T12:59:22.386Z",
+      "eligible": "2026-10-22T12:59:22.386Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T12:59:22.386Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-darwin-arm64/-/binding-darwin-arm64-1.2.15.tgz",
+      "integrity": "sha512-m2WuQ6r0B4OTYxyPpNLtXaMRbRDUbG8YQV2Q3KTdSSK8Th6KHCnC8jVCJt8bvYeSB5WivkkNbc85mKadaSdOxA==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-darwin-x64",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:01:06.575Z",
+      "eligible": "2026-10-22T13:01:06.575Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:01:06.575Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-darwin-x64/-/binding-darwin-x64-1.2.15.tgz",
+      "integrity": "sha512-5RtnsHM36nodM9WbMy+zip0LGS/G+y5wro5RHrpOlr4ac24+1zSi9kiV2MP1myZeZ/ifEHfulQcWjnAXzc2C2A==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-freebsd-x64",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:01:42.301Z",
+      "eligible": "2026-10-22T13:01:42.301Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:01:42.301Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-freebsd-x64/-/binding-freebsd-x64-1.2.15.tgz",
+      "integrity": "sha512-g3l09pyFqhu+135JKkbkwiKGQmwU5hUMUPJ4VdBADvuqR8d33L6H578rh8m7rtxbdp+VmX/+nzI7nvhSZlzpUQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-arm-gnueabihf",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:00:09.322Z",
+      "eligible": "2026-10-22T13:00:09.322Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:00:09.322Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-arm-gnueabihf/-/binding-linux-arm-gnueabihf-1.2.15.tgz",
+      "integrity": "sha512-nIe3VugI97nGQtspPxDqA4sXMUpeiocKIP/CqpY/u/vgbT+alX+cVxu1C/oVBPKg4feNTmYovE91v4DgXvXNwQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-arm64-gnu",
+      "version": "1.2.15",
+      "published": "2026-10-21T12:59:38.024Z",
+      "eligible": "2026-10-22T12:59:38.024Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T12:59:38.024Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-gnu/-/binding-linux-arm64-gnu-1.2.15.tgz",
+      "integrity": "sha512-iTBjXx+B5QSvgI89lJfmqh4wTh8NabR1YZIIN3hNx4zSG0EVfVqkOvLulNpG4251pbd6/IAmZ/LefVk1Y4rPhw==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-arm64-musl",
+      "version": "1.2.15",
+      "published": "2026-10-21T12:59:52.371Z",
+      "eligible": "2026-10-22T12:59:52.371Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T12:59:52.371Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-musl/-/binding-linux-arm64-musl-1.2.15.tgz",
+      "integrity": "sha512-uN26XOnVR7rqQupG3V9oAG2EGGatWjcJHOeDOHUFCh4TBWmP2tHTFoVN13aYbwfm0aHqJAEmcwhAu6sooIjfqQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-ppc64-gnu",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:01:04.242Z",
+      "eligible": "2026-10-22T13:01:04.242Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:01:04.242Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-ppc64-gnu/-/binding-linux-ppc64-gnu-1.2.15.tgz",
+      "integrity": "sha512-9nWkcdd+H+XhaA3fQIwpHnKIrfx/PQ6rO0pivr78Og07tXlUlctBBJoEYLPfhTmCR/QxEVdn6uPjHV5SymPhdw==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-s390x-gnu",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:05:45.436Z",
+      "eligible": "2026-10-22T13:05:45.436Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:05:45.436Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-s390x-gnu/-/binding-linux-s390x-gnu-1.2.15.tgz",
+      "integrity": "sha512-Ggh0ciFjLwIusLSLz7LZYEaGdxOAUJXI+Qu5JCbhPJJHEt8vP+IjRATTJheiJsdzzTYgUiHUiw3X1Ea3ZpMBdA==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:02:05.003Z",
+      "eligible": "2026-10-22T13:02:05.003Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:02:05.003Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.15.tgz",
+      "integrity": "sha512-FHg60rS6DBePAYZ9X9F67x+JObFdmgn6tupA1C/a3B+CufFmTD4mX+e8M75tCiAO3foR/6xwVBI0KQiI7sn/rw==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-musl",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:06:47.340Z",
+      "eligible": "2026-10-22T13:06:47.340Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:06:47.340Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.15.tgz",
+      "integrity": "sha512-/cvV/7v5VGz/moiz0XKRj2dE8DzsKyhIu1KpOvJGPjRywg3yscON889UGvAe8zfiJLHup7VLjBduoGWi3HusWQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-openharmony-arm64",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:00:55.814Z",
+      "eligible": "2026-10-22T13:00:55.814Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:00:55.814Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-openharmony-arm64/-/binding-openharmony-arm64-1.2.15.tgz",
+      "integrity": "sha512-MyzC5Hrv/sm+Z7TSGKP/j8001RO2xQm1zOpCNVL4j0cY/VhBZviludA2YFQ7i4lH6ZAXxQm0lcMdBzM+99mE7w==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-win32-arm64-msvc",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:01:15.215Z",
+      "eligible": "2026-10-22T13:01:15.215Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:01:15.215Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-win32-arm64-msvc/-/binding-win32-arm64-msvc-1.2.15.tgz",
+      "integrity": "sha512-+PgYiS+AH5omy6L45ZLxybasauJaj3M8buoT83D+nzPmCayXlxUV9hydhciCKVyIg0B/v0BtXPDE1uGqNwCPpg==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:01:16.798Z",
+      "eligible": "2026-10-22T13:01:16.798Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:01:16.798Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@rolldown/binding-win32-x64-msvc/-/binding-win32-x64-msvc-1.2.15.tgz",
+      "integrity": "sha512-HFZd2QNQYn1JbIi+Hpd7H+r/lkWxcfIu28nirZ6eCn2LafuvmExMlb/P96Sfx5tf7pPArw39IdhmCF8vmV+NhQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@vitest/coverage-v8",
+      "version": "5.0.3",
+      "published": "2026-09-30T11:29:29.357Z",
+      "eligible": "2026-10-01T11:29:29.357Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "5.0.5",
+      "latestPublished": "2026-10-15T14:27:49.006Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-5.0.3.tgz",
+      "integrity": "sha512-+klsyz7BvT1vCU28Zkfzms1Ia78XD0V41U3FUtRaa3S+vOr/EXvK1O6BvVD7l1RzEjm6SONR2aybOvDDf9u0mQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@vitest/mocker",
+      "version": "5.0.3",
+      "published": "2026-09-30T11:29:00.625Z",
+      "eligible": "2026-10-01T11:29:00.625Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "5.0.5",
+      "latestPublished": "2026-10-15T14:27:01.877Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@vitest/mocker/-/mocker-5.0.3.tgz",
+      "integrity": "sha512-T8sWAIbkSyAjkwTcaEc3Iu0o9A27X1/kdXrizhZkGuSKScRQtRzclfAMpOTcGdXCsqxeWlpGy3XjqaW8CpLORg==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "@vitest/spy",
+      "version": "5.0.3",
+      "published": "2026-09-30T11:30:17.823Z",
+      "eligible": "2026-10-01T11:30:17.823Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "5.0.5",
+      "latestPublished": "2026-10-15T14:28:29.575Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/@vitest/spy/-/spy-5.0.3.tgz",
+      "integrity": "sha512-XhFysQTB8AZ+P4gMi+Lpo99vg2AZi0qKpaB9yXQl37+CaMEAPO3iH/wGVnSyL5MPERiLezpqTVtrR6UZH5GCXg==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "baseline-browser-mapping",
+      "version": "2.11.33",
+      "published": "2026-10-25T17:29:32.531Z",
+      "eligible": "2026-10-26T17:29:32.531Z",
+      "mature": true,
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "latestStable": "2.11.34",
+      "latestPublished": "2026-10-27T19:18:59.294Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.11.33.tgz",
+      "integrity": "sha512-yiVKDX+qCMRKBE084lXvq9EcwFUhKZ2nU8TK1EQQuOgPNR/lmbGxXOeDdlGUqC2Zz11Cs9rk1d/8NfgBmlkt0w==",
+      "installHookNames": [],
+      "exposure": "Next runtime/build dependency path; conservatively possible production shipping, NOT VERIFIED until four-image trace/smoke review",
+      "shippingObservation": "Not observed as a separate installed package identity in the four inspected current images; bundled/vendored-code absence NOT_CLAIMED; retain conservative exposure"
+    },
+    {
+      "name": "body-parser",
+      "version": "2.4.0",
+      "published": "2026-10-22T11:39:38.614Z",
+      "eligible": "2026-10-23T11:39:38.614Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      },
+      "latestStable": "2.4.0",
+      "latestPublished": "2026-10-22T11:39:38.614Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/body-parser/-/body-parser-2.4.0.tgz",
+      "integrity": "sha512-Ifk1KcLrxaGt1occQagQNFNNOqRt1LFuehEnHHzB8Z6cRgIxRU1TBaiIsUiCdA+gy5PL7Y1IX31DNKkRmxtXjQ==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "caniuse-lite",
+      "version": "1.0.30001819",
+      "published": "2026-10-22T08:00:40.232Z",
+      "eligible": "2026-10-23T08:00:40.232Z",
+      "mature": true,
+      "license": "CC-BY-4.0",
+      "engines": {},
+      "latestStable": "1.0.30001819",
+      "latestPublished": "2026-10-22T08:00:40.232Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001819.tgz",
+      "integrity": "sha512-LFUqIIAwpzsIuevnKnsR9qnStBcgzPShTX61lBwN9uFkkf8o8zLiebEjbW8AYtZiF+1YKDWfdt/pWDtMuG8Xwg==",
+      "installHookNames": [],
+      "exposure": "Next runtime/build dependency path; conservatively possible production shipping, NOT VERIFIED until four-image trace/smoke review",
+      "shippingObservation": "Not observed as a separate installed package identity in the four inspected current images; bundled/vendored-code absence NOT_CLAIMED; retain conservative exposure"
+    },
+    {
+      "name": "chai",
+      "version": "6.3.0",
+      "published": "2026-09-30T19:18:04.368Z",
+      "eligible": "2026-10-01T19:18:04.368Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      },
+      "latestStable": "6.3.0",
+      "latestPublished": "2026-09-30T19:18:04.368Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/chai/-/chai-6.3.0.tgz",
+      "integrity": "sha512-XWAtwJ6OHO+tj0EKCs0Y2UamnyOxseZWltU4x2U2wh8g4AigdjwvtUjvLP2tqkA/avxHEtzxNaqGq/YGNwckKg==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "content-disposition",
+      "version": "2.0.1",
+      "published": "2026-05-28T02:54:30.497Z",
+      "eligible": "2026-05-29T02:54:30.497Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      },
+      "latestStable": "3.0.0",
+      "latestPublished": "2026-08-13T20:29:16.841Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/content-disposition/-/content-disposition-2.0.1.tgz",
+      "integrity": "sha512-e+H0ZXHSWYrENhQzw1LPuP4oF5MzVKmDU6d3hxlvaPEYLLg62MxtQNPRx4SYSuYJSBUgnQIG4HIN2tEtNv7Dog==",
+      "installHookNames": ["prepare"],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "express",
+      "version": "5.3.0",
+      "published": "2026-10-09T12:56:54.505Z",
+      "eligible": "2026-10-10T12:56:54.505Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 18"
+      },
+      "latestStable": "5.3.0",
+      "latestPublished": "2026-10-09T12:56:54.505Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/express/-/express-5.3.0.tgz",
+      "integrity": "sha512-qCqy1xSoaugxOD4IVHb1ZWdkvCF2W3aE2okKouWj8VwJ+ztskSiXoBnCSJqfKT+cVPJhuJqe9YLbY425+Zh00g==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.1.9",
+      "published": "2026-10-19T23:05:26.357Z",
+      "eligible": "2026-10-20T23:05:26.357Z",
+      "mature": true,
+      "license": "BSD-3-Clause",
+      "engines": {},
+      "latestStable": "4.2.3",
+      "latestPublished": "2026-10-19T22:51:36.634Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.9.tgz",
+      "integrity": "sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "magic-string",
+      "version": "1.4.5",
+      "published": "2026-10-27T05:36:50.800Z",
+      "eligible": "2026-10-28T05:36:50.800Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "1.4.5",
+      "latestPublished": "2026-10-27T05:36:50.800Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/magic-string/-/magic-string-1.4.5.tgz",
+      "integrity": "sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "multer",
+      "version": "2.5.0",
+      "published": "2026-10-22T11:58:46.216Z",
+      "eligible": "2026-10-23T11:58:46.216Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 10.16.0"
+      },
+      "latestStable": "2.5.0",
+      "latestPublished": "2026-10-22T11:58:46.216Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/multer/-/multer-2.5.0.tgz",
+      "integrity": "sha512-BsqOzYGVq49JcW2IzoSAxeKYRevb+dGGPPWleOR8Lrlk4igwxu1/9pwSXlByhCb7MVZDrNJFC0IBP5/O5nLYRw==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.20",
+      "published": "2026-10-05T09:44:40.679Z",
+      "eligible": "2026-10-06T09:44:40.679Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+      },
+      "latestStable": "6.0.2",
+      "latestPublished": "2026-10-05T21:23:00.134Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.20.tgz",
+      "integrity": "sha512-uKdg2G3GNCKQn9byYOpxbGqrT2fGO5KRt5J/8b3pok8rT6qxGWF6hxMyJiEYtAf+FVyYuD9hRaDqX5uPFYJ4ZQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "next",
+      "version": "16.4.1",
+      "published": "2026-10-14T17:43:55.246Z",
+      "eligible": "2026-10-15T17:43:55.246Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=20.9.0"
+      },
+      "latestStable": "16.4.3",
+      "latestPublished": "2026-10-23T13:40:24.922Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/next/-/next-16.4.1.tgz",
+      "integrity": "sha512-uc657V62E34fOI6W5NtG9IzwsPcms0Z60grz2MJGtglgD+pTFnNt4Yw2PzaU622tfX4vhrDgLZzicE2YlhI20Q==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "on-finished",
+      "version": "2.4.2",
+      "published": "2026-10-22T13:21:19.221Z",
+      "eligible": "2026-10-23T13:21:19.221Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "latestStable": "2.4.2",
+      "latestPublished": "2026-10-22T13:21:19.221Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/on-finished/-/on-finished-2.4.2.tgz",
+      "integrity": "sha512-ATWUv387i+nLD49EiDoOft5scf32Vsdz3ktrQJG9bi7jRFmaXTssvyvj1EmeKVVgvesbqUtvQQvaS2TpTukAZQ==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.32",
+      "published": "2026-10-26T20:36:42.832Z",
+      "eligible": "2026-10-27T20:36:42.832Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^10 || ^12 || >=14"
+      },
+      "latestStable": "8.5.32",
+      "latestPublished": "2026-10-26T20:36:42.832Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/postcss/-/postcss-8.5.32.tgz",
+      "integrity": "sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g==",
+      "installHookNames": [],
+      "exposure": "Next runtime/build dependency path; conservatively possible production shipping, NOT VERIFIED until four-image trace/smoke review",
+      "shippingObservation": "Not observed as a separate installed package identity in the four inspected current images; bundled/vendored-code absence NOT_CLAIMED; retain conservative exposure"
+    },
+    {
+      "name": "qs",
+      "version": "6.17.0",
+      "published": "2026-10-27T06:23:47.002Z",
+      "eligible": "2026-10-28T06:23:47.002Z",
+      "mature": true,
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "latestStable": "6.17.0",
+      "latestPublished": "2026-10-27T06:23:47.002Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/qs/-/qs-6.17.0.tgz",
+      "integrity": "sha512-5LK5BZ2XDHMvcUJaf0CQ5HL3aVgKbpklvByC7qLSxYkfE8COEEbJg5xCHWCTqzqi0Gs4Jn5Mv5v3R38W6edscA==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    },
+    {
+      "name": "rolldown",
+      "version": "1.2.15",
+      "published": "2026-10-21T13:10:11.254Z",
+      "eligible": "2026-10-22T13:10:11.254Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "1.2.15",
+      "latestPublished": "2026-10-21T13:10:11.254Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.15.tgz",
+      "integrity": "sha512-6odND+fel5zVw3I4Yc2e69gvguDnX0CAAGiNDZSq4ik5WUcaLrkD2GLuog0XcODbor31hZ5ayEMgVDno+KPV5g==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "tinybench",
+      "version": "6.2.2",
+      "published": "2026-10-10T19:50:11.229Z",
+      "eligible": "2026-10-11T19:50:11.229Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "latestStable": "6.2.2",
+      "latestPublished": "2026-10-10T19:50:11.229Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/tinybench/-/tinybench-6.2.2.tgz",
+      "integrity": "sha512-nIZ2N2dFpjBsg2hgitKu7mA+FvsIJuGJOwysRngmVRRmWgR/UyPjwJj8c/fT/dhm8EkHnF5EOogRf+0Z2qrimA==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "undici",
+      "version": "6.29.1",
+      "published": "2026-10-15T14:19:28.454Z",
+      "eligible": "2026-10-16T14:19:28.454Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=18.17"
+      },
+      "latestStable": "8.12.3",
+      "latestPublished": "2026-10-19T14:02:56.699Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/undici/-/undici-6.29.1.tgz",
+      "integrity": "sha512-EvRlUt/QqAEvXdQeRMYUfwOQsfzpDztykrG2owGEE/rBOBoYv9uF39ZzsNDh4lTFHhTr2XOZjKkYgueD12ZmGA==",
+      "installHookNames": ["prepare"],
+      "exposure": "CI artifact HTTP transport"
+    },
+    {
+      "name": "vite",
+      "version": "8.3.3",
+      "published": "2026-10-06T04:10:19.326Z",
+      "eligible": "2026-10-07T04:10:19.326Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "latestStable": "8.3.5",
+      "latestPublished": "2026-10-21T06:38:54.907Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/vite/-/vite-8.3.3.tgz",
+      "integrity": "sha512-cTAldKPImjg6c+gk48U19POPn3GCBzZwpdsN8ZMEEcbpes+6/wvfqUd0C2y3qYY4wsj8PwgFwrZ/1jBPVttMSg==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "vitest",
+      "version": "5.0.3",
+      "published": "2026-09-30T11:30:42.429Z",
+      "eligible": "2026-10-01T11:30:42.429Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+      },
+      "latestStable": "5.0.5",
+      "latestPublished": "2026-10-15T14:29:01.396Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/vitest/-/vitest-5.0.3.tgz",
+      "integrity": "sha512-xMw97S3rjdtj5dkVat7jCsqWBpvchs3RlpQctUqwJD0KkERk40vz2fJ77lDwW/Vzh/pk18eItYAzkodhSes3jQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required"
+    },
+    {
+      "name": "why-is-node-running",
+      "version": "3.2.1",
+      "published": "2024-10-29T17:08:48.344Z",
+      "eligible": "2024-10-30T17:08:48.344Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=20.11"
+      },
+      "latestStable": "3.2.3",
+      "latestPublished": "2026-10-09T11:19:32.467Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/why-is-node-running/-/why-is-node-running-3.2.1.tgz",
+      "integrity": "sha512-Tb2FUhB4vUsGQlfSquQLYkApkuPAFQXGFzxWKHHumVz2dK+X1RUm/HnID4+TfIGYJ1kTcwOaCk/buYCEJr6YjQ==",
+      "installHookNames": [],
+      "exposure": "build/test component or optional native compiler; production exclusion required",
+      "tracking": {
+        "signal": "selected version older than18months, no deprecation; maintained latest stable exists",
+        "consumer": "Vitest5.0.3 exact pin",
+        "nextReview": "2026-12-29",
+        "reason": "Supported security-fixed consumer exact pin; no forced substitution. Verify supported consumer alternative and actual runtime/CI impact before acceptance",
+        "triggers": "CORE-002 event-driven graph/exposure/support/advisory/integrity changes"
+      }
+    },
+    {
+      "name": "zod",
+      "version": "4.6.6",
+      "published": "2026-10-11T16:18:23.878Z",
+      "eligible": "2026-10-12T16:18:23.878Z",
+      "mature": true,
+      "license": "MIT",
+      "engines": {},
+      "latestStable": "4.6.7",
+      "latestPublished": "2026-10-12T16:29:37.778Z",
+      "deprecated": null,
+      "source": "https://registry.npmjs.org/zod/-/zod-4.6.6.tgz",
+      "integrity": "sha512-4UmzQUF5fxvfcYHlbjBmejU+w+hbDnWFx4aS8kBx7nPBHcO2SqPbpAG8snbdg+Xse4pRefR98hgjFgIMCI/UhA==",
+      "installHookNames": [],
+      "exposure": "application runtime/build; exact shipping checked by production images"
+    }
+  ],
+  "files": [
+    {
+      "path": "apps/api/package.json",
+      "mode": "100644",
+      "sha256": "4dd7dc200b6fd43ad407ef8a2a98d3150f4abe79231301ee60f981c39f89f51c",
+      "added": 1,
+      "deleted": 1,
+      "realCodeLines": 2,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -25 +25 @@",
+          "sha256": "638305100e6fc273ccbab9f32e361f030e9b55ce2664c8eb39cc5b667d685bff"
+        }
+      ]
+    },
+    {
+      "path": "apps/api/tests/operations.spec.ts",
+      "mode": "100644",
+      "sha256": "7a367c795961a0e452bf4de604bbfffdef035b0c8719c56b9fe215c8754b175a",
+      "added": 162,
+      "deleted": 12,
+      "realCodeLines": 174,
+      "classification": "preserved sensitive test/guard correction",
+      "hunks": [
+        {
+          "range": "@@ -7,0 +8 @@ import { Test } from '@nestjs/testing';",
+          "sha256": "187b6c0149db0230fcb58aa1fb97f99f00a25f74ab45f77234ae7544b16af5c9"
+        },
+        {
+          "range": "@@ -9,0 +11 @@ import { expect, it } from 'vitest';",
+          "sha256": "3a34efe641b40962cb997b245bc7d6e0a9b504cdf13ecdf6de2febdad72e99c8"
+        },
+        {
+          "range": "@@ -16,0 +19,148 @@ import {",
+          "sha256": "948e055b0bf7dd1e08500d0c0494fe19e4a3d5baa05eeb54caecca25672e8137"
+        },
+        {
+          "range": "@@ -21 +171 @@ class FailureFixture {",
+          "sha256": "6bc54d9d3158fe54c3ced88381fe149746a88c3c80a4945a72c0ef4a17a9587a"
+        },
+        {
+          "range": "@@ -24 +174 @@ class FailureFixture {",
+          "sha256": "140af3d3aab74be09173a8d4c82c19f13b6e15acedfcea42ed04e2db2d6bc613"
+        },
+        {
+          "range": "@@ -27 +177 @@ class FailureFixture {",
+          "sha256": "70769fe510c3e88d954525e12a35ffcfd7e913bc26436809b407fdad1de9840e"
+        },
+        {
+          "range": "@@ -64 +214 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "51ef2b7cce1b5ddc9cc82c10db6884fef93a8515d07d790364d446f1b971b75a"
+        },
+        {
+          "range": "@@ -69 +219 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "32fe70e33eded12c4ba5906d126a364ec52dff46fdc8305778c980ae05e8bce2"
+        },
+        {
+          "range": "@@ -72,3 +222,3 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "f823a6545b6b1c290bd017dcfbc09b691c40b321e57635e203ced36276d5f8ed"
+        },
+        {
+          "range": "@@ -81 +231 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "9ccb3a914754612bd22ffff0abfaea7b1e7521cc9197fbd0ac83f31cc068e24d"
+        },
+        {
+          "range": "@@ -91 +241 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "0ebf848371d87fbac20b42009b2a07449bfd663c44e522846ea987b75aac0c52"
+        },
+        {
+          "range": "@@ -95,2 +245,2 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "d2c40e362bf48a4e50b915154eb15191d087155f461d4602b581f75eb4dcb72a"
+        }
+      ]
+    },
+    {
+      "path": "apps/dashboard-web/package.json",
+      "mode": "100644",
+      "sha256": "000ec21e1bcf28550858ad228b821b6ef3720ceaa8dc82b5ddb6fc7a8ef0b755",
+      "added": 1,
+      "deleted": 1,
+      "realCodeLines": 2,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -21 +21 @@",
+          "sha256": "dd9a56bbf8095cac6c8feb78d2b483d36710b4e7b2018fe8ef5c98034ac027f9"
+        }
+      ]
+    },
+    {
+      "path": "apps/public-renderer/package.json",
+      "mode": "100644",
+      "sha256": "55f9bdde2ceede642bc4ab3a6900646d7e4943c07cf2d05e77fd65547c4f84ec",
+      "added": 1,
+      "deleted": 1,
+      "realCodeLines": 2,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -21 +21 @@",
+          "sha256": "dd9a56bbf8095cac6c8feb78d2b483d36710b4e7b2018fe8ef5c98034ac027f9"
+        }
+      ]
+    },
+    {
+      "path": "apps/worker/package.json",
+      "mode": "100644",
+      "sha256": "916463273d71a840f1dc1594489c6cfa34e75ff7ac52879bcc059d125dc27efa",
+      "added": 1,
+      "deleted": 1,
+      "realCodeLines": 2,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -28 +28 @@",
+          "sha256": "4df505f82879a4b4a45bbb9bdee3884a9f2992c67c5d3ae519aa06b2c57114c2"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-k-canary-correction-inventory.json",
+      "mode": "100644",
+      "sha256": "a0d55588588776caa8cbed1f666cfb8909bacd042d328cc0da051964815cfc10",
+      "added": 111,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "generated review/lock evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/00-k-canary-correction.md",
+      "mode": "100644",
+      "sha256": "25417eccbdcf231722cb8adc5da2ce70b4f180dba15da424a3b295b367597ba2",
+      "added": 58,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "documentation/evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/00-k-dependency-remediation-20261027.md",
+      "mode": "100644",
+      "sha256": "c8d356a279fafdd7c318900a8dfc69ad5d36b96c5008c4e34ee2b43f8b71dcab",
+      "added": 61,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "documentation/evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/00-k-dependency-remediation-inventory.json",
+      "mode": "100644",
+      "sha256": "0b9d7167204e40e5a2a008528dc8220510c30c2fe4a0d346aced8b1920144812",
+      "added": 276,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "generated review/lock evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/00-k-dependency-review.md",
+      "mode": "100644",
+      "sha256": "5d98598d9e30a1cfd9ddd589a42161bd91c9d6b304a7798713ea775663c6fa76",
+      "added": 82,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "documentation/evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/00-k-resumption-20261027.md",
+      "mode": "100644",
+      "sha256": "1f5398d7b3e43520d9c95130ec287b584b3c26ad73c3ae6abf4f2b17ed29f130",
+      "added": 90,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "documentation/evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/00-k-resumption-inventory.json",
+      "mode": "100644",
+      "sha256": "c8596342eab20c1914b1cf746717eb689c546146d08a9b565b799487d6aa50c4",
+      "added": 243,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "generated review/lock evidence, separately reviewed",
+      "hunks": []
+    },
+    {
+      "path": "docs/checkpoints/evidence/00-j-dependency-acceptance.json",
+      "mode": "100644",
+      "sha256": "c2e81e655e4753d5672ad20cd89d8974a0cc5915ee163635f639aac4e8bf713b",
+      "added": 4,
+      "deleted": 4,
+      "realCodeLines": 8,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -3 +3 @@",
+          "sha256": "7f53171c7b3ea702697d5a5c7c35b443681d3ff161a3b274592b3182f9ce613b"
+        },
+        {
+          "range": "@@ -5 +5 @@",
+          "sha256": "23fd7b3eafa25aa9f2e3895dbfda30697719d1ac7e993856af3d21a9ee7799a7"
+        },
+        {
+          "range": "@@ -7 +7 @@",
+          "sha256": "c283d5cb4c854775e9d3e151fd73f6d1b658d6905bc70703a3df58bdf1e6a254"
+        },
+        {
+          "range": "@@ -9 +9 @@",
+          "sha256": "a7fc569f92f214e12e56fbed040592254b3f2acb3afb65c5fcbca776a3cf6e0e"
+        }
+      ]
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "sha256": "5bd247cdfe1ac01e40923b4a323e5b2125f6573fdd20658a1c2fd31bf778354c",
+      "added": 4,
+      "deleted": 4,
+      "realCodeLines": 8,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -42 +42 @@",
+          "sha256": "9d4562b6d6471a79e60479d7e80f49272bc7e3605cf307d090950b1083e7edfe"
+        },
+        {
+          "range": "@@ -51 +51 @@",
+          "sha256": "2f6834587bb506b97f6e13cb5d0e679677dfa03ba43e0139b1e28026d57c57f6"
+        },
+        {
+          "range": "@@ -64,2 +64,2 @@",
+          "sha256": "591ada938edccf913e4eabd6cd963339c96fe90eac1e834d9356cb079046b206"
+        }
+      ]
+    },
+    {
+      "path": "packages/schemas/package.json",
+      "mode": "100644",
+      "sha256": "9d59f8432c0e00eb3895572916246e9cba4a4d8cfcc9b1d75236d184662df6e9",
+      "added": 1,
+      "deleted": 1,
+      "realCodeLines": 2,
+      "classification": "sensitive dependency pin/current graph acceptance",
+      "hunks": [
+        {
+          "range": "@@ -23 +23 @@",
+          "sha256": "cc7ab65bc637ce0dc6815b39d1be6b08ce9aaac937c899947a64345a1d9977ee"
+        }
+      ]
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "mode": "100644",
+      "sha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+      "added": 261,
+      "deleted": 267,
+      "realCodeLines": 0,
+      "classification": "generated review/lock evidence, separately reviewed",
+      "hunks": [
+        {
+          "range": "@@ -22,2 +22,2 @@ importers:",
+          "sha256": "f80bea87a53cf34f98b7ef5edcdb388eb0559f2815532a9ea5d4bca4b1eca75c"
+        },
+        {
+          "range": "@@ -34,2 +34,2 @@ importers:",
+          "sha256": "b23c029f9f3b911db540ca34f8947432f4d7f87b69d06bb67c14a1bd8ffcc639"
+        },
+        {
+          "range": "@@ -82,2 +82,2 @@ importers:",
+          "sha256": "ec470ce57c5b365ce2288ad8fa6fafbb9ef8bad3995a1b3ef32b2ca7852bd275"
+        },
+        {
+          "range": "@@ -85,2 +85,2 @@ importers:",
+          "sha256": "e078a144a6da2e016f532e01bf2112e80994b9ec7e5776311723c96b09bd69f0"
+        },
+        {
+          "range": "@@ -95 +95 @@ importers:",
+          "sha256": "7daef542b23f715371ba6e22a5a6c8f82c561e1343e786fbe037e4fa38ad0e66"
+        },
+        {
+          "range": "@@ -97,2 +97,2 @@ importers:",
+          "sha256": "0bf4496728063fad7707ae4f6f8770e985c7cbe7c538b8b86ebe63c7e6d441a7"
+        },
+        {
+          "range": "@@ -117 +117 @@ importers:",
+          "sha256": "2fd80fb6164b1b19c591d30e56497e39c4a620b858d9ebd4f78de498e046aea4"
+        },
+        {
+          "range": "@@ -128,2 +128,2 @@ importers:",
+          "sha256": "e0f8b45ee63a5ea3a589f904067aa0bce530a37bbecc5dec192b4a95065fe15e"
+        },
+        {
+          "range": "@@ -132 +132 @@ importers:",
+          "sha256": "7971a2299a3a6259e43fe766ce0cdd9c5077eea591432ddda4bc6f6d1c716006"
+        },
+        {
+          "range": "@@ -159,2 +159,2 @@ importers:",
+          "sha256": "211835f44fcd1304cd3d7d0a273fe30628047421ee879a24bc08fdc70fe0d82c"
+        },
+        {
+          "range": "@@ -163 +163 @@ importers:",
+          "sha256": "1aca593a984b07c4e39dab1f3a8a5bb107a89046b8d18bd938b3632a4e035803"
+        },
+        {
+          "range": "@@ -188 +188 @@ importers:",
+          "sha256": "2959514ff5edc379f9308bb0f57eb708028a97f0d73093fc793c5c51c8fb6b81"
+        },
+        {
+          "range": "@@ -206,2 +206,2 @@ importers:",
+          "sha256": "b9966677cb9010985180a19af37899481da74a4586ddae900201f06a7c44acfe"
+        },
+        {
+          "range": "@@ -210 +210 @@ importers:",
+          "sha256": "5edef87360be4b35afe99d7fbbddb98b4407c3c27a425443607c427b08e3813d"
+        },
+        {
+          "range": "@@ -252,2 +252,2 @@ importers:",
+          "sha256": "4f114347505880cebc9b72a27a2f248debf099540dabe0432507fce731e624cd"
+        },
+        {
+          "range": "@@ -338,2 +338,2 @@ packages:",
+          "sha256": "7b3d4b070735e802c00e7ded93f1a82ca63b9da20a268121949c350055c61032"
+        },
+        {
+          "range": "@@ -346,2 +346,2 @@ packages:",
+          "sha256": "92772714a64359a6a5d1b4b8e986ccab9e451d3fb32e712ef656a8fafb222d8b"
+        },
+        {
+          "range": "@@ -351,2 +351,2 @@ packages:",
+          "sha256": "a14c4b8ee0ed62b0521787ce2ee2a6d472d59b181a86b0cb7124522c0e01f7be"
+        },
+        {
+          "range": "@@ -716,2 +716,2 @@ packages:",
+          "sha256": "9c4554f5069d91740d304f8aafeaaf3e134a1af0f3b2db3b8028108fec53ef1d"
+        },
+        {
+          "range": "@@ -735,2 +735,2 @@ packages:",
+          "sha256": "99ea76550559fa6d3df918891bd9753250f32a1c441a5546b8081ab51da1c543"
+        },
+        {
+          "range": "@@ -738,2 +738,2 @@ packages:",
+          "sha256": "34d26f2086ab875cb166b57fd3fc776b1a16c2f7448572749d221db1d4a99305"
+        },
+        {
+          "range": "@@ -744,2 +744,2 @@ packages:",
+          "sha256": "88dbed6570296aef49f7514a910c24e3ba12e8af72502290580a21ae420f0878"
+        },
+        {
+          "range": "@@ -750,2 +750,2 @@ packages:",
+          "sha256": "899b5b9858a50972b40d3fc107ad9583d1c85cd858413c4fe4d9683a64b6a0af"
+        },
+        {
+          "range": "@@ -757,2 +757,2 @@ packages:",
+          "sha256": "7a91ad8461096eb071582d540188c4d304da6ca6f041e745b7de900d72dc1477"
+        },
+        {
+          "range": "@@ -764,2 +764,2 @@ packages:",
+          "sha256": "c699afcb0bc99b54bed848f03d3fd4f3d592a25fdc30fb78a44250cce4b1d366"
+        },
+        {
+          "range": "@@ -771,2 +771,2 @@ packages:",
+          "sha256": "49d80a9ff9f5f920af568c87e8a351ac92beb399e9bfb1da4d3ca9236491673b"
+        },
+        {
+          "range": "@@ -778,2 +778,2 @@ packages:",
+          "sha256": "2166cb83f1a408b5279e1e8c18f46ca25476334e0ad7b24141424bba5145d5ad"
+        },
+        {
+          "range": "@@ -784,2 +784,2 @@ packages:",
+          "sha256": "bc599fb21b96ee16ee6e730442c4f2222113ac39241b557df040f8544bf9fa1c"
+        },
+        {
+          "range": "@@ -859,2 +859,2 @@ packages:",
+          "sha256": "9524b1551d8116fe720f9da9645f9dd51b457d854e96b718a05cde2c45a05cc7"
+        },
+        {
+          "range": "@@ -959,2 +959,2 @@ packages:",
+          "sha256": "d4fe206da0eb048281868af941d678719cc9cbeb31c8c63a07ea3b0f282dcf49"
+        },
+        {
+          "range": "@@ -965,2 +965,2 @@ packages:",
+          "sha256": "3500e71e27c9c7c031e8daa81e5d78a6bf23735fbe4fd9f48e62d998e9baf866"
+        },
+        {
+          "range": "@@ -971,2 +971,2 @@ packages:",
+          "sha256": "60e5982e7d03d7853555fbae44cd702fd6f8928f3c7419bbb02f968d12d28625"
+        },
+        {
+          "range": "@@ -977,2 +977,2 @@ packages:",
+          "sha256": "7b4c31166b9ea00c72f742d5e93b8b4e147fb132f86e47e7fb6768a20b484f85"
+        },
+        {
+          "range": "@@ -983,2 +983,2 @@ packages:",
+          "sha256": "ee178320a5ede5356be362f71167ff130be246bfa7c0dcf50fb4be1510178730"
+        },
+        {
+          "range": "@@ -989,2 +989,2 @@ packages:",
+          "sha256": "edfb660a2eea8442ac83fe5f35e87166c012e285983c36100752fe3911153384"
+        },
+        {
+          "range": "@@ -995,2 +995,2 @@ packages:",
+          "sha256": "b8e285570b8206899821d2257f6ddea811c5d122ed6646282dbb3b845f3916df"
+        },
+        {
+          "range": "@@ -1002,2 +1002,2 @@ packages:",
+          "sha256": "9f6f804dbabd80d834d43d8c819d790990bccf55b12f080b26af5d4708984f44"
+        },
+        {
+          "range": "@@ -1009,2 +1009,2 @@ packages:",
+          "sha256": "57570030c487f4c2095966d0dc3421279d8540cef2e11c8ad65abd6bd8f46bc1"
+        },
+        {
+          "range": "@@ -1016,2 +1016,2 @@ packages:",
+          "sha256": "27e2d6b768494e6a9e8463e007281af1d84f41d9d86b628bf51b926635872863"
+        },
+        {
+          "range": "@@ -1023,2 +1023,2 @@ packages:",
+          "sha256": "e2c7a9d7f12d1941086f3d4bfc2f6529240f4542440b27b5826d74b27d92fe3f"
+        },
+        {
+          "range": "@@ -1030,2 +1030,2 @@ packages:",
+          "sha256": "724d36c1c626be5ab9acda3cd3eda72cb118d2354b6cc9435b53830bb5de7c3c"
+        },
+        {
+          "range": "@@ -1037,2 +1037,2 @@ packages:",
+          "sha256": "a3da8127f661d3f983405f297b88c0f8ed4acccd4c5ad199fc8fb0010289dbe6"
+        },
+        {
+          "range": "@@ -1043,2 +1043,2 @@ packages:",
+          "sha256": "90a36d9f7e4293eb4e38ac919c0cda4b68ff0dc8bf61ba1f99a539863b920173"
+        },
+        {
+          "range": "@@ -1049,2 +1049,2 @@ packages:",
+          "sha256": "a04ec028966cc8a2e2f43a1f961bcdce9364657c168e710a1401484b5d15ebc9"
+        },
+        {
+          "range": "@@ -1292,2 +1292,2 @@ packages:",
+          "sha256": "b2d685a7b19e4e78b52957d9b18c3e767b8578ed6024155a591427c85b6a61c7"
+        },
+        {
+          "range": "@@ -1295,2 +1295,2 @@ packages:",
+          "sha256": "114fc610d230026985c79f7c30746b829bffb1de7c05eafd0c1bbb626da91dcb"
+        },
+        {
+          "range": "@@ -1309,2 +1309,2 @@ packages:",
+          "sha256": "f399848abab4f5ebbf67cac91f1dd924a139a69a6e44b84710487f197f7054c7"
+        },
+        {
+          "range": "@@ -1320,2 +1320,2 @@ packages:",
+          "sha256": "3744e69331c7c225ae58c3e2fe5b766f892739e0b0cdeda9a32b359772fafc7a"
+        },
+        {
+          "range": "@@ -1513,2 +1513,2 @@ packages:",
+          "sha256": "3942d38190793e5df7bfcf41a041c94cfb1a52f5b8421fd60f6bb5cfc5542af9"
+        },
+        {
+          "range": "@@ -1524,2 +1524,2 @@ packages:",
+          "sha256": "c24f29cb716cb9e31e71549b5c9ef93eee840fa112c71a029c8d76f7a34ef5ad"
+        },
+        {
+          "range": "@@ -1594,2 +1594,2 @@ packages:",
+          "sha256": "d7f6b7d750e47883fb0be5d3e61d05175ae363710adfb6b23c0a58ad2a3fd16d"
+        },
+        {
+          "range": "@@ -1597,2 +1597,2 @@ packages:",
+          "sha256": "4647b6bfdef9b2fa94a69575b467a8a54f6e1eceaf5456621ff53126020be6b9"
+        },
+        {
+          "range": "@@ -1633,2 +1633,2 @@ packages:",
+          "sha256": "23618d0fa1fc8c3e0e3a4b49528a73490b8a515c2ab2ef54c6739c9f40662e91"
+        },
+        {
+          "range": "@@ -1637,4 +1636,0 @@ packages:",
+          "sha256": "434636d31c176dc8cd998811265c978bbbdeb5fe96a5ca1a1af2d35b8b7539e6"
+        },
+        {
+          "range": "@@ -1828,2 +1824,2 @@ packages:",
+          "sha256": "9c539b4367d3840bec78846537df4c179747538e357d82e5735a15fdb39d5af3"
+        },
+        {
+          "range": "@@ -1847,2 +1843,2 @@ packages:",
+          "sha256": "d6d65c1aea7d46d367a04188869867883f02dbe2a3839d8e86cb8a1faf36541b"
+        },
+        {
+          "range": "@@ -2185,2 +2181,2 @@ packages:",
+          "sha256": "c53bf3daadc05717bd58ae0db64548fe56d0a8421fbe174f927b8a31e5c850ab"
+        },
+        {
+          "range": "@@ -2314,2 +2310,2 @@ packages:",
+          "sha256": "d641c340726a141cfbf9148fe2f7e54e7a97d106c8273584d93fcf5491aaa4a6"
+        },
+        {
+          "range": "@@ -2318,2 +2314,2 @@ packages:",
+          "sha256": "8376dfdfd16b0f6b8f2c1be96345c6577ccaf02f8160e84b26b74587f2155cdf"
+        },
+        {
+          "range": "@@ -2343,2 +2339,2 @@ packages:",
+          "sha256": "6b59f022aff2bd9680b1687d6fb25a49ef261e665a8158c45d9ceecbc47ec010"
+        },
+        {
+          "range": "@@ -2405,2 +2401,2 @@ packages:",
+          "sha256": "f0a6057e3e5e58c3cafcbf01d7d9845e18ace732d1d35164f5e5d2430e33c779"
+        },
+        {
+          "range": "@@ -2512,2 +2508,2 @@ packages:",
+          "sha256": "8147e480e02aedd0945f5f1f1eabb0eba6579c07717ee53855ae7dfeb32f4f41"
+        },
+        {
+          "range": "@@ -2560,2 +2556,2 @@ packages:",
+          "sha256": "ed825c18b862793398c15bf3c220cd6d12d5ab5326f5868c6162efe469aa970b"
+        },
+        {
+          "range": "@@ -2602,2 +2598,2 @@ packages:",
+          "sha256": "69418007ea86f167f53e03194e2e8fb6f7af7188280551512a7507266edd19b6"
+        },
+        {
+          "range": "@@ -2783,2 +2779,2 @@ packages:",
+          "sha256": "1d51acec497b547966a0e52c04992b31a911f60087e7058e184a92c8770a6f54"
+        },
+        {
+          "range": "@@ -2862,2 +2858,2 @@ packages:",
+          "sha256": "173e94d09283ae711b4b7d4541adef4c88db4f929acd353c57e6a0f7d382f526"
+        },
+        {
+          "range": "@@ -2901,2 +2897,2 @@ packages:",
+          "sha256": "185f788c6dc99ea42424b2c6ff70ae60a91c0480b15648cc1e3d7451f5960952"
+        },
+        {
+          "range": "@@ -2944,2 +2940,2 @@ packages:",
+          "sha256": "ac72a2f831d65697c856e47a8dcc8fab1bd6616938afc7b754290079398df7fe"
+        },
+        {
+          "range": "@@ -2952,2 +2948,2 @@ packages:",
+          "sha256": "719d2e3bb132fe7e98944739459e5fe8920824fe6d98b2fc62c12139199c2335"
+        },
+        {
+          "range": "@@ -2955,3 +2951,3 @@ packages:",
+          "sha256": "ccb8d8c5e573d00107083fdf699da0bf936e65487df0197de7b4ff5cf3b95a86"
+        },
+        {
+          "range": "@@ -3008,2 +3004,2 @@ packages:",
+          "sha256": "2608208e93cb3a666fd1a50317accd745cf8890346c3083d09e2392e00952c2c"
+        },
+        {
+          "range": "@@ -3060,2 +3056,2 @@ packages:",
+          "sha256": "b5abd07a8f09c6df0e8132508cbe792a932b613d86f9b4d2a7788a6e52de0952"
+        },
+        {
+          "range": "@@ -3104 +3100 @@ snapshots:",
+          "sha256": "08bb8d1278b02a4de3de95ddb238422873514d7d4813910c97fe396026230693"
+        },
+        {
+          "range": "@@ -3109 +3105 @@ snapshots:",
+          "sha256": "243e72d473aa331c0cebd3dd54b4984be7bc7c6a6167ccd80d25a78f8bc680bb"
+        },
+        {
+          "range": "@@ -3114 +3110 @@ snapshots:",
+          "sha256": "00249b8548fec021307e36e58e9192690e687857f96fe170521dee8018bfc2df"
+        },
+        {
+          "range": "@@ -3237 +3233 @@ snapshots:",
+          "sha256": "63c6c9f224692895dbc62ed7bdfa62585011496635f3def9f02b3835858e149f"
+        },
+        {
+          "range": "@@ -3241 +3237 @@ snapshots:",
+          "sha256": "10a827097cb55627fd35936524d17f4370ad8211ee0eb2f4b0e4a63146fab325"
+        },
+        {
+          "range": "@@ -3243 +3239 @@ snapshots:",
+          "sha256": "9aa283fb323dcffa83c3cd45600dce3a88f976670d5d1a0565e833d85682b3cb"
+        },
+        {
+          "range": "@@ -3245 +3241 @@ snapshots:",
+          "sha256": "794a965b7820a507c6fc7b7d4a477467789849a0c9d146570989e5afb7fd504b"
+        },
+        {
+          "range": "@@ -3247 +3243 @@ snapshots:",
+          "sha256": "0415c9dc1fdef531fc17f5e7b851307e2b288d25a698113c6386fbda98032f1d"
+        },
+        {
+          "range": "@@ -3528 +3524 @@ snapshots:",
+          "sha256": "88159e87d3ef752879f30bbdeda42e301922d5c212e110bd74466f45399b09da"
+        },
+        {
+          "range": "@@ -3539 +3535 @@ snapshots:",
+          "sha256": "e577e3bcbc50a90b21027fc91256ffbde63d2e0febd96f3d7dd37079b780d17f"
+        },
+        {
+          "range": "@@ -3541 +3537 @@ snapshots:",
+          "sha256": "470dc72d30132bffb9ba27d45b21c70c09db61edbfdb4b33d89a6c35377f7ca1"
+        },
+        {
+          "range": "@@ -3544 +3540 @@ snapshots:",
+          "sha256": "95badd0c88307504dc6e9886a06be752e172f751492869244335e23bc6a702e4"
+        },
+        {
+          "range": "@@ -3546,2 +3542,2 @@ snapshots:",
+          "sha256": "69e588b87da182b3dd13fcac3e190b9a4941d1e4f0506f6e7b05457114099907"
+        },
+        {
+          "range": "@@ -3553 +3549 @@ snapshots:",
+          "sha256": "035d62ce1157cb784d33d2a04ca4a71ed4f630264a83de9f02af4a5b285f5c48"
+        },
+        {
+          "range": "@@ -3556 +3552 @@ snapshots:",
+          "sha256": "d2817aded17250e6cff7505c9b922bec9f6efd80b79bee84a5b1cd77da1e4ba2"
+        },
+        {
+          "range": "@@ -3559 +3555 @@ snapshots:",
+          "sha256": "7fadf2b4d84bc4a9eba7be905c50410566bd0a4b0a057b5f982bbe6be9711a2c"
+        },
+        {
+          "range": "@@ -3561 +3557 @@ snapshots:",
+          "sha256": "e7002d0af8a3b8b18268a77d1ed2847b8a0f7660fb8f5bd778443147948c08d0"
+        },
+        {
+          "range": "@@ -3563 +3559 @@ snapshots:",
+          "sha256": "dbad83c138d33c54a475bb82243724ed9444812c5d5a87c60eda0db21682f945"
+        },
+        {
+          "range": "@@ -3566 +3562 @@ snapshots:",
+          "sha256": "e9be6630f03af1806f50f9c1fce8648b7f3c769b2af89422097e088ab1e407d2"
+        },
+        {
+          "range": "@@ -3569 +3565 @@ snapshots:",
+          "sha256": "b2985d85863c8f0ac024d6de09c334bbfe8260ea1000250f34feead2a58a9b2a"
+        },
+        {
+          "range": "@@ -3572 +3568 @@ snapshots:",
+          "sha256": "2aae7c491d105a25c3c05d42751b16d31679496225ad899058017d3b52c43f19"
+        },
+        {
+          "range": "@@ -3575 +3571 @@ snapshots:",
+          "sha256": "5bfa01e9b959e7b6ca19d293c89f886c064e4b40465031c2bc03a8ee2d1ff394"
+        },
+        {
+          "range": "@@ -3578 +3574 @@ snapshots:",
+          "sha256": "7ef231fe71002080ae4d725c11bca308f6c431ed4bfcad2e43c57f9b866e9184"
+        },
+        {
+          "range": "@@ -3581 +3577 @@ snapshots:",
+          "sha256": "55cdd2596e919376d44db7ab858ad2b7327cf868be1f1abcfbb5c02e24b14d54"
+        },
+        {
+          "range": "@@ -3584 +3580 @@ snapshots:",
+          "sha256": "fc892e50415e31f35a9fb55346cc17cf0da25e557583307c1f217bcd00d474f9"
+        },
+        {
+          "range": "@@ -3664 +3660 @@ snapshots:",
+          "sha256": "4f13e013d6388360763806a6d45b814f13e21162a7c700fcb0c6594282e3564e"
+        },
+        {
+          "range": "@@ -3735 +3731 @@ snapshots:",
+          "sha256": "33eddc0e7037a07d0c906eb013eab17702437bd0d3e2ba54a14a67c58b2e9f7e"
+        },
+        {
+          "range": "@@ -3738 +3734 @@ snapshots:",
+          "sha256": "6f0570f17bf66e5c146b6757673a603f924972424cfe56f056c763ccb6af2309"
+        },
+        {
+          "range": "@@ -3741 +3737 @@ snapshots:",
+          "sha256": "682dbe1a00ec519d53b75a23e6a3fb96281c877b14abac06703e194e17186127"
+        },
+        {
+          "range": "@@ -3744 +3740 @@ snapshots:",
+          "sha256": "3bca74c873e4d8f90f859fe81eebe382af5b35b6242d832e2995c6ed8a241342"
+        },
+        {
+          "range": "@@ -3747 +3743 @@ snapshots:",
+          "sha256": "8414547f25a6cac399cd9a83258515e3e67c874382418329f2e8b90e17323e12"
+        },
+        {
+          "range": "@@ -3750 +3746 @@ snapshots:",
+          "sha256": "2978f813e3cb9f446943d6a6dae42ee1b67d5109e57b455a2b6c2c12034bdac5"
+        },
+        {
+          "range": "@@ -3753 +3749 @@ snapshots:",
+          "sha256": "e0bf118e2e7c05c1dade31e6ce3fd708d6ff55e3a0b502c11bce7a86041222b8"
+        },
+        {
+          "range": "@@ -3756 +3752 @@ snapshots:",
+          "sha256": "cfce15a60cfdb76e292c4a819b01fdecaade58dfe74d1fa467f216ead526e492"
+        },
+        {
+          "range": "@@ -3759 +3755 @@ snapshots:",
+          "sha256": "87a3dfcb5ba5005fa2e3b4b7c93a53731951cf0cb115f3fffd49fdbfb2fb2bc2"
+        },
+        {
+          "range": "@@ -3762 +3758 @@ snapshots:",
+          "sha256": "a2e05a8e0811a3a9b5c1257393855eb7aff43c10e7f08c3131c06f8d78bccd05"
+        },
+        {
+          "range": "@@ -3765 +3761 @@ snapshots:",
+          "sha256": "c42e82edbc0991b778c8fadcd465a0a4e58e785694a1b74bac1e0de4313bcfc6"
+        },
+        {
+          "range": "@@ -3768 +3764 @@ snapshots:",
+          "sha256": "338998a401ee4a8d93e07197f0ec45bb0354c7e212f34cb5d2ec6e634f361b95"
+        },
+        {
+          "range": "@@ -3771 +3767 @@ snapshots:",
+          "sha256": "242257756a900a5476a45ad913ebb1140a5808ebe54b8434c23d69662ad65873"
+        },
+        {
+          "range": "@@ -3774 +3770 @@ snapshots:",
+          "sha256": "98c93c7766d966abc611b080d82cf1eb5563fc9c6f9618a8249b8c814f5a67f1"
+        },
+        {
+          "range": "@@ -3777 +3773 @@ snapshots:",
+          "sha256": "8f4a00621f194483bb318dd59e191dbc7c5e39094fda09aef2581635f58254f7"
+        },
+        {
+          "range": "@@ -4012 +4008 @@ snapshots:",
+          "sha256": "30f7a55d270345dc0393be016ed4f81034609d443b5624122174466fe0a06bb9"
+        },
+        {
+          "range": "@@ -4022 +4018 @@ snapshots:",
+          "sha256": "4921ff9504f4769521271dfaf9a7b6da1d5afc4ae3a65c0f75adf23221bfdb24"
+        },
+        {
+          "range": "@@ -4030 +4026 @@ snapshots:",
+          "sha256": "c50380929a1f7b8b36803dcec37e521ee329646bb6a6095e974a8382895c1a98"
+        },
+        {
+          "range": "@@ -4033 +4029 @@ snapshots:",
+          "sha256": "f4cfd2c3791a886791e6b1a83744945b3f2e22c47113cf99d6bdaf4520aab64d"
+        },
+        {
+          "range": "@@ -4035 +4031 @@ snapshots:",
+          "sha256": "0ae0076a9f2094f4d74ce1706ffd3130ad24ff3ec1968192b8198f3153069f74"
+        },
+        {
+          "range": "@@ -4037 +4033 @@ snapshots:",
+          "sha256": "a7688ef8124f1192bd7c45fc7105ae5e76a40db8e03fb6c0f2d0cf529c99fc7b"
+        },
+        {
+          "range": "@@ -4039 +4035 @@ snapshots:",
+          "sha256": "6c743f067bb2b63cfe9e771ae5a3a3cbd31538f622d64f38b4b5e340e69f3c71"
+        },
+        {
+          "range": "@@ -4157 +4153 @@ snapshots:",
+          "sha256": "1e73908aa5cb26e4273ab72a83190425041f678112b9d79e14a6b27273874377"
+        },
+        {
+          "range": "@@ -4255 +4251 @@ snapshots:",
+          "sha256": "cee0b5d75583c71f6e99a22e14509a73d79f34941bfe7b02607b0822b6d303fc"
+        },
+        {
+          "range": "@@ -4264 +4260 @@ snapshots:",
+          "sha256": "44bf782ccf05f43f52a1895b6d15d22dd1241674406bd971f65509dbe98cbfff"
+        },
+        {
+          "range": "@@ -4271,2 +4267,2 @@ snapshots:",
+          "sha256": "0b1b0c3fc5e0ab40af682fd4184c147f454f0cc8953097b8e1b6f18d6540f972"
+        },
+        {
+          "range": "@@ -4290,2 +4286,2 @@ snapshots:",
+          "sha256": "26eb8cfea543db1627afc4ace00c2faf2a6d02d8ea7ade5e5f6c1421b80d6db2"
+        },
+        {
+          "range": "@@ -4342 +4338 @@ snapshots:",
+          "sha256": "34a0c5243125da778af228b20a8bef454c246f1e677ccb8e1e5718d721a58179"
+        },
+        {
+          "range": "@@ -4344 +4340 @@ snapshots:",
+          "sha256": "2c2e35ba07848f7e698653efaeb248bcc6458d13c2dc511e04bc7a77b9656658"
+        },
+        {
+          "range": "@@ -4378,3 +4374 @@ snapshots:",
+          "sha256": "2a7bba4786ecceeed9efe4edcbc795349f1a37998a6e63273510752f0af4f6a7"
+        },
+        {
+          "range": "@@ -4553 +4547 @@ snapshots:",
+          "sha256": "76e9e24bbb11a2dcb2e5a636ff6ac3cd5ebbd997ecf22d69e50a1e1bfb27f3dc"
+        },
+        {
+          "range": "@@ -4556,3 +4550,3 @@ snapshots:",
+          "sha256": "77e7628cf8f700ac77da7bca36eae471a375b2ed8fefcf8ab1b16aee258a36f2"
+        },
+        {
+          "range": "@@ -4571 +4565 @@ snapshots:",
+          "sha256": "f06cf3cbdead7a71dc5aa7081b7788428198a2d2f68948723a0aee7d3da3fc6e"
+        },
+        {
+          "range": "@@ -4575 +4569 @@ snapshots:",
+          "sha256": "1e8b3435225e3d39ef6eb8bee18f3ca40164c4d30fcf219fb767e2a8ad17b95b"
+        },
+        {
+          "range": "@@ -4596 +4590 @@ snapshots:",
+          "sha256": "64be089284d3514376848e83cdd576f4c435f9e33223319011e9c52d58d7ac6c"
+        },
+        {
+          "range": "@@ -4634 +4628 @@ snapshots:",
+          "sha256": "4398ba4a96ce352b8ee893d1915825a01fa3d0a6fe993d0ca561e9cbe1a8bede"
+        },
+        {
+          "range": "@@ -4910 +4904 @@ snapshots:",
+          "sha256": "b4d59045fe135be6a50245e956edad0a90eb244dafab05e06ce329fc8d5d9d1d"
+        },
+        {
+          "range": "@@ -4916,2 +4910,2 @@ snapshots:",
+          "sha256": "d0ef85156f2db07ac7783ddf98a9fd4600459bdaae8c6b3121365d915a0605b1"
+        },
+        {
+          "range": "@@ -4988 +4982 @@ snapshots:",
+          "sha256": "2142838cd31dd65dadadd45c6876ff44668ff4fd3873e2df183f60fbdf20f73c"
+        },
+        {
+          "range": "@@ -4994 +4988 @@ snapshots:",
+          "sha256": "de5c381a89ae452e52b47d0768d86c335e5a7ff914df5afa8bf750c32086a0a8"
+        },
+        {
+          "range": "@@ -5004 +4998 @@ snapshots:",
+          "sha256": "d804627725b9513c09d94515c94365c0e58fae0c29098050685749229610d861"
+        },
+        {
+          "range": "@@ -5014 +5008 @@ snapshots:",
+          "sha256": "5853aab6dc725c133acb00287157d29cba4f40f63625b529c1b6a4073bcfe674"
+        },
+        {
+          "range": "@@ -5023 +5017 @@ snapshots:",
+          "sha256": "b631b0353f47e5195837af38a6af8726b1acca8f437efcaab5d9626cdd18fd34"
+        },
+        {
+          "range": "@@ -5025 +5019 @@ snapshots:",
+          "sha256": "e4b7621af809b0cfd04297e5a13843211d24d209fd398a1858274c7c7c8f0c4d"
+        },
+        {
+          "range": "@@ -5027,2 +5021,2 @@ snapshots:",
+          "sha256": "627c918a621ef95a44944080f2b526ab6678c5630f2aa20ebe1e21df661d256e"
+        },
+        {
+          "range": "@@ -5034,8 +5028,8 @@ snapshots:",
+          "sha256": "e10ea496ab8712f2ad08f8115cc3d47900db077eb602fe3f228cf4a93415fa5e"
+        },
+        {
+          "range": "@@ -5077 +5071 @@ snapshots:",
+          "sha256": "03479ec9f5ae978123f9c81a31aa1dea6a844e17d9db9b037e02d415d30299fd"
+        },
+        {
+          "range": "@@ -5173 +5167 @@ snapshots:",
+          "sha256": "812632d016e8b3aa40fc9d34b2990156f228fc5dc001eecf014de6e6757de5e8"
+        },
+        {
+          "range": "@@ -5177 +5171 @@ snapshots:",
+          "sha256": "1a5ebd128a4d08470de13be272e31ae1c52fac5fd374d1805dd2569e2c0164bb"
+        },
+        {
+          "range": "@@ -5179 +5173 @@ snapshots:",
+          "sha256": "6a237e4d0fb93b80d83127547f141e2a77dbb4e2fa2fbe4d36e32e7ed8474b5f"
+        },
+        {
+          "range": "@@ -5212 +5206 @@ snapshots:",
+          "sha256": "f91c62104d5ec8f6ade6840a4e936467dc8f3f63ad357b36068b47e5e3d2bd03"
+        },
+        {
+          "range": "@@ -5261 +5255 @@ snapshots:",
+          "sha256": "c4caa427591cd69f40fa446b97c638f8fd29e6c3ad1b2107494335714cdf596f"
+        },
+        {
+          "range": "@@ -5263 +5257 @@ snapshots:",
+          "sha256": "5735eb511cbe80b94383202cfdb10f670cdc21c134bed7546747378c19c58fb3"
+        },
+        {
+          "range": "@@ -5266,15 +5260,15 @@ snapshots:",
+          "sha256": "288e6bb1aaee8da9529b7e2af5ab422394461ffb404d8974a87b5a6d79be3b5d"
+        },
+        {
+          "range": "@@ -5323 +5317 @@ snapshots:",
+          "sha256": "086570219759b727268567d19e3e38633e200b922a28fcb4de497e4fd5178c09"
+        },
+        {
+          "range": "@@ -5522 +5516 @@ snapshots:",
+          "sha256": "f1d544f55f6e1b1836e0c2bc559a25397451817b96d7b1fd2aabb452c42f659f"
+        },
+        {
+          "range": "@@ -5596 +5590 @@ snapshots:",
+          "sha256": "db0b43ee3baf2300aed1f56033af2639abe76dd1433d137b8dd7008e61417497"
+        },
+        {
+          "range": "@@ -5631 +5625 @@ snapshots:",
+          "sha256": "9b5624d062c8dbf124bed7bff8ab00f611cd3f46ccf54a7bd4af6abd075571b4"
+        },
+        {
+          "range": "@@ -5635,2 +5629,2 @@ snapshots:",
+          "sha256": "105b8de04622bad463c793be15e2bc1c766e49aa005cbd07b232480806def90c"
+        },
+        {
+          "range": "@@ -5644 +5638 @@ snapshots:",
+          "sha256": "788264b29429fc411c744e4f55194d1313bd4fb3ac4e5f79b40ca3d443be9fd9"
+        },
+        {
+          "range": "@@ -5647,2 +5641,2 @@ snapshots:",
+          "sha256": "6c947606e6fc7667ae925503df1561153d873e2b76b484cecaecfb822b158519"
+        },
+        {
+          "range": "@@ -5651 +5645 @@ snapshots:",
+          "sha256": "b5d34a5d33b7ccf62c99b85fd360c2fa3aa75781d40cf0f12d429a1a0b362bc3"
+        },
+        {
+          "range": "@@ -5655 +5649 @@ snapshots:",
+          "sha256": "9dc8cf5dbef34c2c32666418beabf06b14141fcdd091b817581c59b2bcb9149b"
+        },
+        {
+          "range": "@@ -5658,2 +5652,2 @@ snapshots:",
+          "sha256": "890228645f889bd6ef041acfdd0e9ad9e58e197fe0de02fefd4e0d95952d8b24"
+        },
+        {
+          "range": "@@ -5662 +5656 @@ snapshots:",
+          "sha256": "375e098fe5b17457417fa3c88b2f26887c45b81aa3ba0e071d8bfa9a088e4c85"
+        },
+        {
+          "range": "@@ -5713 +5707 @@ snapshots:",
+          "sha256": "0cebe3203b494c1613b4901284c51627460b0a86455a6fb6a76daee8b57c02a3"
+        },
+        {
+          "range": "@@ -5762 +5756 @@ snapshots:",
+          "sha256": "a56e6c7099ce9b85eb54c08f89423aa33ff6ad7cf78734a90481b76dba25bf3f"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-evidence.ts",
+      "mode": "100644",
+      "sha256": "0c8d35ab26d62758a354c1e6fe6c7b3c1239cd82ec71836f25f6858750f8c571",
+      "added": 3,
+      "deleted": 3,
+      "realCodeLines": 6,
+      "classification": "preserved sensitive test/guard correction",
+      "hunks": [
+        {
+          "range": "@@ -61,2 +61,2 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "sha256": "535a2eefad00765b61cbfa5840f04140662da677e0995fe900d27e65daba2cc5"
+        },
+        {
+          "range": "@@ -68 +68 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "sha256": "b7835ac6765564fb7daea171ffddad4aa7bec1fcdb68fe8df7d4430a95b0eb57"
+        }
+      ]
+    },
+    {
+      "path": "tests/database/operations.spec.ts",
+      "mode": "100644",
+      "sha256": "cda5b05fba56065223e9a071246f71969a8a1122852f4deaa54de2c138c57b24",
+      "added": 104,
+      "deleted": 11,
+      "realCodeLines": 115,
+      "classification": "preserved sensitive test/guard correction",
+      "hunks": [
+        {
+          "range": "@@ -1,0 +2 @@ import { execFileSync } from 'node:child_process';",
+          "sha256": "bfdf8e7f890b058e7ad58e67565034bcd59532b3bb57bbf3132ee29b15d0875c"
+        },
+        {
+          "range": "@@ -13,0 +15,97 @@ import {",
+          "sha256": "dbfc0ca6cc3e2bd7a2f41754759af5347f2c91a0134f4cf2737e11849fecd76c"
+        },
+        {
+          "range": "@@ -49 +147 @@ it('real API probes preserve liveness and bounded private readiness across a Pos",
+          "sha256": "1fc2381acf049111e4ef4dbf1e8fa87ccb79fd6c2c755cedef7131ebf6f6177c"
+        },
+        {
+          "range": "@@ -53,2 +151,2 @@ it('real API probes preserve liveness and bounded private readiness across a Pos",
+          "sha256": "c2c09f526ed3f3c2c3e3f5a11e03b9c70affc29b309c16423926dc1420500023"
+        },
+        {
+          "range": "@@ -71 +169 @@ it('real API probes preserve liveness and bounded private readiness across a Pos",
+          "sha256": "71e62d94067e04a273ae7226413b384e6ab09875276868486ecb89034606c696"
+        },
+        {
+          "range": "@@ -92,7 +190,2 @@ it('real API probes preserve liveness and bounded private readiness across a Pos",
+          "sha256": "ad5d6f9444368e3696d73c46379403942189acbd81860027ca6ac1b7d8490200"
+        }
+      ]
+    },
+    {
+      "path": "tests/local/foundation.spec.ts",
+      "mode": "100644",
+      "sha256": "6012e554038d7b8db85bd52bfc4491cd9c98c4d85ac9f5b5396a155a496f4f47",
+      "added": 58,
+      "deleted": 21,
+      "realCodeLines": 79,
+      "classification": "preserved sensitive test/guard correction",
+      "hunks": [
+        {
+          "range": "@@ -26,0 +27,48 @@ const children: ChildProcess[] = [];",
+          "sha256": "09bd74dd6ef948fbebbe57e1ebfbc30c21b71d9341d576f7f85a3a920d933330"
+        },
+        {
+          "range": "@@ -215,0 +264 @@ it('real app probes reflect only their dependency and safely handle local outage",
+          "sha256": "8f714568fd744df0ba1bb8bb9ce8e5606962f24df38c557f79631354a51bb833"
+        },
+        {
+          "range": "@@ -235,2 +284,7 @@ it('real app probes reflect only their dependency and safely handle local outage",
+          "sha256": "5d734239a73762f0be36540c5076683c5aa1152ebc9320f3beaa7a036ecf518b"
+        },
+        {
+          "range": "@@ -246 +300 @@ it('real app probes reflect only their dependency and safely handle local outage",
+          "sha256": "832e19fbea41cf53bd12d2964004544ebb04b9d2deb995b9bafa470d58919fc1"
+        },
+        {
+          "range": "@@ -250,17 +303,0 @@ it('real app probes reflect only their dependency and safely handle local outage",
+          "sha256": "0090b7d469abb1b16b72932f5ab8aa1a6cad589a64399a9e7a2ab7b50eaeb7e3"
+        },
+        {
+          "range": "@@ -268 +305 @@ it('real app probes reflect only their dependency and safely handle local outage",
+          "sha256": "c773574cea4d194779c99c119d67501fd765e201b779a560a16c57dbd1e656e5"
+        }
+      ]
+    }
+  ],
+  "self": {
+    "path": "docs/checkpoints/00-k-security-remediation-inventory.json",
+    "classification": "generated evidence; self-hash retained privately to avoid a cycle"
+  },
+  "gitOperations": {
+    "branchesCreated": 0,
+    "staged": false,
+    "commits": 0,
+    "pushes": 0,
+    "pullRequests": 0,
+    "merge": false,
+    "recordPhase": "PRE_PUBLICATION_REVIEW",
+    "noMergeAuthorized": true
+  },
+  "hosted": {
+    "status": "NOT_EXECUTED",
+    "run": null
+  },
+  "closure": false,
+  "preservation": {
+    "originalCheckout": "PASS_UNCHANGED",
+    "oldCandidateHashes": "PASS_UNCHANGED",
+    "priorPrivateEvidence": "PASS_UNCHANGED_EXCEPT_OWNED_MANAGED_OUTPUTS_PRESERVED_IN_HASH_VERIFIED_COPIES",
+    "dockerInventory": "PASS_ZERO_CONTAINERS_SAME_TWO_VOLUMES_AND_NETWORKS",
+    "persistentDataOperations": false,
+    "githubMutations": false,
+    "historicalPreFetchGitState": "PASS_UNCHANGED_AT_INITIAL_PRE_FETCH_VERIFICATION",
+    "currentHeadTreeBranchIndex": "PASS_UNCHANGED_BEFORE_PUBLICATION",
+    "authorizedGitChanges": {
+      "fetchApprovedMain": true,
+      "remoteTrackingMainUpdatedFrom": "aabbf416c6c0cd789c345b08552c946fc7b15659",
+      "remoteTrackingMainUpdatedTo": "5d86555402507d73f103713b198789c594a1811c",
+      "fetchHeadWritten": true,
+      "otherRefsChanged": false
+    }
+  },
+  "historicalVerification": {
+    "previousInventorySha256": "5ebc80572dab2e7485cd0a74aae838ef167f081f0d12a80022cda3bb6abd19e7",
+    "previousCanonical": {
+      "schema": 1,
+      "mode": "verify",
+      "status": "FAIL",
+      "startedAt": "2026-10-28T16:52:18.572Z",
+      "durationMs": 140184,
+      "lockfileSha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+      "results": [
+        {
+          "command": "frozen install",
+          "status": "PASS",
+          "durationMs": 1104
+        },
+        {
+          "command": "container runtime",
+          "status": "PASS",
+          "durationMs": 593
+        },
+        {
+          "command": "ci:validate",
+          "status": "PASS",
+          "durationMs": 615
+        },
+        {
+          "command": "ci:supply-chain",
+          "status": "PASS",
+          "durationMs": 3511
+        },
+        {
+          "command": "format:check",
+          "status": "PASS",
+          "durationMs": 7853
+        },
+        {
+          "command": "lint",
+          "status": "PASS",
+          "durationMs": 53210
+        },
+        {
+          "command": "typecheck",
+          "status": "FAIL",
+          "durationMs": 72964
+        },
+        {
+          "command": "container cleanup inventory",
+          "status": "PASS",
+          "durationMs": 332
+        }
+      ],
+      "providerExecution": "NOT_VERIFIED"
+    },
+    "previousBlocker": {
+      "code": "ERR_SWC_NATIVE_CACHE",
+      "component": "@swc/core@1.16.12",
+      "consumer": "next-intl@4.14.8",
+      "unchangedFromBaseline": true,
+      "reason": "Default Windows SWC cache DACL grants replacement rights to a non-owner SID; guard refuses loading",
+      "newNextSwcCausation": "NOT_ESTABLISHED",
+      "ownerStopConditionHonored": true,
+      "cacheOrAclChanged": false,
+      "retry": false,
+      "nextOption": "Separately authorized private absolute SWC_NATIVE_BINDING_CACHE with verified permissions; effectiveness NOT_VERIFIED"
+    },
+    "previousScans": {
+      "source": {
+        "status": "PASS",
+        "paths": 325,
+        "suppressions": false
+      },
+      "localAllRefs": {
+        "status": "PASS",
+        "commits": 299,
+        "suppressions": false
+      },
+      "refreshedRemoteHistory": "NOT_EXECUTED_AFTER_STOP"
+    }
+  },
+  "shippedImages": {
+    "api": {
+      "id": "sha256:a7a83694ccf04804a96548e00faba227a00b2cac32683450dc1e3cc77e8671a9",
+      "packages": [
+        "@borewit/text-codec@0.2.2",
+        "@lukeed/csprng@1.1.0",
+        "@nestjs/common@12.1.1",
+        "@nestjs/core@12.1.1",
+        "@nestjs/platform-express@12.3.0",
+        "@standard-schema/spec@1.1.0",
+        "@tokenizer/inflate@0.4.1",
+        "@tokenizer/token@0.3.0",
+        "@website-builder/config@0.0.0",
+        "@website-builder/database@0.0.0",
+        "@website-builder/observability@0.0.0",
+        "@website-builder/schemas@0.0.0",
+        "accepts@2.0.0",
+        "append-field@1.0.0",
+        "body-parser@2.4.0",
+        "busboy@1.6.0",
+        "bytes@3.1.2",
+        "call-bind-apply-helpers@1.0.2",
+        "call-bound@1.0.4",
+        "content-disposition@2.0.1",
+        "content-type@2.1.0",
+        "cookie-signature@1.2.2",
+        "cookie@0.7.2",
+        "cors@2.8.6",
+        "debug@4.4.3",
+        "depd@2.0.0",
+        "dunder-proto@1.0.1",
+        "ee-first@1.1.1",
+        "encodeurl@2.0.0",
+        "es-define-property@1.0.1",
+        "es-errors@1.3.0",
+        "es-object-atoms@1.1.2",
+        "escape-html@1.0.3",
+        "etag@1.8.1",
+        "express@5.3.0",
+        "fast-safe-stringify@2.1.1",
+        "file-type@22.1.1",
+        "finalhandler@2.1.1",
+        "forwarded@0.2.0",
+        "fresh@2.0.0",
+        "function-bind@1.1.2",
+        "get-intrinsic@1.3.0",
+        "get-proto@1.0.1",
+        "gopd@1.2.0",
+        "has-symbols@1.1.0",
+        "hasown@2.0.4",
+        "http-errors@2.0.1",
+        "iconv-lite@0.7.3",
+        "ieee754@1.2.1",
+        "inherits@2.0.4",
+        "ipaddr.js@1.9.1",
+        "is-promise@4.0.0",
+        "iterare@1.2.1",
+        "load-esm@1.0.3",
+        "math-intrinsics@1.1.0",
+        "media-typer@0.3.0",
+        "media-typer@1.1.1",
+        "merge-descriptors@2.0.0",
+        "mime-db@1.52.0",
+        "mime-db@1.54.0",
+        "mime-types@2.1.35",
+        "mime-types@3.0.2",
+        "ms@2.1.3",
+        "multer@2.5.0",
+        "negotiator@1.1.0",
+        "object-assign@4.1.1",
+        "object-inspect@1.13.4",
+        "on-finished@2.4.2",
+        "once@1.4.0",
+        "parseurl@1.3.3",
+        "path-to-regexp@8.4.2",
+        "pg-cloudflare@1.4.0",
+        "pg-connection-string@2.14.0",
+        "pg-int8@1.0.1",
+        "pg-pool@3.14.0",
+        "pg-protocol@1.16.0",
+        "pg-types@2.2.0",
+        "pg@8.23.0",
+        "pgpass@1.0.5",
+        "postgres-array@2.0.0",
+        "postgres-bytea@1.0.1",
+        "postgres-date@1.0.7",
+        "postgres-interval@1.2.0",
+        "proxy-addr@2.0.8",
+        "qs@6.17.0",
+        "range-parser@1.3.0",
+        "raw-body@3.0.2",
+        "reflect-metadata@0.2.2",
+        "router@2.2.0",
+        "rxjs@7.8.2",
+        "safer-buffer@2.1.2",
+        "send@1.2.1",
+        "serve-static@2.2.1",
+        "setprototypeof@1.2.0",
+        "side-channel-list@1.0.1",
+        "side-channel-map@1.0.1",
+        "side-channel-weakmap@1.0.2",
+        "side-channel@1.1.1",
+        "split2@4.2.0",
+        "statuses@2.0.2",
+        "streamsearch@1.1.0",
+        "strtok3@10.3.5",
+        "toidentifier@1.0.1",
+        "token-types@6.1.2",
+        "tslib@2.8.1",
+        "type-is@1.6.18",
+        "type-is@2.1.0",
+        "uid@2.0.2",
+        "uint8array-extras@1.6.0",
+        "unpipe@1.0.0",
+        "vary@1.1.2",
+        "wrappy@1.0.2",
+        "xtend@4.0.2",
+        "zod@4.6.6"
+      ],
+      "toolingExclusion": "PASS"
+    },
+    "worker": {
+      "id": "sha256:f6a84444da5467b596f9ad32bb70b63c8e4f6b768576469d81400a7d10f31f14",
+      "packages": [
+        "@borewit/text-codec@0.2.2",
+        "@ioredis/commands@2.0.0",
+        "@lukeed/csprng@1.1.0",
+        "@msgpackr-extract/msgpackr-extract-linux-x64@3.0.4",
+        "@nestjs/common@12.1.1",
+        "@nestjs/core@12.1.1",
+        "@nestjs/platform-express@12.3.0",
+        "@standard-schema/spec@1.1.0",
+        "@tokenizer/inflate@0.4.1",
+        "@tokenizer/token@0.3.0",
+        "@website-builder/config@0.0.0",
+        "@website-builder/observability@0.0.0",
+        "@website-builder/queues@0.0.0",
+        "@website-builder/schemas@0.0.0",
+        "accepts@2.0.0",
+        "append-field@1.0.0",
+        "body-parser@2.4.0",
+        "bullmq@6.3.10",
+        "busboy@1.6.0",
+        "bytes@3.1.2",
+        "call-bind-apply-helpers@1.0.2",
+        "call-bound@1.0.4",
+        "cluster-key-slot@1.1.1",
+        "content-disposition@2.0.1",
+        "content-type@2.1.0",
+        "cookie-signature@1.2.2",
+        "cookie@0.7.2",
+        "cors@2.8.6",
+        "cron-parser@5.10.1",
+        "debug@4.4.3",
+        "denque@2.1.0",
+        "depd@2.0.0",
+        "detect-libc@2.1.2",
+        "dunder-proto@1.0.1",
+        "ee-first@1.1.1",
+        "encodeurl@2.0.0",
+        "es-define-property@1.0.1",
+        "es-errors@1.3.0",
+        "es-object-atoms@1.1.2",
+        "escape-html@1.0.3",
+        "etag@1.8.1",
+        "express@5.3.0",
+        "fast-safe-stringify@2.1.1",
+        "file-type@22.1.1",
+        "finalhandler@2.1.1",
+        "forwarded@0.2.0",
+        "fresh@2.0.0",
+        "function-bind@1.1.2",
+        "get-intrinsic@1.3.0",
+        "get-proto@1.0.1",
+        "gopd@1.2.0",
+        "has-symbols@1.1.0",
+        "hasown@2.0.4",
+        "http-errors@2.0.1",
+        "iconv-lite@0.7.3",
+        "ieee754@1.2.1",
+        "inherits@2.0.4",
+        "ioredis@6.0.0",
+        "ipaddr.js@1.9.1",
+        "is-promise@4.0.0",
+        "iterare@1.2.1",
+        "load-esm@1.0.3",
+        "luxon@3.7.2",
+        "math-intrinsics@1.1.0",
+        "media-typer@0.3.0",
+        "media-typer@1.1.1",
+        "merge-descriptors@2.0.0",
+        "mime-db@1.52.0",
+        "mime-db@1.54.0",
+        "mime-types@2.1.35",
+        "mime-types@3.0.2",
+        "ms@2.1.3",
+        "msgpackr-extract@3.0.4",
+        "msgpackr@2.1.0",
+        "multer@2.5.0",
+        "negotiator@1.1.0",
+        "node-abort-controller@3.1.1",
+        "node-gyp-build-optional-packages@5.2.2",
+        "object-assign@4.1.1",
+        "object-inspect@1.13.4",
+        "on-finished@2.4.2",
+        "once@1.4.0",
+        "parseurl@1.3.3",
+        "path-to-regexp@8.4.2",
+        "pg-cloudflare@1.4.0",
+        "pg-connection-string@2.14.0",
+        "pg-int8@1.0.1",
+        "pg-pool@3.14.0",
+        "pg-protocol@1.16.0",
+        "pg-types@2.2.0",
+        "pg@8.23.0",
+        "pgpass@1.0.5",
+        "postgres-array@2.0.0",
+        "postgres-bytea@1.0.1",
+        "postgres-date@1.0.7",
+        "postgres-interval@1.2.0",
+        "proxy-addr@2.0.8",
+        "qs@6.17.0",
+        "range-parser@1.3.0",
+        "raw-body@3.0.2",
+        "redis-errors@1.2.0",
+        "reflect-metadata@0.2.2",
+        "router@2.2.0",
+        "rxjs@7.8.2",
+        "safer-buffer@2.1.2",
+        "semver@7.8.5",
+        "send@1.2.1",
+        "serve-static@2.2.1",
+        "setprototypeof@1.2.0",
+        "side-channel-list@1.0.1",
+        "side-channel-map@1.0.1",
+        "side-channel-weakmap@1.0.2",
+        "side-channel@1.1.1",
+        "split2@4.2.0",
+        "standard-as-callback@2.1.0",
+        "statuses@2.0.2",
+        "streamsearch@1.1.0",
+        "strtok3@10.3.5",
+        "toidentifier@1.0.1",
+        "token-types@6.1.2",
+        "tslib@2.8.1",
+        "type-is@1.6.18",
+        "type-is@2.1.0",
+        "uid@2.0.2",
+        "uint8array-extras@1.6.0",
+        "unpipe@1.0.0",
+        "vary@1.1.2",
+        "wrappy@1.0.2",
+        "xtend@4.0.2",
+        "zod@4.6.6"
+      ],
+      "toolingExclusion": "PASS"
+    },
+    "dashboard-web": {
+      "id": "sha256:bf28c1b64c7a814dfdc1bfcceba046080a3b3a5de2b3c7c52581015102e7a428",
+      "packages": [
+        "@img/colour@1.1.0",
+        "@img/sharp-libvips-linuxmusl-x64@1.3.4",
+        "@img/sharp-linuxmusl-x64@0.35.5",
+        "@next/env@16.4.1",
+        "@swc/helpers@0.5.23",
+        "@website-builder/config@0.0.0",
+        "@website-builder/observability@0.0.0",
+        "@website-builder/schemas@0.0.0",
+        "client-only@0.0.1",
+        "detect-libc@2.1.2",
+        "next@16.4.1",
+        "react-dom@19.3.0",
+        "react@19.3.0",
+        "semver@7.8.5",
+        "sharp@0.35.5",
+        "styled-jsx@5.1.6",
+        "zod@4.6.6"
+      ],
+      "toolingExclusion": "PASS"
+    },
+    "public-renderer": {
+      "id": "sha256:f5b8d5aa5fc01526596cbd30b8b8e7cb1691a035bc01e161e3cd499ab3262172",
+      "packages": [
+        "@img/colour@1.1.0",
+        "@img/sharp-libvips-linuxmusl-x64@1.3.4",
+        "@img/sharp-linuxmusl-x64@0.35.5",
+        "@next/env@16.4.1",
+        "@swc/helpers@0.5.23",
+        "@website-builder/config@0.0.0",
+        "@website-builder/observability@0.0.0",
+        "@website-builder/schemas@0.0.0",
+        "client-only@0.0.1",
+        "detect-libc@2.1.2",
+        "next@16.4.1",
+        "react-dom@19.3.0",
+        "react@19.3.0",
+        "semver@7.8.5",
+        "sharp@0.35.5",
+        "styled-jsx@5.1.6",
+        "zod@4.6.6"
+      ],
+      "toolingExclusion": "PASS"
+    }
+  }
+}
