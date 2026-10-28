@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "checkpoint": "00-K",
+  "status": "FOCUSED_PASS_FULL_VERIFICATION_BLOCKED_NOT_PUBLISHED",
+  "owner": "Hasoba96",
+  "approvedMain": "5d86555402507d73f103713b198789c594a1811c",
+  "localHead": "105dbaab8eca8ddfa2e96c2a91db4ee2628b66be",
+  "baseTree": "752b2d37f2fbd8646e5c092099c5bd05a2319e96",
+  "packet": "00-K-CANARY-01",
+  "realCodeLines": 176,
+  "maximum": 400,
+  "risk": "Sensitive, reversible test-only security assertion correction; no production changes",
+  "review": "Separate same-agent technical/security/disclosure review; not independent human review",
+  "publicationAuthorized": false,
+  "lockfileSha256": "be29a554f8d40b5722408eef0b59e4114dced472f1578b7caf123750c4188074",
+  "files": [
+    {
+      "path": "apps/api/tests/operations.spec.ts",
+      "mode": "100644",
+      "sha256": "7a367c795961a0e452bf4de604bbfffdef035b0c8719c56b9fe215c8754b175a",
+      "gitBlob": "45409341c9b4f325b8ec66b2eb1fdf1a8d83a691",
+      "bytes": 7852,
+      "added": 162,
+      "deleted": 12,
+      "realCodeLines": 174,
+      "hunks": [
+        {
+          "range": "@@ -7,0 +8 @@ import { Test } from '@nestjs/testing';",
+          "sha256": "d2b61ce1e7ee3a58316e57a76bbf54337b2d5dbc229b219ac5a09af8e0ee84e4"
+        },
+        {
+          "range": "@@ -9,0 +11 @@ import { expect, it } from 'vitest';",
+          "sha256": "b00c7ef5ccfe76ad1eb4bd4aacbcfc6cb5bfcb10de2c2a9bf942dfcb8d12db10"
+        },
+        {
+          "range": "@@ -16,0 +19,148 @@ import {",
+          "sha256": "00878cd8846441f0f495365a82cd6047289a4a53d87d47c9bc5f67276eb386e3"
+        },
+        {
+          "range": "@@ -21 +171 @@ class FailureFixture {",
+          "sha256": "1a9c8e5bea0e70ca9fb784d2a7790e8cd80b5de38868b64f5f2a5f73a50e4c94"
+        },
+        {
+          "range": "@@ -24 +174 @@ class FailureFixture {",
+          "sha256": "f35d56cd76a0784a3d57d86114588cd037d3084cbdc8903cbd375ea85e446a37"
+        },
+        {
+          "range": "@@ -27 +177 @@ class FailureFixture {",
+          "sha256": "44c8dfa0254e60b70e4e32170107cbc22a4aa22e857bf07b1de9c042ea95f8f3"
+        },
+        {
+          "range": "@@ -64 +214 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "11628ab8a05da8672835a4b4dac50ebb9d22df85c032904ca70f596512d833ac"
+        },
+        {
+          "range": "@@ -69 +219 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "1f2ca23577338adb458a77e77fef152119913296737d38fe56fafdd333b6d7e4"
+        },
+        {
+          "range": "@@ -72,3 +222,3 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "866625f0938e8039a23c5773db3f8ce75710fc0c120a575b6781a7e44edf0193"
+        },
+        {
+          "range": "@@ -81 +231 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "98e5658211a7945a764023f797a9a577c68475b070133d532394bd4c49ce43c9"
+        },
+        {
+          "range": "@@ -91 +241 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "cbdba7b7d50875cf226e8bba1199e3549956f91cd2b139dfb7e93214fe54c0f7"
+        },
+        {
+          "range": "@@ -95,2 +245,2 @@ it('centralizes real Nest exceptions, 404s and HTTP correlation without exposing",
+          "sha256": "d2c40e362bf48a4e50b915154eb15191d087155f461d4602b581f75eb4dcb72a"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-evidence.ts",
+      "mode": "100644",
+      "sha256": "605953a66d0ff5abf878caabf3d415b906836d24e04867c6abf0051be88fc0e7",
+      "gitBlob": "aef490093cdcd69e248bacb90b4c18b64ea630b4",
+      "bytes": 5929,
+      "added": 1,
+      "deleted": 1,
+      "realCodeLines": 2,
+      "hunks": [
+        {
+          "range": "@@ -62 +62 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "sha256": "b06479240d9e20ac6196ff190c124eb95e88621a86bcd79cb3ca1eb5e6dcc9c4"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-k-canary-correction.md",
+      "mode": "100644",
+      "sha256": "25417eccbdcf231722cb8adc5da2ce70b4f180dba15da424a3b295b367597ba2",
+      "gitBlob": "f6bec6a8e06170bf5cf794fefb0b42cdedc27bd8",
+      "bytes": 10123,
+      "added": 58,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "hunks": [
+        {
+          "range": "new file 1-58",
+          "sha256": "25417eccbdcf231722cb8adc5da2ce70b4f180dba15da424a3b295b367597ba2"
+        }
+      ]
+    }
+  ],
+  "self": "Generated inventory is the fourth reviewed file; its own hash is recorded externally to avoid recursion"
+}

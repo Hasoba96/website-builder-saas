@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "reviewedAt": "2026-10-11",
+  "reviewedAt": "2026-10-28",
   "reviewBy": "2026-12-29T00:00:00Z",
-  "lockfileSha256": "sha256:be29a554f8d40b5722408eef0b59e4114dced472f1578b7caf123750c4188074",
+  "lockfileSha256": "sha256:60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
   "owner": "Project maintainer",
-  "review": "docs/checkpoints/00-j-dependency-review.md",
+  "review": "docs/checkpoints/00-k-dependency-review.md",
   "newDirect": { "@actions/artifact": "6.3.1" },
-  "securityPatch": { "next": "16.3.8", "@next/env": "16.3.8" },
+  "securityPatch": { "next": "16.4.1", "@next/env": "16.4.1" },
   "exposure": "@actions/artifact: CI only; Next.js and @next/env security patch: application runtime, web launcher, build and test tooling",
   "disposition": "ACCEPT WITH TRACKING",
   "tracked": [

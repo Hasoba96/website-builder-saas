@@ -24,6 +24,54 @@ const id = randomUUID();
 const project = `wb-local-test-${id}`;
 const directory = resolve('.local', project);
 const children: ChildProcess[] = [];
+// Match existing process-lifecycle bounds; measured cold API imports take ~14s.
+const startupTimeoutMs = 25_000;
+function startupState(
+  child: Pick<ChildProcess, 'exitCode' | 'signalCode'>,
+  output: string[],
+) {
+  return {
+    reason:
+      child.exitCode !== null || child.signalCode !== null
+        ? 'process_exited'
+        : 'readiness_deadline',
+    exitCode: child.exitCode,
+    terminated: child.signalCode !== null,
+    outputObserved: output.some((chunk) => chunk.length > 0),
+  };
+}
+
+it('startup diagnostics distinguish silent live/exited processes without exposing captured values', () => {
+  const live = { exitCode: null, signalCode: null };
+  expect(startupState(live, [])).toEqual({
+    reason: 'readiness_deadline',
+    exitCode: null,
+    terminated: false,
+    outputObserved: false,
+  });
+  const output = [
+    'raw-process-private-value',
+    '{"details":{"password":"raw-process-private-value"}}',
+  ];
+  expect(startupState({ exitCode: 1, signalCode: null }, output)).toEqual({
+    reason: 'process_exited',
+    exitCode: 1,
+    terminated: false,
+    outputObserved: true,
+  });
+  expect(
+    startupState({ exitCode: null, signalCode: 'SIGTERM' }, output),
+  ).toEqual({
+    reason: 'process_exited',
+    exitCode: null,
+    terminated: true,
+    outputObserved: true,
+  });
+  expect(JSON.stringify(startupState(live, output))).not.toContain(
+    'raw-process-private-value',
+  );
+});
+
 async function freePort() {
   const server = createServer();
   server.listen(0, '127.0.0.1');
@@ -213,6 +261,7 @@ it('real app probes reflect only their dependency and safely handle local outage
     });
   // Start one process at a time; both remain live for the dependency-isolation checks.
   for (const app of ['api', 'worker'] as const) {
+    const appOutput: string[] = [];
     appendFileSync(
       resolve(directory, `${app}.env`),
       `\n${app === 'api' ? 'PORT' : 'PROBE_PORT'}=${ports[app]}\n`,
@@ -232,8 +281,13 @@ it('real app probes reflect only their dependency and safely handle local outage
       },
     );
     children.push(child);
-    child.stdout?.on('data', (data: Buffer) => outputs.push(data.toString()));
-    child.stderr?.on('data', (data: Buffer) => outputs.push(data.toString()));
+    const capture = (data: Buffer) => {
+      const text = data.toString();
+      outputs.push(text);
+      appOutput.push(text);
+    };
+    child.stdout?.on('data', capture);
+    child.stderr?.on('data', capture);
     await expect
       .poll(
         async () => {
@@ -243,29 +297,12 @@ it('real app probes reflect only their dependency and safely handle local outage
             return 0;
           }
         },
-        { timeout: 15000 },
+        { timeout: startupTimeoutMs },
       )
       .toBe(200)
       .catch(() => {
-        const events = outputs
-          .join('')
-          .split('\n')
-          .filter(Boolean)
-          .map((line) => {
-            try {
-              const record = JSON.parse(line) as Record<string, unknown>;
-              return {
-                service: record['service'],
-                event: record['event'],
-                code: record['code'],
-                details: record['details'],
-              };
-            } catch {
-              return { event: 'non_json_process_output' };
-            }
-          });
         throw new Error(
-          `Local ${app} startup failed: ${JSON.stringify(events)}`,
+          `Local ${app} startup failed: ${JSON.stringify(startupState(child, appOutput))}`,
         );
       });
   }
