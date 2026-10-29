@@ -1,0 +1,71 @@
+# L-00/L-01 candidate verification — 2026-10-29
+
+**Status: implementation complete; mandatory verification BLOCKED. Not published, merged or accepted as a checkpoint PASS.** Owner: Hasoba96, infrastructure/observability. The owner authorized the working L-00 defaults, inert L-01 implementation, separate review and conditional protected publication only after every required gate passes. No merge is authorized.
+
+## Candidate and scope
+
+Entry main: `8f745f8c0de284b1ed0fb22d26a57174630766b1`, tree `a72c9a387a9023d7c9e910dd07e6cdc1dd514405`. Local branch `codex/00-l-01-bounded-metrics` was created at2026-10-29T11:26:23Z, with a72-hour execution expiry at2026-11-01T11:26:23Z; CORE-041's shorter-than-five-working-days requirement remains binding. No branch was published, commit created or index staged.
+
+[L-00](00-l-charter.md) records the working charter, applicability matrix and ADR trigger decisions; [the local contract](00-l-metrics-contract.md) defines finite schemas, units, windows, retention, overflow and clock behavior. The new initial inert aggregate policy is indexed in system21 in English and Arabic. Removing only each new table row reconstructs its entry-main file exactly: no existing retention duration, rule, ADR or threshold changes.
+
+The library has84 fixed series,5460 numeric-array bytes per instance, bounded counters/histograms, honest bucket-upper-bound quantiles/overflow, latest-only gauges, logical expiry/stale/reset and sanitized clock refusal. It retains no input object/PII and registers no application consumer, timer, network, sink, provider or monitoring endpoint. Applications, migrations, dependencies, lockfile, workflows, logger and readiness semantics are unchanged. Pure module definitions are exported through existing workspace boundaries.
+
+## Whole-PR real-code accounting
+
+| Path                                       | Conservative added/deleted code lines |
+| ------------------------------------------ | ------------------------------------- |
+| packages/schemas/src/metrics.ts            | 82 added                              |
+| packages/observability/src/metrics.ts      | 129 added                             |
+| scripts/metrics.spec.ts                    | 184 added                             |
+| packages/schemas/package.json              | 1 added                               |
+| packages/observability/src/index.ts        | 1 added                               |
+| scripts/test-evidence.ts                   | 2 added,1 deleted                     |
+| **Whole source/test/configuration packet** | **400**                               |
+
+Markdown and generated review evidence remain inventoried and separately reviewed, not hidden executable implementation. No lockfile/generated-source exception or consumed bootstrap allowance is used. No further source line can be added without a genuinely coherent compliant re-plan. [Review inventory](00-l-01-review-inventory.json) records exact file/mode/hunk identities; its own digest is held in private operational evidence to avoid a circular self-hash.
+
+## Actual verification and preserved failures
+
+- New metrics9/9 plus existing observability12/12 focused tests passed. The existing browser-import exclusion test remains active; no duplicate or fake test was introduced. Required root ownership/floor deliberately increased from64 to73. All current expected suites contain195 tests.
+- First canonical attempt passed frozen install, runtime, workflow contract, supply-chain/audit, format and lint/boundaries, then failed typecheck because APP_ENV was unset. The safe CONFIGURATION_INVALID failure is preserved; no source fix or validation bypass was used. The second attempt used APP_ENV=ci and CI=true, matching the reviewed workflow, with1536MiB Node heap and the existing supported process-only private SWC cache. The real native transform passed; no cache-root, ACL, loader or guard change was made.
+- The second canonical attempt passed fresh frozen install, supply-chain/license/audit, format/lint/boundaries, workspace validation, **typecheck14/14** and **build9/9**. It then failed the mandatory Compose suite: **6/7**, at `tests/local/foundation.spec.ts:304`, API readiness deadline25000ms; live process, no observed stdout/stderr, no exit/signal. The original deadline, assertion and production behavior were not changed.
+- The exact failed startup stage/root cause is **unresolved**. A separate bounded import-only diagnosis measured observability121.0982ms and API bootstrap610.21ms, without launching either application. These warm measurements neither explain the failed process nor prove a cold-start/environment cause. No repeated Compose attempt, timeout increase, warmup workaround or quarantine was used.
+- Independent existing `scripts/test-redis.ts --all` completed the remaining188 tests successfully: PostgreSQL17, Redis/BullMQ15, API7, Worker2, config29, schemas12, Dashboard4, Renderer4, root73 and browser25. Native reports were validated against actual required files and recorded execution identities. **Across these explicit candidate executions:194 passed,1 failed. This is not a successful full guarded run.**
+- Real backup/restore recovered two synthetic records from an encrypted7039-byte archive, source unchanged and migration compatible. Backup886.9375ms, restore1416.895ms, complete exercise6934.0073ms; these are small-fixture timings, not production RPO/RTO.
+- Production Chromium **25/25**, zero skipped/flaky/unexpected, with the eight existing Windows-platform visual comparisons and AR/EN/layout/accessibility/hydration/CSP/browser-secret checks. This is Windows evidence, not hosted Linux or a new Linux baseline acceptance.
+- **Coverage incomplete:9/10** native nonempty summaries. Failed Compose did not produce its coverage summary. No historical coverage was substituted, and the missing evidence remains a mandatory block.
+- Canonical budget/final audit/source stages were not reached after the test failure. Independently executed bundle budgets passed: both187736/512000 gzip bytes. Fresh full audit reported zero info/low/moderate/high/critical findings. Dependency graph and lock SHA-256 remain `60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af`;1440-minute maturity and strict peers/engines/lifecycle policy are unchanged.
+- Independent `pnpm ci:images`: **PASS**, a fresh frozen installation, all four Linux application builds and four smoke checks, non-root readiness, applicable locales, production/test-tooling boundaries, structured output and shutdown0. Actual execution took534626ms and reported zero owned test containers. This is local Linux-container evidence, not hosted GitHub verification; no image was pushed. It does not clear the failed canonical path.
+- Final documentation format/link/secret/history and preservation checks are recorded in the private operational ledger; they cannot clear the Compose block. Hooks remain configured; no new staged commit exists on which to claim a pre-commit hook execution.
+
+## Separate review and remaining gate
+
+Separate AI-assisted technical/security/disclosure review passed the source algorithm,400-line accounting and narrowed documentation. Findings resolved: the clock function/last valid time are intentionally retained;60 seconds is logical access validity, not guaranteed physical RAM deletion; system21 now indexes the initial inert type. BR-031/061 maintenance/deletion acceptance remains open before actual runtime collection/export/storage. No new architectural ADR is triggered by an inert initial type; external diagnostics, SLO/provider/rendering/security changes retain their actual ADR requirements. This is not independent human review or a full security certification.
+
+Publication remains blocked under the owner's stop conditions, CORE-040/044/045/046 and TS-060/063/IN-030. No hosted run/artifact or PR exists for this candidate. A green independent image run cannot replace the failed canonical path or missing coverage. No provider, alert recipient, consumer, production service, L-02/L-03 source, L-04–L-11 or Stage01 implementation was activated.
+
+Recommended next owner action: authorize a separate bounded Compose startup diagnosis/repair prerequisite packet, measured as its own ordinary <=400-line PR and preserving this exact L-01 candidate. Establish the failing stage before proposing a correction; no arbitrary deadline increase or weakened fresh-process readiness assertion. Only after that prerequisite and a revalidated approved base may this packet repeat canonical/images and proceed through the already requested protected publication and fresh hosted Linux checks. L-01 merge still requires separate explicit owner acceptance of its eventual exact candidate.
+
+## Dated reconciliation — 2026-10-29, fresh acceptance authorized
+
+The observations above are preserved historical evidence. The owner's subsequent L-01 recovery/publication instruction supersedes the earlier additional stop condition requiring a proven cause for a non-reproducing historical failure. No authoritative project rule was found that adds causal repair of that historical symptom to successful current acceptance. Every mandatory original local and hosted gate remains required without skips, relaxed assertions or a deadline change. This is not a governance waiver or a claim that the symptom is harmless.
+
+**OPEN RISK L-01-R1 — intermittent API startup stall; not FIXED or CLOSED.** Previously, the fresh API child remained live with no observed stdout/stderr, exit or signal, but did not reach readiness within the unchanged 25,000 ms deadline at tests/local/foundation.spec.ts:304. Exact blocking bootstrap stage and root cause remain unproven. API readiness remains PostgreSQL-only, Worker readiness Redis-only; liveness remains dependency-independent.
+
+A bounded diagnostic investigation subsequently passed Compose 7/7 in two isolated observed runs and once in the full canonical predecessor context. The observed canonical execution passed 195/195 tests and all ten coverage summaries. Temporary allowlisted observers and native filesystem tracing may alter timing, so those results are diagnostic evidence, not uninstrumented acceptance or proof of a repair. No source or corrective environment change was applied. API listen phases varied approximately 1.681–12.412 seconds; those successful measurements do not identify the historical cause.
+
+During the successful full observed run, available host RAM reached approximately 388 MiB, CPU reached 100%, and C: retained at least 7,494,242,304 bytes free. Resource pressure is established as a risk, not as the causal explanation. Do not manufacture a failure using load, cache flushing, antivirus exclusions or disk exhaustion.
+
+**Fresh uninstrumented acceptance: LOCAL PASS on 2026-10-29; hosted acceptance pending.** The approved execution uses Node24.21.0/pnpm10.34.6, APP_ENV=ci, CI=true, the standard1536MiB Node heap and existing process-scoped private SWC cache, with all temporary timing preloads/trace flags removed. Fresh pnpm ci:verify and pnpm ci:images success permit the owner-authorized branch/PR publication. Current-candidate hosted verify/images success and artifact inspection are then mandatory before PR acceptance or any separately authorized merge. Earlier image and instrumented successes cannot substitute for those results.
+
+Reproduction/escalation: any fresh mandatory startup/readiness, coverage, security, cleanup or image failure blocks publication immediately. Preserve native failure evidence and sanitized process state; do not retry heavy CI randomly or increase the deadline. For a recurrence, propose narrowly scoped failure-time OS/process observation covering child spawn, scheduling, filesystem waits, dependency connection and probe responses, with allowlisted fields, bounded duration/storage, no raw requests/credentials and reviewed privileges. No system-wide recording or elevation is authorized by this risk entry. Investigate a demonstrated failing stage before proposing a code correction. A proven source repair must have its own coherent <=400-line reviewed PR if it cannot fit safely here; no artificial splitting or acceptance bypass.
+
+Accountable owner: Hasoba96; infrastructure/observability. The owner explicitly authorized retaining this unresolved historical risk while requiring successful original current acceptance and protected publication. Merge acceptance remains separately required for the exact eventual head/base. Reassess on recurrence, material resource/topology change, L-02/L-03 integration and before production activation. Neither L-01 nor this record closes Stage00-L or Foundation.
+
+### Fresh local acceptance evidence
+
+The subsequent uninstrumented pnpm ci:verify exited0 in 545766ms: 195/195 guarded tests, Compose7/7 at the original25,000ms deadline, all ten required coverage summaries, typecheck14/14 and build9/9. Counts: root73 including9 metrics tests, API7, Worker2, config29, schemas12, Dashboard4, Public Renderer4, PostgreSQL17, Redis/BullMQ15, Compose7, production Chromium25 with eight unchanged Windows comparisons. This is Windows acceptance, not hosted Linux evidence.
+
+Fresh pnpm ci:images exited0 in 103232ms, invoking all four production-image builds and four real smoke checks. Docker may reuse verified build layers; no historical smoke result was substituted. All applications ran non-root, became ready, satisfied applicable locales/locked package identities and output boundaries, and shut down0. Exact-owned cleanup reported zero remaining test containers. Both sanitizer preparations passed, including native-report/coverage validation and actual evidence secret scanning; no provider upload was attempted locally.
+
+Frozen lockfile, dependency/supply-chain/license gates, format/lint/architectural boundaries, source scan333paths and frontend budgets187736/512000 bytes each passed. Audit reported no known vulnerabilities. No dependency, test assertion, readiness deadline or production application behavior changed. L-01-R1 remains OPEN/UNPROVEN. Fresh exact-candidate hosted verify/images, Linux snapshots, artifacts, review-thread resolution and separate owner merge acceptance remain mandatory. The earlier failure and diagnostic records above retain their historical meaning.

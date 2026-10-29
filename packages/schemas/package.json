@@ -8,6 +8,7 @@
   ],
   "type": "module",
   "exports": {
+    "./metrics": "./dist/metrics.js",
     "./operations": "./dist/operations.js",
     "./queues": "./dist/queues.js",
     "./database": "./dist/database.js",
