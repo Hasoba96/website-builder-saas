@@ -84,6 +84,18 @@ export class BoundedMetrics {
     this.#clear();
     this.#seen.fill(0);
   }
+  invalidateGauge(name: string, service: string): boolean {
+    this.#advance();
+    const index = metricSeries.findIndex(
+      (s) =>
+        s.name !== 'http_duration_ms' &&
+        s.name === name &&
+        s.service === service,
+    );
+    if (index < 0) return this.#drop();
+    this.#values[index] = NaN;
+    return true;
+  }
   snapshot(): MetricSnapshot {
     this.#advance();
     return {

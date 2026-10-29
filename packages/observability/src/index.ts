@@ -1,6 +1,7 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 export { BoundedMetrics, MetricClockError } from './metrics.js';
 export { observeResponse } from './metrics-node.js';
+export { createProcessSampler } from './sampler.js';
 import { randomUUID, randomBytes } from 'node:crypto';
 import type { Writable } from 'node:stream';
 import type { IncomingMessage, ServerResponse } from 'node:http';
