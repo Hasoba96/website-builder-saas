@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "packet": "L-02-A",
+  "scope": "First independent inactive HTTP terminal observer prerequisite; no runtime attachment",
+  "owner": "Hasoba96",
+  "module": "infrastructure/observability",
+  "status": "LOCAL_PASS_PROTECTED_PR_PENDING",
+  "base": "1a899eff3cd415e17e7c759042a09ce91edb8cfa",
+  "baseTree": "2ec3da8976e532814ceede113c8dd9bc288d2338",
+  "branch": "codex/00-l-02-inactive-consumers",
+  "createdAt": "2026-10-29T14:32:58.000Z",
+  "expiresAt": "2026-11-01T14:32:58.000Z",
+  "realCodeLines": 334,
+  "files": [
+    {
+      "path": "docs/checkpoints/00-l-01-verification.md",
+      "mode": "100644",
+      "sha256": "6523052cd05a72894f7ce085865085a99fc049ad296a54095a6bb6147c04a36c",
+      "added": 10,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/scope reconciliation",
+      "hunks": [
+        {
+          "header": "@@ -71,0 +72,10 @@ Frozen lockfile, dependency/supply-chain/license gates, format/lint/architectura",
+          "added": 10,
+          "deleted": 0,
+          "sha256": "b986e957be2ceaed3764f744abe9007634a195c4a0ae06cddb159fbbc457c524"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-l-charter.md",
+      "mode": "100644",
+      "sha256": "67384c131f4334a849e134df40838ae68eb1ff1cf6a8332d381b788baf17b500",
+      "added": 8,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/scope reconciliation",
+      "hunks": [
+        {
+          "header": "@@ -47,0 +48,8 @@ Preserve the original development checkout, existing evidence, lockfile and pers",
+          "added": 8,
+          "deleted": 0,
+          "sha256": "efdbbae98b83ed8bfbd63b860db8fc4c3b0035bf68186c6ad7dc55165fb715e9"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-l-02-verification.md",
+      "mode": "100644",
+      "sha256": "7c28fae405196255f734caf97f18fa498c8536144ef1de3473b4e753dcc58848",
+      "added": 39,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/scope reconciliation",
+      "hunks": [
+        {
+          "header": "@@ -0,0 +1,39 @@",
+          "added": 39,
+          "deleted": 0,
+          "sha256": "16dd05f935675f0fdc77acef8eb2d3ebfdf953bf6577a57942331992f0028296"
+        }
+      ]
+    },
+    {
+      "path": "packages/observability/src/index.ts",
+      "mode": "100644",
+      "sha256": "25ce7da481a6896c4b2a3e3fd92241d1cee560db9203074652faffd775f14eb5",
+      "added": 1,
+      "deleted": 0,
+      "realCodeLines": 1,
+      "classification": "Server-only source/test/canonical discovery",
+      "hunks": [
+        {
+          "header": "@@ -2,0 +3 @@ export { BoundedMetrics, MetricClockError } from './metrics.js';",
+          "added": 1,
+          "deleted": 0,
+          "sha256": "b3bff574f2082963966ca291cecd472f98ea8b85e50809c56bb1e8e3d7e13dc1"
+        }
+      ]
+    },
+    {
+      "path": "packages/observability/src/metrics-node.ts",
+      "mode": "100644",
+      "sha256": "c7497afe2259e5888bdd539626518cbed5a2a4eecf4b304cf582bd3ba29bad55",
+      "added": 81,
+      "deleted": 0,
+      "realCodeLines": 81,
+      "classification": "Server-only source/test/canonical discovery",
+      "hunks": [
+        {
+          "header": "@@ -0,0 +1,81 @@",
+          "added": 81,
+          "deleted": 0,
+          "sha256": "4206a0448e0480e50dcd5d8aa80c36793285e283dfe9ef7f2ee35905bdddde5e"
+        }
+      ]
+    },
+    {
+      "path": "scripts/metrics-node.spec.ts",
+      "mode": "100644",
+      "sha256": "52645d4f6e17762ad74ab275f765e960e2f250e0ca7550955e25d49009139f47",
+      "added": 249,
+      "deleted": 0,
+      "realCodeLines": 249,
+      "classification": "Server-only source/test/canonical discovery",
+      "hunks": [
+        {
+          "header": "@@ -0,0 +1,249 @@",
+          "added": 249,
+          "deleted": 0,
+          "sha256": "46508af7831ebe7dbd36dd0f6659148663599f407092b4535bfbc3541347431d"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-evidence.ts",
+      "mode": "100644",
+      "sha256": "3eab4bf229897ecaa2334b7cc9d3a7aa903927df6894f0542ba5c6f2d7d6ff1d",
+      "added": 2,
+      "deleted": 1,
+      "realCodeLines": 3,
+      "classification": "Server-only source/test/canonical discovery",
+      "hunks": [
+        {
+          "header": "@@ -9,0 +10 @@ export const suites = {",
+          "added": 1,
+          "deleted": 0,
+          "sha256": "b66ba04c73e584a00d8b7fb6a6a6ada4f072c972fa80271a98a2cd3aa6b8f858"
+        },
+        {
+          "header": "@@ -61 +62 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "added": 1,
+          "deleted": 1,
+          "sha256": "8ed2707cc1b75089b82c4cd27503edb9a43fc5b4789206d39c1e919a47621ade"
+        }
+      ]
+    }
+  ],
+  "generatedEvidenceSelf": {
+    "path": "docs/checkpoints/00-l-02-review-inventory.json",
+    "sha256": "Recorded outside inventory after serialization",
+    "classification": "Generated non-executable review evidence"
+  },
+  "hunkHashContract": "SHA256 git unified0 hunk including header and trailing LF, normalizedLF",
+  "dependenciesAdded": 0,
+  "lockfileSha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+  "review": {
+    "technical": "PASS_SEPARATE_SCOPED_AI_REVIEW",
+    "security": "PASS_SEPARATE_SCOPED_AI_REVIEW",
+    "disclosure": "PASS_SEPARATE_SCOPED_AI_REVIEW",
+    "independentHuman": false,
+    "findings": [],
+    "limitations": "No independent human review, runtime activation, completed retention job, or future sampler capability claim"
+  },
+  "verification": {
+    "focusedNewTests": 6,
+    "focusedCoreAndNewTests": 15,
+    "expectedGuardedTests": 201,
+    "requiredCoverageReports": 10,
+    "canonical": "PASS",
+    "images": "PASS_FOUR_BUILDS_FOUR_SMOKES",
+    "hosted": "NOT_EXECUTED",
+    "previousCanonical": {
+      "status": "FAIL",
+      "cause": "Approved Gitleaks directory omitted from process PATH; spawn ENOENT confirmed",
+      "passed": 173,
+      "failed": 3,
+      "executed": 176,
+      "expected": 201,
+      "browser": "NOT_EXECUTED",
+      "preserved": true
+    },
+    "scannerCorrection": {
+      "sourceChanged": false,
+      "existingVersion": "8.30.1",
+      "focusedTests": 17,
+      "passed": 17,
+      "method": "Restore existing approved process PATH entry only"
+    },
+    "passed": 201,
+    "failed": 0,
+    "coverageReports": 10,
+    "typecheckTasks": 14,
+    "buildTasks": 9,
+    "sanitizedEvidence": "PASS_LOCAL_PREPARATION"
+  },
+  "risk": {
+    "classification": "Reversible pre-production observability/privacy-sensitive",
+    "runtimeConsumersAttached": false,
+    "retentionMaintenanceAcceptance": "BR031_BR061_OPEN_BEFORE_ACTIVATION",
+    "historicalCompose": "R1_OPEN_UNPROVEN",
+    "productionData": false,
+    "provider": false,
+    "ownerPublicationAuthorized": true,
+    "ownerMergeAuthorized": false
+  },
+  "scopeDeferred": [
+    "Independent inactive process/CPU/RSS/pool/actual Redis sampler and timer lifecycle packet",
+    "Actual API/Worker attachment after explicit maintenance/deletion acceptance",
+    "L03 implementation and all provider activation"
+  ],
+  "rollback": "Protected revert of unused definition/export/discovery; no persistent data operation",
+  "publication": {
+    "ownerAuthorized": true,
+    "staged": false,
+    "commitCreated": false,
+    "pushed": false,
+    "allowed": true,
+    "mergeAuthorized": false
+  }
+}
