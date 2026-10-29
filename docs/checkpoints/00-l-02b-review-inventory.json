@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "packet": "L-02-B",
+  "scope": "Inactive CPU/RSS process sampler prerequisite only; no dependency adapters or runtime attachment",
+  "owner": "Hasoba96",
+  "module": "infrastructure/observability",
+  "status": "LOCAL_PASS_PROTECTED_PR_PENDING",
+  "base": "b3a6f34be3a03c4f51e74ca49108b09e7da85ffa",
+  "baseTree": "e8afa09a495bac77fc434c62c413243dd0404f63",
+  "branch": "codex/00-l-02b-inactive-sampler",
+  "createdAt": "2026-10-29T16:06:16.000Z",
+  "expiresAt": "2026-11-01T16:06:16.000Z",
+  "realCodeLines": 379,
+  "files": [
+    {
+      "path": "docs/checkpoints/00-l-02-verification.md",
+      "mode": "100644",
+      "sha256": "fd951bfc8d4bdb75055613317d1db64414b7b40c0cfa8ff14b99346dff9de322",
+      "added": 8,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/contract",
+      "hunks": [
+        {
+          "header": "@@ -39,0 +40,8 @@ Current packet334conservative code lines. No application consumer is attached; B",
+          "added": 8,
+          "deleted": 0,
+          "sha256": "c4086a05633a141f4def6c903aba0f424da95517300913c563ed5c6d723cc5e7"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-l-02b-verification.md",
+      "mode": "100644",
+      "sha256": "5a6574d864c195e48815da0ec40156a85f7936f6578474138b0c38dadc3be7ce",
+      "added": 45,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/contract",
+      "hunks": [
+        {
+          "header": "@@ -0,0 +1,45 @@",
+          "added": 45,
+          "deleted": 0,
+          "sha256": "d9ba1b5ba0a4297b55cb8adccfac2763cb0849490324d69b50abff121996eafa"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-l-charter.md",
+      "mode": "100644",
+      "sha256": "ef9b636b843a71a24680e49896b49769381b91b3f79b21ecb054ec1d73da58af",
+      "added": 6,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/contract",
+      "hunks": [
+        {
+          "header": "@@ -55,0 +56,6 @@ Actual runtime attachment remains gated by system21 BR-031/061 and its accepted",
+          "added": 6,
+          "deleted": 0,
+          "sha256": "2d996ce551a75916a13bb1d89c6c5edc19964c0687c84e8a16df97d3a76ce095"
+        }
+      ]
+    },
+    {
+      "path": "docs/checkpoints/00-l-metrics-contract.md",
+      "mode": "100644",
+      "sha256": "ad69ea2efa2b48aae04f758f4eed316904be70a3216fbb3fe0f22251d09ab5a2",
+      "added": 8,
+      "deleted": 0,
+      "realCodeLines": 0,
+      "classification": "Non-executable reviewed evidence/contract",
+      "hunks": [
+        {
+          "header": "@@ -32,0 +33,8 @@ Importing the core starts no timer/listener, retains no external sink and attach",
+          "added": 8,
+          "deleted": 0,
+          "sha256": "c771ea4e91c5153f1a0ee5d396fc8966a69a9def8f2db29ae5bfe0d0ae9e7061"
+        }
+      ]
+    },
+    {
+      "path": "packages/observability/src/index.ts",
+      "mode": "100644",
+      "sha256": "13f711711bfd8df0e235c3a6a99de35a1f832a362b9a32c432dd2af9cf10e16c",
+      "added": 1,
+      "deleted": 0,
+      "realCodeLines": 1,
+      "classification": "Server-only source/tests/canonical ownership",
+      "hunks": [
+        {
+          "header": "@@ -3,0 +4 @@ export { observeResponse } from './metrics-node.js';",
+          "added": 1,
+          "deleted": 0,
+          "sha256": "7582c7a9a210eb5a4f132701a98d24dfb44e768cdbbea6ec2c45da3b5a39227d"
+        }
+      ]
+    },
+    {
+      "path": "packages/observability/src/metrics.ts",
+      "mode": "100644",
+      "sha256": "db047618a201d20b5a96e4a38f42f1e56c31b62fdec3ef83239bfa840019a3bd",
+      "added": 12,
+      "deleted": 0,
+      "realCodeLines": 12,
+      "classification": "Server-only source/tests/canonical ownership",
+      "hunks": [
+        {
+          "header": "@@ -86,0 +87,12 @@ export class BoundedMetrics {",
+          "added": 12,
+          "deleted": 0,
+          "sha256": "08cd6a951008e46c4d128c9480a0843dced5059ac4034903601466b12cb83ddb"
+        }
+      ]
+    },
+    {
+      "path": "packages/observability/src/sampler.ts",
+      "mode": "100644",
+      "sha256": "1bc47e000414d8e4c0196e74919c31519b4b45e34d09803efec57a1299cfd11c",
+      "added": 138,
+      "deleted": 0,
+      "realCodeLines": 138,
+      "classification": "Server-only source/tests/canonical ownership",
+      "hunks": [
+        {
+          "header": "@@ -0,0 +1,138 @@",
+          "added": 138,
+          "deleted": 0,
+          "sha256": "5b13958418869fa99773984f779d1ecbaccd86391c2e532a66c55611b61481b4"
+        }
+      ]
+    },
+    {
+      "path": "scripts/sampler.spec.ts",
+      "mode": "100644",
+      "sha256": "2c9651e59e822db525eff0a8db1f650803163f7f979bb68ff46720d1f90b2984",
+      "added": 225,
+      "deleted": 0,
+      "realCodeLines": 225,
+      "classification": "Server-only source/tests/canonical ownership",
+      "hunks": [
+        {
+          "header": "@@ -0,0 +1,225 @@",
+          "added": 225,
+          "deleted": 0,
+          "sha256": "dd7cbd31778b187d61a72f5daafd085c7c5e48c3b5f2dd0eb28346bf29a7ce43"
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-evidence.ts",
+      "mode": "100644",
+      "sha256": "527bf11836f64e2b87821919ead6db542f30f16c32e5d7da3d1935a52bb296cd",
+      "added": 2,
+      "deleted": 1,
+      "realCodeLines": 3,
+      "classification": "Server-only source/tests/canonical ownership",
+      "hunks": [
+        {
+          "header": "@@ -9,0 +10 @@ export const suites = {",
+          "added": 1,
+          "deleted": 0,
+          "sha256": "04d63dea47e93c4cd429de01b46f812c5c7e8a89af44f14fcdff90354dbf80ca"
+        },
+        {
+          "header": "@@ -62 +63 @@ export const minimumTests: Record<keyof typeof suites, number> = {",
+          "added": 1,
+          "deleted": 1,
+          "sha256": "5f6798eb23706a061cdea93db21f19ef3f53a4fcda4ac37fe51147f7bd3ba63e"
+        }
+      ]
+    }
+  ],
+  "inventorySelf": {
+    "path": "docs/checkpoints/00-l-02b-review-inventory.json",
+    "mode": "100644",
+    "classification": "Generated non-executable inventory, separately reviewed and hashed in operational ledger; no recursive self hash"
+  },
+  "hunkHashContract": "SHA-256 of git diff --unified=0 hunk including @@ header and trailing LF; normalized LF",
+  "accounting": "All changed source, tests and scripts including blanks/comments count; only non-executable Markdown and generated inventory excluded",
+  "review": {
+    "technical": "Separate AI review; reentrant-start timer finding corrected and regression tested",
+    "security": "Separate AI review; inactive/privacy-sensitive; no independent human review claim",
+    "disclosure": "Synthetic fixtures and sanitized references only; private evidence excluded",
+    "limitations": "No runtime integration, production validation or independent human reviewer"
+  },
+  "verification": {
+    "expected": 208,
+    "rootFloor": 86,
+    "newTests": 7,
+    "focusedPassed": 16,
+    "localCanonical": "PASS",
+    "localImages": "PASS",
+    "hosted": "PENDING",
+    "requiredCoverageReports": 10,
+    "completeCoverageStatus": "PASS"
+  },
+  "risk": {
+    "classification": "Reversible pre-production observability/privacy-sensitive",
+    "runtimeConsumersAttached": false,
+    "retention": "BR031_BR061_OPEN",
+    "historicalCompose": "R1_OPEN_UNPROVEN",
+    "ownerPublicationAuthorized": true,
+    "ownerMergeAuthorized": false
+  },
+  "deferred": [
+    "PostgreSQL pool and actual Redis/Worker dependency adapters (unpublished prototype458 lines)",
+    "Application attachment and retention/deletion acceptance",
+    "L03 implementation and external telemetry"
+  ],
+  "rollback": "Protected revert of unused sampler/additive invalidation/export/test ownership; no persistent data operation"
+}
