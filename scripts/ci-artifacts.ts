@@ -233,6 +233,16 @@ export function prepareArtifacts(gate: unknown) {
     if (existsSync(budget)) add(budget, 'bundle-budget.json', true);
     const dependencies = resolve(root, 'dependencies.json');
     if (existsSync(dependencies)) add(dependencies, 'dependencies.json', true);
+    for (const name of [
+      'audit-raw.json',
+      'audit-stderr.txt',
+      'audit-process.json',
+      'audit-disposition.json',
+      'audit-disposition.txt',
+    ]) {
+      const source = resolve(root, name);
+      if (existsSync(source)) add(source, name);
+    }
   }
   const scan = spawnSync(
     'gitleaks',

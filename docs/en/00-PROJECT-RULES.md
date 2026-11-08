@@ -19,6 +19,8 @@
 
 Arabic documents are synchronized translations, not a separate authority. An ADR does not silently override this file: any approved change affecting these rules must also update the governing rule. If references conflict, stop and report the conflict before implementation; do not invent a reconciliation.
 
+**Prospective Known Risk Exception authority — 2026-11-08.** The owner explicitly adopts [ADR-005](../adr/ADR-005-known-risk-integration-exception.md) and the [Known Risk Exception policy](../governance/known-risk-exceptions.md). Solely for its four exact Moderate combinations, this supersedes CORE-045's independent-human amendment prerequisite and contrary no-owner-exception wording, and CORE-134's stop requirement for that explicitly adopted scope. This is a disclosed departure from the former procedure, not compliance with it. No independent human review occurred. The exception lasts at most30 calendar days, never renews automatically and is bound to exact graph/execution/approval/advisory identities. Full raw audit findings and exit remain visible; a separate policy result may qualify integration without calling that audit clean. CORE-002 hard blockers and every other check/protection remain. AU-003, D6 and all unrelated human-review/production restrictions are not superseded. The mechanism persists; no future exception or renewal is approved here.
+
 | You are | Read |
 |---|---|
 | New developer (any role) | This file in full + `01` + `02` + `17` before your first line of code |

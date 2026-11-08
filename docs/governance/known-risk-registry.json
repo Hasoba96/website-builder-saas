@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "id": "KR-20261108-FOUR-MODERATE",
+  "owner": "Hasoba96",
+  "scope": "development/integration-only",
+  "adoptedAt": "2026-11-08T14:39:50.661Z",
+  "expiresAt": "2026-12-08T14:39:50.661Z",
+  "lockSha256": "60061b036a4ca44917f066d629a33da7a17ff5bc6855edf52cac48748f28a9af",
+  "executionSha256": "744a5c123fa822a3c6b9abc18d10dc6b48658b87e2732cf2b24b880f8821e4fd",
+  "approvalSha256": "33f871fbcce519d5fe9547387c4bbd4cab443e2cfe5889257c32370c64ea97c3",
+  "findings": [
+    "GHSA-3g3m-2fjr-6pw4|glob|10.5.0|.>@actions/artifact>archiver>archiver-utils>glob",
+    "GHSA-3g3m-2fjr-6pw4|glob|13.0.6|.>node-pg-migrate>glob",
+    "GHSA-g3hv-75wg-m249|minimatch|10.2.6|.>eslint>minimatch",
+    "GHSA-g3hv-75wg-m249|minimatch|9.0.9|.>@actions/artifact>archiver>archiver-utils>glob>minimatch"
+  ],
+  "advisorySha256": {
+    "GHSA-3g3m-2fjr-6pw4": "b7037f69b7ebfd52e8479c972fed2c3ce10f2a9ba22b0fab9b314907f4d7e995",
+    "GHSA-g3hv-75wg-m249": "18cb8249d89a836e665ba0fa23366464ec456bac8b058236fd8061f3f8886df1"
+  }
+}
