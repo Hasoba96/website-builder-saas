@@ -54,7 +54,7 @@ function licenseFixture(license: string, name: string, versions: string[]) {
       manager,
       `const command=process.argv[2];
       require('node:fs').appendFileSync('invocations',command+'\\n');
-      const responses={list:[],licenses:${JSON.stringify({ [license]: [{ name, versions }] })},audit:{metadata:{vulnerabilities:{high:0,critical:0}}}};
+      const responses={list:[],licenses:${JSON.stringify({ [license]: [{ name, versions }] })},audit:{actions:[],advisories:{},muted:[],metadata:{vulnerabilities:{info:0,low:0,moderate:0,high:0,critical:0}}}};
       if(!(command in responses))process.exit(1);
       require('node:fs').writeFileSync(1,JSON.stringify(responses[command]));`,
     );

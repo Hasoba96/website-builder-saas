@@ -2,6 +2,12 @@ import assert from 'node:assert/strict';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import {
+  evaluateRisk,
+  riskContext,
+  RiskEvidenceError,
+  blockedRisk,
+} from './known-risk.ts';
 
 const manager = process.env['npm_execpath'];
 assert.ok(manager, 'Invoke through pnpm ci:supply-chain');
@@ -118,17 +124,46 @@ const audit = spawnSync(process.execPath, [manager, 'audit', '--json'], {
   timeout: 120000,
   maxBuffer: 10 * 1024 * 1024,
 });
-assert.ok(!audit.error, 'Dependency audit unavailable');
-const auditReport = JSON.parse(audit.stdout) as {
-  metadata: { vulnerabilities: { high: number; critical: number } };
-};
-assert.equal(
-  auditReport.metadata.vulnerabilities.high +
-    auditReport.metadata.vulnerabilities.critical,
-  0,
-  'High/Critical dependency finding',
+const auditDirectory = '.local/ci/verify';
+mkdirSync(auditDirectory, { recursive: true });
+for (const [name, data] of Object.entries({
+  'audit-raw.json': audit.stdout ?? '',
+  'audit-stderr.txt': audit.stderr ?? '',
+  'audit-process.json': JSON.stringify({
+    exit: audit.status,
+    signal: audit.signal,
+    error: audit.error ? 'PROCESS_ERROR' : null,
+  }),
+}))
+  writeFileSync('.local/ci/verify/' + name, data);
+let auditReport: unknown, disposition;
+try {
+  assert.ok(!audit.error && !audit.signal, 'Dependency audit unavailable');
+  auditReport = JSON.parse(audit.stdout);
+  disposition = evaluateRisk(
+    auditReport,
+    audit.status,
+    audit.status === 0
+      ? undefined
+      : JSON.parse(
+          readFileSync('docs/governance/known-risk-registry.json', 'utf8'),
+        ),
+    audit.status === 0 ? undefined : riskContext(process.cwd()),
+  );
+} catch (error) {
+  disposition =
+    error instanceof RiskEvidenceError
+      ? error.result
+      : blockedRisk(audit.status);
+}
+writeFileSync(
+  auditDirectory + '/audit-disposition.json',
+  JSON.stringify(disposition),
 );
-assert.equal(audit.status, 0, 'Dependency audit failed');
+const summary = `Raw audit exit ${audit.status}; policy ${disposition.status}; accepted ${disposition.accepted.length}; unresolved ${disposition.unresolved.length}.`;
+writeFileSync(auditDirectory + '/audit-disposition.txt', summary + '\n');
+process.stdout.write(summary + '\n');
+assert.ok(disposition.status !== 'BLOCKED', 'Risk policy rejected');
 const base = process.env['CI_BASE_SHA'];
 let diff =
   'No committed comparison base: initial/local baseline requires owner review.';

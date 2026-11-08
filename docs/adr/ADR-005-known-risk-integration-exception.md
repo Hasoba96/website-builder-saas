@@ -1,0 +1,11 @@
+# ADR-005 — bounded four-finding owner exception
+
+Status: ADOPTED LOCALLY / PROTECTED INTEGRATION PENDING. Date:2026-11-08. Owner:Hasoba96. Accepted-main baseline:b3a6f34be3a03c4f51e74ca49108b09e7da85ffa. The registry supplies actual UTC adoption/expiry and exact graph/profile/authorization hashes.
+
+The owner explicitly authorizes the [Known Risk Exception policy](../governance/known-risk-exceptions.md), its four documented Moderate combinations and a deterministic evaluator without the unavailable independent reviewer. This is an explicit prospective departure from the former CORE-045 procedure, not compliance with it or evidence that a human review occurred. It extends the local Governance V2 founding decision only for the enumerated development/integration exception. It is not a general owner-only security amendment power.
+
+CORE-002's risk disposition and audit acceptance semantics, CORE-045's mandatory-human amendment prerequisite, CORE-134's conflict handling and GV2 IG-004/RA-001–003 are superseded only to the exact extent described in that policy. Existing historical ADRs, unrelated controls, AU-003, D6 and production restrictions remain. The current implementation candidate may be verified under this newly adopted policy to avoid circular adoption; remote protection and all actual required checks still apply.
+
+Use the existing pnpm audit unchanged, retain its full stdout/stderr/exit, and separately report CLEAN, ACCEPTED_RISK or BLOCKED. Exact graph/profile/advisory/path/version binding, maximum30-day expiry, no renewal, daily monitoring and fail-closed negative tests are required. New findings and other hard blockers are not accepted. No workflow/protected-setting change is part of this decision.
+
+The owner accepts the specific solo-review and availability risks described in the policy, not production release or unknown new exposure. A separate AI-assisted review records its limitations; no signature or independent reviewer is fabricated. Exact candidate acceptance/publication/merge, current hosted Linux verification, fresh main verification and remaining stage criteria are still required. Stage00 stays OPEN until those criteria actually pass. Rollback/reassessment follows the policy; old audit and stage history is never relabeled.
