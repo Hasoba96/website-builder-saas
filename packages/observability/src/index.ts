@@ -1,4 +1,5 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
+import { ObserverInputError } from './observer-errors.js';
 export { BoundedMetrics, MetricClockError } from './metrics.js';
 export { observeResponse } from './metrics-node.js';
 export { ObserverInputError } from './observer-errors.js';
@@ -32,13 +33,22 @@ export class StructuredLogger {
   readonly #operationId = newRequestId();
   #blocked = false;
   #failed = false;
+  #observerAttempted = false;
+  #observerUnavailable = false;
+  #observerFallback: Readonly<LogRecord> | undefined;
   constructor(
     readonly service: LogRecord['service'],
     readonly environment: LogRecord['environment'],
     readonly output: Writable = process.stdout,
   ) {
+    if (
+      !logSchema.shape.service.safeParse(service).success ||
+      !logSchema.shape.environment.safeParse(environment).success
+    )
+      throw new ObserverInputError();
     output.on('error', () => {
       this.#failed = true;
+      if (this.#observerAttempted) this.#observerUnavailable = true;
     });
   }
   emit(event: OperationalEvent, fields: unknown = {}) {
@@ -99,6 +109,57 @@ export class StructuredLogger {
       return;
     }
     this.write(record.data);
+  }
+  /** One fixed diagnostic per logger owner; failed transport retains one safe record. */
+  observerFailure() {
+    if (this.#observerAttempted) return;
+    this.#observerAttempted = true;
+    const record = logSchema.parse({
+      timestamp: new Date().toISOString(),
+      level: 'error',
+      service: this.service,
+      environment: this.environment,
+      requestId: this.#operationId,
+      organizationId: null,
+      siteId: null,
+      userId: null,
+      event: 'infrastructure_failure',
+      message: 'infrastructure_failure',
+      durationMs: 0,
+      code: 'INTERNAL_ERROR',
+    });
+    this.#observerFallback = Object.freeze(record);
+    try {
+      if (this.#failed || this.#blocked || this.output.destroyed) {
+        this.#observerUnavailable = true;
+        this.#observerFallback = Object.freeze(record);
+        return;
+      }
+      this.write(record);
+      if (this.#blocked) {
+        this.#observerUnavailable = true;
+        this.#observerFallback = Object.freeze(record);
+      }
+    } catch {
+      // Logging continues in this bounded owner journal, never a recursive emit.
+      this.#observerUnavailable = true;
+      this.#observerFallback = Object.freeze(record);
+    }
+  }
+  get observerDiagnostic() {
+    return {
+      attempted: this.#observerAttempted,
+      delivery: this.#observerUnavailable
+        ? ('unavailable' as const)
+        : this.#observerAttempted
+          ? ('submitted' as const)
+          : ('none' as const),
+      record: this.#observerFallback ? { ...this.#observerFallback } : null,
+    };
+  }
+  clearObserverDiagnostic() {
+    this.#observerFallback = undefined;
+    // Keep the one-attempt guard; clearing cannot cause a log storm or recursion.
   }
   private write(record: LogRecord) {
     if (this.environment === 'production' && record.level === 'debug') return;

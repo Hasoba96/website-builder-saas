@@ -1,5 +1,6 @@
 import type { ServerResponse } from 'node:http';
 import type { BoundedMetrics } from './metrics.js';
+import type { StructuredLogger } from './index.js';
 
 type Service = 'api' | 'worker';
 type Route = 'health' | 'ready' | 'other';
@@ -8,19 +9,23 @@ export function observeResponse(
   service: Service,
   route: Route,
   response: ServerResponse | undefined,
+  owner: StructuredLogger,
   now = () => performance.now(),
 ) {
   let done = false,
     start = 0;
+  let diagnostics: StructuredLogger | undefined = owner;
   function stop() {
     done = true;
     response?.removeListener('finish', finish);
     response?.removeListener('close', close);
     response = undefined;
+    diagnostics = undefined;
   }
   function terminal(aborted: boolean) {
     if (done) return;
     const target = response;
+    const diagnostic = diagnostics;
     stop();
     try {
       const end = now();
@@ -43,7 +48,7 @@ export function observeResponse(
         value: elapsed,
       });
     } catch {
-      /* Observation cannot change HTTP behavior. */
+      diagnostic?.observerFailure();
     }
   }
   function finish() {
@@ -75,6 +80,7 @@ export function observeResponse(
       }
     }
   } catch {
+    diagnostics?.observerFailure();
     stop();
   }
   return stop;

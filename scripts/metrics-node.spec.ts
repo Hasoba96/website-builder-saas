@@ -6,11 +6,33 @@ import {
   type RequestListener,
 } from 'node:http';
 import { EventEmitter } from 'node:events';
+import { observerFixture } from './observer-fixture.js';
 import { spawnSync } from 'node:child_process';
 import {
   BoundedMetrics,
-  observeResponse,
+  observeResponse as nativeObserveResponse,
 } from '@website-builder/observability';
+
+const owners = {
+  api: observerFixture().logger,
+  worker: observerFixture('worker').logger,
+};
+function observeResponse(
+  metrics: BoundedMetrics,
+  service: 'api' | 'worker',
+  route: 'health' | 'ready' | 'other',
+  response: ServerResponse | undefined,
+  now?: () => number,
+) {
+  return nativeObserveResponse(
+    metrics,
+    service,
+    route,
+    response,
+    owners[service === 'worker' ? 'worker' : 'api'],
+    now,
+  );
+}
 
 afterEach(() => vi.useRealTimers());
 const row = (
@@ -150,17 +172,23 @@ it('preserves final denial, OPTIONS, redirect and concurrent response status', a
   }
 });
 it('contains observer failures in real HTTP responses and detaches on disposal or invalid time', async () => {
+  const diagnostics = observerFixture('api', true);
   const broken = {
     record() {
       throw Error('l02-private');
     },
   } as unknown as BoundedMetrics;
   const server = await serve((_request, response) => {
-    observeResponse(broken, 'api', 'other', response);
+    nativeObserveResponse(broken, 'api', 'other', response, diagnostics.logger);
     response.end('ok');
   });
   try {
     expect(await hit(server.port)).toBe(200);
+    expect(diagnostics.write).toHaveBeenCalledTimes(1);
+    expect(diagnostics.logger.observerDiagnostic.delivery).toBe('unavailable');
+    expect(JSON.stringify(diagnostics.logger.observerDiagnostic)).not.toContain(
+      'l02-private',
+    );
   } finally {
     await server.close();
   }

@@ -69,6 +69,8 @@
 | Backups | Per `BR-011` | — |
 | L-01 inert process-local numeric metric aggregates | Current 60-second tumbling window is readable; logical expiry is synchronous on the next operation, not guaranteed physical RAM erasure within 60 seconds | [Initial contract](../../checkpoints/00-l-metrics-contract.md). Fixed bounded state; old arrays clear on the next operation or reset, and seen-bits last until reset/process exit. No application collector, persistence or export is activated. No maintenance job or `BR-031`/`BR-061` completion is claimed; actual runtime collection/export/storage must resolve its maintenance/deletion acceptance before activation. Existing retention durations are unchanged. |
 
+The inactive observer correction's [logger-owned diagnostic journal](../../checkpoints/00-l-observer-correction.md) holds at most one fixed sanitized LogRecord (under 512 serialized bytes) plus finite attempt/unavailable flags. Fixture-only ownership lasts until explicit record release/process exit; clearing does not rearm output. No elapsed runtime-retention duration, application metrics attachment, persistence or provider is approved. This initial inert lifetime does not change application-log durations above or prove BR-031/061; actual collection and retained consumer copies require maintenance/deletion acceptance before activation.
+
 **`BR-031` (MUST):** Retention deletion is **automated in a maintenance job**, never manual and never left to memory.
 
 **`BR-032` (MUST):** The retention policy is **implemented in code**, not merely described on a privacy policy page.
