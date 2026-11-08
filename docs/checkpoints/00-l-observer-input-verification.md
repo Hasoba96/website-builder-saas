@@ -1,0 +1,15 @@
+# Inactive observer input prerequisite — 2026-11-04
+
+Owner: Hasoba96, infrastructure/observability. Status: LOCAL IMPLEMENTATION; PUBLICATION BLOCKED. This independently testable prerequisite defines the expected observer-input domain error and validated trusted CPU/RSS/clock reader adapters. It creates no timer, listener, collection, provider, persistent state or application attachment. Reader construction does not invoke readers or retain their mutable input container; getter/type failures are rethrown as sanitized domain errors without their causes.
+
+Three deterministic tests cover error name/code/message/cause absence, lazy/default native adapters, input-container independence, invalid reader types and hostile getters. The existing VALIDATION_FAILED code and shared schema remain authoritative. This is neither operational metrics acceptance nor automated-retention compliance.
+
+The supplemental observer-correction inventory measures the complete ordinary packet, including exports, test ownership/floor and this documentation. It also identifies later logger/HTTP and sampler packets as separate dependent virtual payloads, not accepted main commits. Current dependency audit remains a hard publication failure under the unchanged CI gate; no supported upstream zero-audit resolution was available during investigation. Full local and protected hosted checks remain mandatory; focused tests are not full CI PASS.
+
+Separate AI-assisted review is not independent human review. Applicable CORE-022/044/045/060/061/080, TS-031/060/063. No tenant data, schema migration, network call or dependency change. Rollback is a protected reviewed revert of inactive exports/input construction/tests. No PR or merge is approved by this document.
+
+## Reconstruction against accepted security main — 2026-11-08
+
+The preceding November 4 account is historical. This successor reconstructs the exact reviewed OBS-INPUT source and tests on accepted main `69e822ee9f05b33f71b94623b59d5e5b59e6ec75`, preserving the five original local Foundation candidates. The sole executable reconciliation preserves `known-risk.spec.ts` and adds the three observer-input tests to canonical discovery, raising the root floor from 84 to 87. The conservative executable delta remains 75 lines, including tests, exports and discovery.
+
+PR #9's adopted exception now permits only its exact four Moderate combinations and unchanged graph/execution profile until `2026-12-08T14:39:50.661Z`. The raw audit remains nonzero; this is accepted integration risk, not vulnerability remediation. New findings or evidence drift still block. The old sampler PR #8 remains unmerged and expired; it is not this prerequisite's publication vehicle. Fresh exact-candidate local and hosted verification, separate AI-assisted technical/security/disclosure review, exact owner publication authorization and later merge authorization remain required. Current command results and immutable source/patch identities are preserved in the packet's operational ledger; no historical result is relabeled or silently refreshed.
