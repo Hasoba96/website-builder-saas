@@ -62,7 +62,7 @@ export const suites = {
 const normalize = (path: string) => path.replaceAll('\\', '/');
 
 export const minimumTests: Record<keyof typeof suites, number> = {
-  root: 93,
+  root: 96,
   local: 7,
   api: 7,
   worker: 2,

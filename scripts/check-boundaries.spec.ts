@@ -18,12 +18,95 @@ import { describe, expect, it } from 'vitest';
 import {
   boundaryViolation,
   checkBoundaries,
+  dependencyCycles,
   importSpecifiers,
 } from './check-boundaries.js';
 
 const root = process.cwd();
 const path = (value: string) => resolve(root, value);
 describe('repository boundaries', () => {
+  it.each(['C:\\repo\\', '/repo/'])(
+    'checks both cycle directions and acyclic graphs with %s path syntax',
+    (prefix) => {
+      const left = prefix + 'index.ts',
+        right = prefix + 'metrics-node.ts';
+      const forward = (value: string) => value.replaceAll('\\', '/');
+      const alias = left.includes('\\')
+        ? forward(left)
+        : left.replaceAll('/', '\\');
+      const entries: [string, string[]][] = [
+        [left, [forward(right)]],
+        [right, [forward(left)]],
+      ];
+      for (const input of [entries, [...entries].reverse()])
+        expect(dependencyCycles(prefix, new Map(input))).toContainEqual(
+          expect.stringContaining('Circular dependency:'),
+        );
+      expect(
+        dependencyCycles(
+          prefix,
+          new Map([
+            [left, [forward(right)]],
+            [right, []],
+          ]),
+        ),
+      ).toEqual([]);
+      expect(
+        dependencyCycles(prefix, new Map([[left, [forward(left)]]])),
+      ).toContainEqual(expect.stringContaining('Circular dependency:'));
+      expect(
+        dependencyCycles(
+          prefix,
+          new Map([
+            [left, [right]],
+            [alias, []],
+            [right, [left]],
+          ]),
+        ),
+      ).toContainEqual(expect.stringContaining('Circular dependency:'));
+    },
+  );
+  it('checks real source cycles, reversed type/re-export edges and acyclic files', () => {
+    const fixture = mkdtempSync(resolve(tmpdir(), 'website-boundary-cycle-'));
+    expect(dirname(fixture)).toBe(resolve(tmpdir()));
+    try {
+      mkdirSync(resolve(fixture, 'apps'));
+      const base = resolve(fixture, 'packages/observability');
+      mkdirSync(base, { recursive: true });
+      writeFileSync(
+        resolve(base, 'tsconfig.json'),
+        JSON.stringify({
+          compilerOptions: { module: 'NodeNext', moduleResolution: 'NodeNext' },
+        }),
+      );
+      for (const reversed of [false, true]) {
+        writeFileSync(
+          resolve(base, 'index.ts'),
+          'export type Left = string; export const left = 1;\n' +
+            (reversed
+              ? "import type {Right} from './metrics-node.js';"
+              : "export {right} from './metrics-node.js';"),
+        );
+        writeFileSync(
+          resolve(base, 'metrics-node.ts'),
+          'export type Right = string; export const right = 1;\n' +
+            (reversed
+              ? "export {left} from './index.js';"
+              : "import type {Left} from './index.js';"),
+        );
+        expect(checkBoundaries(fixture)).toContainEqual(
+          expect.stringContaining('Circular dependency:'),
+        );
+        writeFileSync(
+          resolve(base, 'index.ts'),
+          'export type Left = string; export const left = 1;',
+        );
+        expect(checkBoundaries(fixture)).toEqual([]);
+      }
+    } finally {
+      rmSync(fixture, { recursive: true, force: true });
+    }
+  });
   it('rejects test fixtures, re-exports and test libraries from production while allowing tests to exercise production', () => {
     for (const [target, specifier] of [
       ['apps/api/tests/operations.spec.ts', '../tests/operations.spec'],

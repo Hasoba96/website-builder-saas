@@ -1,6 +1,14 @@
 # L-02 observer correction prerequisites — 2026-11-04
 
-## Current reconstruction — 2026-11-08
+## PR #11 local repair — 2026-11-08
+
+The reconstruction below describes the original 291-line candidate, published at `a68b17ca58bcd83dbc9c67acbabf8363e99778ce`. Hosted run 42518191087 passed images but failed lint/boundaries before tests: the barrel re-export and the observer's reverse logger type import formed a cycle in the mandatory graph. Windows source keys and TypeScript-resolved targets used different separators, hiding that cycle locally. The original source, native failures, image results and reviews remain preserved; the earlier review did not establish compliance with this graph rule.
+
+The local repair removes that reverse import through a narrow diagnostic-owner capability supplied by the existing trusted logger. Public exports, supported callers, logger diagnostics and HTTP runtime behavior remain unchanged. The production checker normalizes every graph key and target before cycle analysis and unions alias edges. Type imports remain checked; no exclusion, threshold or other boundary rule changes. Registered regressions cover Windows/POSIX syntax, both cycle directions, self-cycles, alias-edge preservation and actual filesystem/type-resolution cycles versus acyclic files. Three discovered cases raise the root floor from 93 to 96. The initial POSIX alias fixture's duplicate-Map-key failure and its correction are retained separately, without dropping its assertion.
+
+This repaired candidate is local and uncommitted, requires a new whole-PR inventory within 400 real-code lines and fresh canonical acceptance, and has no publication/update/merge authorization. Its actual results belong to its new immutable evidence, not the original manifest. No hosted rerun, risk-disposition change, runtime attachment, deployment or Foundation closure is authorized. Compose R1 and the historical configuration timeout remain OPEN/UNPROVEN.
+
+## Reconstruction before the PR #11 repair — 2026-11-08
 
 The November 4 sections below preserve their historical results and blockers. This successor uses accepted OBS-INPUT main `cc04c1e941daef653326b0ab6a780febd5330b27` after protected PR #10 and fresh main verification. The original logger/HTTP executable payload is retained; discovery preserves the security/input tests and raises root floor 87 to 93 for the six diagnostic tests. Its independently useful delta remains 291 conservative executable lines. No old sampler branch is refreshed or merged; PR #8 remains expired, open and unmerged. The dated OBS-INPUT acceptance record accompanies this dependent packet as non-executable evidence.
 

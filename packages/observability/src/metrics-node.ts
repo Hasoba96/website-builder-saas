@@ -1,7 +1,7 @@
 import type { ServerResponse } from 'node:http';
 import type { BoundedMetrics } from './metrics.js';
-import type { StructuredLogger } from './index.js';
 
+type DiagnosticOwner = { observerFailure(): void };
 type Service = 'api' | 'worker';
 type Route = 'health' | 'ready' | 'other';
 export function observeResponse(
@@ -9,12 +9,12 @@ export function observeResponse(
   service: Service,
   route: Route,
   response: ServerResponse | undefined,
-  owner: StructuredLogger,
+  owner: DiagnosticOwner,
   now = () => performance.now(),
 ) {
   let done = false,
     start = 0;
-  let diagnostics: StructuredLogger | undefined = owner;
+  let diagnostics: DiagnosticOwner | undefined = owner;
   function stop() {
     done = true;
     response?.removeListener('finish', finish);
