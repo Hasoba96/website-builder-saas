@@ -205,6 +205,23 @@ export function checkBoundaries(root: string): string[] {
       }
     }
   }
+  return [...failures, ...dependencyCycles(root, edges)];
+}
+
+export function dependencyCycles(
+  root: string,
+  input: ReadonlyMap<string, readonly string[]>,
+): string[] {
+  const failures: string[] = [];
+  const edges = new Map<string, string[]>();
+  const key = (value: string) => value.replaceAll('\\', '/');
+  for (const [source, targets] of input) {
+    const sourceKey = key(source);
+    edges.set(sourceKey, [
+      ...(edges.get(sourceKey) ?? []),
+      ...targets.map(key),
+    ]);
+  }
   const complete = new Set<string>();
   const visiting = new Set<string>();
   function visit(source: string) {

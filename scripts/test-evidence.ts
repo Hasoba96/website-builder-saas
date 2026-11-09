@@ -9,6 +9,7 @@ export const suites = {
   root: [
     'scripts/known-risk.spec.ts',
     'scripts/observer-input.spec.ts',
+    'scripts/observer-diagnostics.spec.ts',
     'scripts/metrics-node.spec.ts',
     'scripts/metrics.spec.ts',
     'scripts/backup-scope.spec.ts',
@@ -61,7 +62,7 @@ export const suites = {
 const normalize = (path: string) => path.replaceAll('\\', '/');
 
 export const minimumTests: Record<keyof typeof suites, number> = {
-  root: 87,
+  root: 96,
   local: 7,
   api: 7,
   worker: 2,
